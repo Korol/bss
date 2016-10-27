@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+
 }
 
 .wrap {
@@ -112,4 +113,99 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+/* BOSS STYLES */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.boss-yellow-color {
+    color: #ffd715; /* hover: #fbe751; */
+}
+.navbar-boss {
+    height: 50px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+.navbar-boss-mobile {
+    font-size: 16px;
+    font-weight: lighter;
+}
+.navbar-boss-mobile .icon-bar {
+    background-color: #ffd715 !important;
+}
+.navbar-boss-mobile .navbar-toggle {
+    border-color: #ffd715;
+}
+.navbar-boss .navbar-nav > li > a {
+    color: #ffd715;
+    text-decoration: underline;
+    padding-left: 13px;
+    padding-right: 15px;
+}
+.navbar-boss ul.navbar-nav > li > a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.navbar-boss .navbar-nav > li.active > a {
+    text-decoration: none;
+}
+.blb {
+    padding: 0;
+}
+.blb p {
+    text-align: center;
+    font-size: 56px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.blb-yellow-title {
+    color: #ffd715;
+    position: relative;
+    top: -14px;
+}
+.boss-mobile-title {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #ffd715 !important;
+}
+.boss-logo-block {
+    width: 195px;
+    height: 142px;
+    background: url("/images/logo_png8.png");
+}
+.blb-hide {
+    display: none;
+}
+.boss-countries {
+    min-width: 46px;
+    background: #555;
+    margin-top: 7px !important;
+}
+.boss-countries > li > a {
+    padding: 5px 13px;
+}
+.boss-countries-icon {
+    position: absolute;
+    top: 32px;
+    left: 14px;
+    color: #ffd715;;
+}
+.btn-yellow {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: Arial;
+    color: #000;
+    font-size: 20px;
+    background: #ffd715;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn-yellow:hover {
+    background: #fbe751;
+    text-decoration: none;
 }
