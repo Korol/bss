@@ -1,7 +1,17 @@
 html,
 body {
     height: 100%;
+}
 
+/* vertical centering */
+.vcentered-block {
+    display: flex;
+    display: -webkit-flex;
+    min-height: 64px;
+}
+.vcentered-content {
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .wrap {
@@ -193,6 +203,11 @@ body {
     left: 14px;
     color: #ffd715;;
 }
+
+/* BLOCK 1 */
+.boss-main-block1 {
+    min-height: 200px;
+}
 .btn-yellow {
     -webkit-border-radius: 10;
     -moz-border-radius: 10;
@@ -208,4 +223,56 @@ body {
 .btn-yellow:hover {
     background: #fbe751;
     text-decoration: none;
+}
+
+/* BLOCK 2 */
+.boss-main-block2 {
+    background-color: #ffd715;
+    border-bottom: 1px solid #222;
+}
+.bmb2-wrap {
+    background: url("/images/boss-bg.png") repeat;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.bmb2-header {
+    font-size: 45px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.bmb2-row {
+    margin-bottom: 25px;
+}
+.bmb-icon-block {
+    text-align: right;
+}
+.bmb2-text {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+/* BLOCK 3 */
+.boss-main-block3 {
+    background-color: #ebebec;
+    border-bottom: 1px solid #222;
+    padding-top: 30px;
+}
+.bmb3-bottom-img {
+    width: 100%;
+}
+.bmb3-header {
+    font-size: 45px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.bmb3-tag-block {
+    text-align: right;
+    padding-top: 8px;
+}
+.bmb3-p {
+    font-size: 20px;
+    font-weight: 100;
 }

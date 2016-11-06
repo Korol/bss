@@ -167,12 +167,12 @@ var_dump($is_mobile);
         </nav>
     <?php endif; ?>
 
-    <div class="container" id="page_content">
+<!--    <div class="container" id="page_content">-->
         <?php /*echo Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ])*/ ?>
         <?= $content ?>
-    </div>
+<!--    </div>-->
 </div>
 
 <footer class="footer">
