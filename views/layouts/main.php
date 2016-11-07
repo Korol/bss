@@ -21,6 +21,7 @@ var_dump($is_mobile);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" href="<?=\yii\helpers\Url::to(['images/favicon.ico']); ?>" type="image/x-icon">
     <?php $this->head() ?>
 </head>
 <body>
@@ -175,13 +176,118 @@ var_dump($is_mobile);
 <!--    </div>-->
 </div>
 
-<footer class="footer">
+<!--BLOCK 11-->
+<div class="boss-main-block11">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <?php
+        $block11_header = 'Boss';
+        $block11_img_path = 'images/';
+        $block11_pa_text = 'Кабинет';
+        $block11 = [
+            0 => [
+                0 => [
+                    'title' => 'Главная',
+                    'url' => '#',
+                ],
+                1 => [
+                    'title' => 'Кто такой Boss',
+                    'url' => '#',
+                ],
+                2 => [
+                    'title' => 'Тарифы',
+                    'url' => '#',
+                ],
+                3 => [
+                    'title' => 'Отзывы',
+                    'url' => '#',
+                ],
+            ],
+            1 => [
+                0 => [
+                    'title' => 'FAQ',
+                    'url' => '#',
+                ],
+                1 => [
+                    'title' => 'Наши новости',
+                    'url' => '#',
+                ],
+                2 => [
+                    'title' => 'Стать партнёром',
+                    'url' => '#',
+                ],
+                3 => [
+                    'title' => 'Мы на связи',
+                    'url' => '#',
+                ],
+            ],
+            2 => [
+                0 => [
+                    'title' => 'Пользовательское соглашение',
+                    'url' => '#',
+                ],
+                1 => [
+                    'title' => 'Политика конфиденциальности',
+                    'url' => '#',
+                ],
+            ],
+        ];
+        ?>
+        <div class="row">
+            <div class="col-lg-3 bmb11-content">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h1 class="bmb11-header"><?= $block11_header; ?></h1>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_fb.png']); ?>" alt="Youtube Icon"/>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_vk.png']); ?>" alt="Youtube Icon"/>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_youtube.png']); ?>" alt="Youtube Icon"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 bmb11-content">
+                <diw class="row">
+                    <?php foreach($block11 as $b11_key => $b11_part): ?>
+                        <div class="col-lg-<?=($b11_key < 2) ? 3 : 6; ?>">
+                            <?php if($b11_key == 2): ?>
+                                <div class="bmb11-private-area">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_case.png']); ?>" alt="Footer Case Icon"/>
+                                        </div>
+                                        <div class="col-lg-10 text-left">
+                                            <a href="#" class="b11-pa-text"><?= $block11_pa_text; ?></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            <?php foreach($b11_part as $b11_item): ?>
+                                <div class="b11-row">
+                                    <a href="<?=\yii\helpers\Url::to([$b11_item['url']]); ?>"><?= $b11_item['title']; ?></a>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </diw>
+            </div>
+            <div class="col-lg-2 text-right">
+                <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'warta_logo.png']); ?>" alt="Warta Logo"/>
+            </div>
+        </div>
     </div>
-</footer>
+</div>
 
 <?php $this->endBody() ?>
 </body>

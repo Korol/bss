@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
+
+    // Window Scroll
     $(window).scroll( function() {
-        console.log('Scroll!');
         var value = $(this).scrollTop();
         if ( value > 10 ){
             $("#top_logo").hide(400);
@@ -12,5 +13,16 @@ jQuery(document).ready(function ($) {
             //$("#top_logo").removeClass('blb-hide');
             $("#top_logo").show(400);
         }
+    });
+
+    // Toggle Features
+    $('.bmb4-row-title').click(function(){
+        $('.bmb4-left-block').removeClass('bmb4-row-active');
+        $('.bmb4-right-block').removeClass('bmb4-row-active');
+        $('.bmb4-row-img').removeClass('bmb4-row-active');
+        var  tid = this.id.split('_');
+        $('#bmb4_lb_'+tid[2]).addClass('bmb4-row-active');
+        $('#bmb4_rb_'+tid[2]).addClass('bmb4-row-active');
+        $('#bmb4_pbi_'+tid[2]).addClass('bmb4-row-active');
     });
 });
