@@ -11,7 +11,7 @@ use app\assets\AppAsset;
 
 AppAsset::register($this);
 $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect->isMobile())) ? true : false;
-var_dump($is_mobile);
+//var_dump($is_mobile);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
