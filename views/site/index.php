@@ -9,22 +9,121 @@ $gplay_text = 'Android app on';
 <!--BLOCK 1-->
 <div class="boss-main-block1">
     <div class="container">
+        <?php
+        $block1_img_path = 'images/';
+        $block1_banners_path = 'images/';
+        $block1 = [
+            0 => [
+                'type' => 'image_text',
+                'code' => '',
+                'img' => 'banner4.jpg',
+                'header' => 'Заголовок!',
+                'text' => 'Привет! Спасибо, что зашел к Боссу! Держи удобное приложение для учета бизнеса, и продавай мобильно<br/>БЕСПЛАТНО',
+                'buttons' => 1,
+            ],
+            1 => [
+                'type' => 'video',
+                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                'img' => '',
+                'header' => '',
+                'text' => '',
+                'buttons' => 0,
+            ],
+            2 => [
+                'type' => 'image',
+                'code' => '',
+                'img' => 'banner1.jpg',
+                'header' => '',
+                'text' => '',
+                'buttons' => 0,
+            ],
+            3 => [
+                'type' => 'image_text',
+                'code' => '',
+                'img' => 'banner5.jpg',
+                'header' => '',
+                'text' => 'Привет! Спасибо, что зашел к Боссу! Держи удобное приложение для учета бизнеса, и продавай мобильно<br/>БЕСПЛАТНО',
+                'buttons' => 1,
+            ],
+            4 => [
+                'type' => 'image',
+                'code' => '',
+                'img' => 'banner2.jpg',
+                'header' => '',
+                'text' => '',
+                'buttons' => 0,
+            ],
+        ];
+        // banners size 1140x640
+        ?>
         <div class="row">
             <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-5 col-lg-offset-7">
-                        <div class="row">
-<!--                            <div class="col-lg-12 text-left">-->
-<!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, obcaecati?-->
-<!--                                <h1>БЕСПЛАТНО</h1>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-lg-12 text-center">-->
-<!--                                    <a class="btn-yellow" href="#"><span class="btn-yellow-text"></span></a>-->
-<!--                                    <a class="btn-yellow" href="#"></a>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                <div class="bmb1-carousel-wrapper">
+                    <div id="block1_carousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <?php foreach($block1 as $b1_key => $b1_item): ?>
+                                <div class="item <?= ($b1_key == 0) ? 'active' : ''; ?>">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                        <?php if($b1_item['type'] == 'video'): ?>
+                                            <div class="embed-responsive embed-responsive-16by9"><?= $b1_item['code']; ?></div>
+                                        <?php elseif($b1_item['type'] == 'image'): ?>
+                                            <div class="bmb1-image-block">
+                                                <img src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
+                                            </div>
+                                        <?php elseif($b1_item['type'] == 'image_text'): ?>
+                                            <div class="bmb1-image-block">
+                                                <img src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
+                                                <div class="bmb1-ib-caption">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-lg-offset-7">
+                                                            <h2 class="bmb1-ib-title"><?= $b1_item['header']; ?></h2>
+                                                            <div class="bmb1-ib-text">
+                                                                <p><?= $b1_item['text']; ?></p>
+                                                            </div>
+                                                            <?php if(!empty($b1_item['buttons'])): ?>
+                                                            <div class="bmb1-ib-buttons-block">
+                                                                <div class="row">
+                                                                    <div class="col-lg-10 col-lg-offset-1">
+                                                                        <a href="#" class="bmb4-btn-link">
+                                                                            <div class="bmb1-yellow-appstore">
+                                                                                <span><?= $appstore_text; ?></span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-10 col-lg-offset-1">
+                                                                        <a href="#" class="bmb4-btn-link">
+                                                                            <div class="bmb1-yellow-gplay">
+                                                                                <span><?= $gplay_text; ?></span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#block1_carousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#block1_carousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -315,13 +414,6 @@ $gplay_text = 'Android app on';
                 $block5_chunked = array_chunk($block5, 3);
                 ?>
                 <div id="block5_carousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <?php /*ol class="carousel-indicators">
-                        <?php for($b5_i = 0; $b5_i < count($block5_chunked); $b5_i++): ?>
-                        <li data-target="#block5_carousel" data-slide-to="<?= $b5_i; ?>" <?=($b5_i == 0) ? 'class="active"' : ''; ?>></li>
-                        <?php endfor; ?>
-                    </ol*/?>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <?php foreach($block5_chunked as $b5_chunk_key => $b5_chunk): ?>

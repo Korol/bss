@@ -172,6 +172,7 @@ body {
     text-transform: uppercase;
     font-weight: 900;
     color: #000;
+    /*text-shadow: 2px 2px 1px rgba(255,255,255,.5);*/
 }
 .blb-yellow-title {
     color: #ffd715 !important;
@@ -210,23 +211,83 @@ body {
 /* BLOCK 1 */
 .boss-main-block1 {
     min-height: 200px;
+    background-color: #ebebec;
 }
-.btn-yellow {
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
-    font-family: Arial;
-    color: #000;
+.bmb1-carousel-wrapper {
+    margin-top: 50px;
+}
+#block1_carousel .item {
+    height: 640px;
+}
+#block1_carousel .carousel-control.left,
+#block1_carousel .carousel-control.right {
+    background-image:none !important;
+    filter:none !important;
+}
+.bmb1-ib-caption {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    right: 0;
+    font-size: 18px;
+    color: #f3f3f3;
+    text-shadow: 2px 2px 1px rgba(0,0,0,.5);
+}
+.bmb1-ib-buttons-block {
+    margin-top: 20px;
+}
+.bmb1-yellow-appstore, .bmb1-yellow-gplay {
+    width: 286px;
+    height: 94px;
+    text-shadow: none;
+    margin-bottom: 20px;
+}
+.bmb1-yellow-appstore {
+    background: url("/images/btn_yellow_appstore.png") transparent;
+    margin-bottom: 35px;
+}
+.bmb1-yellow-gplay {
+    background: url("/images/btn_yellow_gplay.png") transparent;
+}
+.bmb1-yellow-appstore span {
+    position: relative;
+    left: 65px;
+    top: 5px;
     font-size: 20px;
-    background: #ffd715;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
+    color: #231f20;
 }
-
-.btn-yellow:hover {
-    background: #fbe751;
-    text-decoration: none;
+.bmb1-yellow-gplay span {
+    position: relative;
+    left: 85px;
+    top: 7px;
+    font-size: 16px;
+    color: #231f20;
+    text-transform: uppercase;
 }
+#block1_carousel .carousel-control .glyphicon-menu-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+    color: #fff;
+    right: 50%;
+}
+#block1_carousel .carousel-control .glyphicon-menu-left {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+    color: #fff;
+    left: 50%;
+}
+#block1_carousel .carousel-control {
+    width: 50px;
+}
+/*#block1_carousel .left, #block1_carousel .right {*/
+    /*width: 50px;*/
+/*}*/
 
 /* BLOCK 2 */
 .boss-main-block2 {
