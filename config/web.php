@@ -14,14 +14,15 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'DbKWw9j29RYV7LxM5Wr3P7s9tsejNZyq',
+            'baseUrl' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
+//        'user' => [
+//            'identityClass' => 'app\models\User',
+//            'enableAutoLogin' => true,
+//        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -42,14 +43,72 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+//        'urlManager' => [
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false,
+//            'rules' => [
+//            ],
+//        ],
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
+            // List all supported languages here
+            // Make sure, you include your app's default language.
+            'languages' => ['ru', 'en', 'fr', 'de'],
+//            'ignoreLanguageUrlPatterns' => [
+//                '#^images/#' => '#^images/#', // исключение роутингов и URL типа images/ из области действия модуля, может также быть полезным для AJAX-запросов
+//            ],
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@dektrium/user/views' => '@app/modules/admin/views/user',
+                ],
+            ],
+        ],
+        // Yii2
+        'i18n' => [
+            'translations' => [
+                'admin' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'on missingTranslation' => ['app\components\TranslationEventHandler', 'handleMissingTranslation']
+                ],
             ],
         ],
     ],
     'params' => $params,
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'admin',
+            'as access' => [
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin', 'language_manager'],
+                    ]
+                ]
+            ],
+        ],
+        'user' => [
+            'class' => 'dektrium\user\Module',
+//            'admins' => ['andkorol'],
+            'adminPermission' => 'rbacAdminAccess',
+            'layout' => '@app/modules/admin/views/layouts/admin',
+            'modelMap' => [
+                'User' => 'app\modules\admin\models\User',
+            ],
+            'controllerMap' => [
+                'admin' => 'app\modules\admin\controllers\AdminController'
+            ],
+        ],
+        'rbac' => [
+            'class' => 'dektrium\rbac\RbacWebModule',
+            'layout' => '@app/modules/admin/views/layouts/admin',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {

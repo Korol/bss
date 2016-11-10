@@ -10,8 +10,8 @@ $gplay_text = 'Android app on';
 <div class="boss-main-block1">
     <div class="container">
         <?php
-        $block1_img_path = 'images/';
-        $block1_banners_path = 'images/';
+        $block1_img_path = '@web/images/';
+        $block1_banners_path = '@web/images/';
         $block1 = [
             0 => [
                 'type' => 'image_text',
@@ -135,7 +135,7 @@ $gplay_text = 'Android app on';
     <div class="bmb2-wrap">
         <div class="container">
             <?php
-            $block2_img_path = 'images/';
+            $block2_img_path = '@web/images/';
             $block2_header = 'Продавай мобильно';
             $block2_images = [
                 0 => 'pm_icon_smart.png',
@@ -212,7 +212,7 @@ $gplay_text = 'Android app on';
             </div>
             <div class="col-lg-6">
                 <?php
-                $block3_img_path = 'images/';
+                $block3_img_path = '@web/images/';
                 $block3_header = 'Весь бизнес <br/>у вас в кармане';
                 $block3_img = 'vbvk_yellow_tag.png';
                 $block3 = [
@@ -256,7 +256,7 @@ $gplay_text = 'Android app on';
 <div class="boss-main-block4">
     <div class="container">
         <?php
-        $block4_img_path = 'images/';
+        $block4_img_path = '@web/images/';
         $block4 = [
             0 => [
                 'title' => 'Товары',
@@ -466,7 +466,7 @@ $gplay_text = 'Android app on';
         <div class="row">
             <div class="col-lg-12">
             <?php
-            $block6_img_path = 'images/';
+            $block6_img_path = '@web/images/';
             $block6 = [
                 0 => [
                     'type' => 'video',
@@ -607,7 +607,7 @@ $gplay_text = 'Android app on';
     <div class="container">
         <?php
         $block8_header = 'Чем <b>boss</b> облегчит вам жизнь';
-        $block8_img_path = 'images/';
+        $block8_img_path = '@web/images/';
         $block8 = [
             0 => [
                 'img' => 'cbovz_pig.png',
@@ -755,7 +755,7 @@ $gplay_text = 'Android app on';
         <?php
         $block10_left = 'Подписывайтесь<br/>на наш канал';
         $block10_right = 'Будем рады подружиться с вами<br/>в социальных сетях';
-        $block10_img_path = 'images/';
+        $block10_img_path = '@web/images/';
         ?>
         <div class="row bmb10-content">
             <div class="col-lg-4">

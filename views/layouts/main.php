@@ -181,7 +181,7 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
     <div class="container">
         <?php
         $block11_header = 'Boss';
-        $block11_img_path = 'images/';
+        $block11_img_path = '@web/images/';
         $block11_pa_text = 'Кабинет';
         $block11 = [
             0 => [
