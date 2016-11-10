@@ -56,9 +56,9 @@ $config = [
             // List all supported languages here
             // Make sure, you include your app's default language.
             'languages' => ['ru', 'en', 'fr', 'de'],
-//            'ignoreLanguageUrlPatterns' => [
-//                '#^images/#' => '#^images/#', // исключение роутингов и URL типа images/ из области действия модуля, может также быть полезным для AJAX-запросов
-//            ],
+            'ignoreLanguageUrlPatterns' => [
+                '#^images/#' => '#^images/#', // исключение роутингов и URL типа images/ из области действия модуля, может также быть полезным для AJAX-запросов
+            ],
         ],
         'view' => [
             'theme' => [
