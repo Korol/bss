@@ -46,7 +46,7 @@ $menu = [
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => Yii::t('admin', 'Main page'), 'url' => ['/admin/main-page/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
             Yii::$app->user->isGuest ? (
