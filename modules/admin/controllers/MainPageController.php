@@ -19,6 +19,7 @@ use yii\web\UploadedFile;
 class MainPageController extends Controller
 {
     public $blocks_num = 11;
+    public $app_language_id = 0;
     /**
      * @inheritdoc
      */
@@ -58,6 +59,7 @@ class MainPageController extends Controller
      */
     public function actionView($id)
     {
+        $this->checkAccess();
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -70,6 +72,7 @@ class MainPageController extends Controller
      */
     public function actionCreate()
     {
+        $this->checkAccess();
         $model = new MainPage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -97,6 +100,7 @@ class MainPageController extends Controller
      */
     public function actionUpdate($id)
     {
+        $this->checkAccess();
         $model = $this->findModel($id);
         $img = $model->img;
 
@@ -129,6 +133,7 @@ class MainPageController extends Controller
      */
     public function actionDelete($id)
     {
+        $this->checkAccess();
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -143,7 +148,9 @@ class MainPageController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = MainPage::findOne($id)) !== null) {
+        $conditions = (Yii::$app->user->can('admin')) ? ['id' => $id] : ['id' => $id, 'language_id' => $this->app_language_id];
+//        if (($model = MainPage::findOne($id)) !== null) {
+        if (($model = MainPage::findOne($conditions)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -167,7 +174,8 @@ class MainPageController extends Controller
         }
         else {
             $language = Language::findOne(['url' => Yii::$app->language]);
-            $user = User::find(Yii::$app->user->id)->one();
+            $this->app_language_id = $language->id;
+            $user = User::findOne(Yii::$app->user->id);
             if($language->id == $user->language_id){
                 return true;
             }

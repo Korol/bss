@@ -43,6 +43,10 @@ class MainPageSearch extends MainPage
     public function search($params)
     {
         $query = MainPage::find();
+        // language condition
+        if(!Yii::$app->user->can('admin')){
+            $query->andWhere(['language_id' => Yii::$app->user->identity->language_id]);
+        }
 
         // add conditions that should always apply here
 
