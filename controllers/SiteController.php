@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Language;
+use app\modules\admin\models\MainPage;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -60,7 +62,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $language = Language::findOne(['url' => Yii::$app->language]);
+        $main_page = \app\models\MainPage::find()
+            ->where(['language_id' => $language->id, 'enabled' => 1])
+            ->asArray()
+            ->orderBy('sort_order ASC')
+            ->all();
+        $blocks = [];
+        if(!empty($main_page)){
+            foreach($main_page as $row){
+                $blocks[$row['block_id']][] = $row;
+            }
+        }
+        return $this->render('index', compact('blocks'));
     }
 
     /**

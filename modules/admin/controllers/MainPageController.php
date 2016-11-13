@@ -11,6 +11,7 @@ use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\modules\admin\models\User;
+use yii\web\UploadedFile;
 
 /**
  * MainPageController implements the CRUD actions for MainPage model.
@@ -72,6 +73,13 @@ class MainPageController extends Controller
         $model = new MainPage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->img = UploadedFile::getInstance($model, 'img');
+            if($model->img){
+                $model->upload();
+                $model->img = $model->img->baseName . '.' . $model->img->extension;
+                $model->save();
+            }
+            Yii::$app->session->setFlash('success', Yii::t('admin', 'Item successfully added!'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -90,8 +98,20 @@ class MainPageController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $img = $model->img;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->img = UploadedFile::getInstance($model, 'img');
+            if($model->img){
+                $model->upload();
+                $model->img = $model->img->baseName . '.' . $model->img->extension;
+                $model->save();
+            }
+            else{
+                $model->img = $img;
+                $model->save();
+            }
+            Yii::$app->session->setFlash('success', Yii::t('admin', 'Item successfully updated!'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -135,7 +155,7 @@ class MainPageController extends Controller
         $return = [];
         $label = Yii::t('admin', 'Block');
         for($i = 1; $i <= $this->blocks_num; $i++){
-            $return[] = $label . ' ' . $i;
+            $return[$i] = $label . ' ' . $i;
         }
         return $return;
     }

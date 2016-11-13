@@ -10,6 +10,7 @@ $this->title = Yii::t('admin', 'Create Main Page element');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'Main Page'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['container'] = 'container';
+$language = \app\models\Language::findOne(['url' => Yii::$app->language]);
 ?>
 <div class="main-page-create">
 
@@ -17,6 +18,8 @@ $this->params['container'] = 'container';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'blocks_filter' => $blocks_filter,
+        'language_id' => $language->id,
     ]) ?>
 
 </div>

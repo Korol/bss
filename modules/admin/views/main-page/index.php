@@ -22,9 +22,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+//            ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
+            [
+                'attribute' => 'id',
+                'contentOptions'=>['style'=>'width: 70px;'],
+            ],
             [
                 'attribute' => 'language_id',
                 'value' => function($data){
@@ -41,22 +44,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => $blocks_filter,
 //            'contentOptions'=>['style'=>'width: 280px;'],
             ],
-            'header',
+            'header:html',
             'content:ntext',
             [
                 'attribute' => 'img',
                 'value' => function($data){
-                    return Yii::t('admin', 'Block') . ' ' . $data->block_id;
+                    return (!empty($data->img)) ? Html::img(\yii\helpers\Url::to(['@web/uploads/main_page/' . $data->img]), ['width' => '70']) : '';
                 },
-                'filter' => [],
+                'format' => 'html',
+                'filter' => [0 => 'Not uploaded', 1 => 'Uploaded'],
 //            'contentOptions'=>['style'=>'width: 280px;'],
             ],
 //             'sort_order',
             [
                 'attribute' => 'enabled',
                 'value' => function($data){
-                    return ($data->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled');
+                    $color = 'green';
+                    $text = Yii::t('admin', 'Enabled');
+                    if($data->enabled <= 0){
+                        $color = 'red';
+                        $text = Yii::t('admin', 'Disabled');
+                    }
+                    $return = '<span class="admin-' . $color . '">' . $text . '</span>';
+                    return $return;
                 },
+                'format' => 'html',
                 'filter' => [0 => Yii::t('admin', 'Disabled'), 1 => Yii::t('admin', 'Enabled')],
 //            'contentOptions'=>['style'=>'width: 280px;'],
             ],

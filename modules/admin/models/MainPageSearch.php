@@ -20,7 +20,7 @@ class MainPageSearch extends MainPage
         return [
             [['id', 'language_id', 'block_id', 'sort_order', 'enabled'], 'integer'],
             [['header', 'content'], 'safe'],
-//            [['img'], 'safe'],
+            [['img'], 'safe'], // комментирование удаляет фильтр из таблицы index
         ];
     }
 
@@ -68,8 +68,20 @@ class MainPageSearch extends MainPage
         ]);
 
         $query->andFilterWhere(['like', 'header', $this->header])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'img', $this->img]);
+            ->andFilterWhere(['like', 'content', $this->content]);
+//            ->andFilterWhere(['like', 'img', $this->img]);
+
+        // img conditions
+        if(is_numeric($this->img)){
+            if($this->img > 0){
+                // not null
+                $query->andWhere("(`img` IS NOT NULL AND `img` != '')");
+            }
+            else{
+                // null or empty
+                $query->andWhere("(`img` IS NULL OR `img` = '')");
+            }
+        }
 
         return $dataProvider;
     }

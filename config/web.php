@@ -58,6 +58,7 @@ $config = [
             'languages' => ['ru', 'en', 'fr', 'de'],
             'ignoreLanguageUrlPatterns' => [
                 '#^images/#' => '#^images/#', // исключение роутингов и URL типа images/ из области действия модуля, может также быть полезным для AJAX-запросов
+                '#^uploads/#' => '#^uploads/#',
             ],
         ],
         'view' => [

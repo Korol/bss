@@ -130,3 +130,12 @@ a.desc:after {
 }
 
 /* CUSTOM STYLES */
+.main-page-radio label {
+    margin-right: 30px;
+}
+.admin-red {
+    color: #880000;
+}
+.admin-green {
+    color: #398439;
+}

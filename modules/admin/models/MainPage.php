@@ -4,6 +4,7 @@ namespace app\modules\admin\models;
 
 use Yii;
 use app\models\Language;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "main_page".
@@ -35,7 +36,9 @@ class MainPage extends \yii\db\ActiveRecord
         return [
             [['language_id', 'block_id', 'sort_order', 'enabled'], 'integer'],
             [['content'], 'string'],
-            [['header', 'img'], 'string', 'max' => 255],
+            [['header'], 'string', 'max' => 255],
+            [['img'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, gif, jpeg'],
+            [['img'], 'safe'],
         ];
     }
 
@@ -50,7 +53,7 @@ class MainPage extends \yii\db\ActiveRecord
             'block_id' => Yii::t('admin', 'Block'),
             'header' => Yii::t('admin', 'Header'),
             'content' => Yii::t('admin', 'Content'),
-            'img' => Yii::t('admin', 'Img'),
+            'img' => Yii::t('admin', 'Image'),
             'sort_order' => Yii::t('admin', 'Sort Order'),
             'enabled' => Yii::t('admin', 'Enabled'),
         ];
@@ -65,5 +68,16 @@ class MainPage extends \yii\db\ActiveRecord
     {
         $language = $this->language;
         return $language ? $language->title_en : '-';
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $path = 'uploads/main_page/';
+            $this->img->saveAs($path . $this->img->baseName . '.' . $this->img->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

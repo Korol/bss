@@ -135,42 +135,41 @@ $gplay_text = 'Android app on';
     <div class="bmb2-wrap">
         <div class="container">
             <?php
-            $block2_img_path = '@web/images/';
-            $block2_header = 'Продавай мобильно';
-            $block2_images = [
-                0 => 'pm_icon_smart.png',
-                1 => 'pm_icon_bar.png',
-                2 => 'pm_icon_se.png',
-                3 => 'pm_icon_barcode.png',
-                4 => 'pm_icon_people.png',
-                5 => 'pm_icon_cloud.png',
-            ];
-            $block2 = [
-                0 => [
-                    'img' => 0,
-                    'text' => 'Пользуйтесь всеми базовыми функциями бесплатно',
-                ],
-                1 => [
-                    'img' => 1,
-                    'text' => 'Легко настраиваемые отчеты',
-                ],
-                2 => [
-                    'img' => 2,
-                    'text' => 'Мультивалютный учет',
-                ],
-                3 => [
-                    'img' => 3,
-                    'text' => 'Использование камеры телефона как сканера штрих-кода',
-                ],
-                4 => [
-                    'img' => 4,
-                    'text' => 'Многопользовательский режим',
-                ],
-                5 => [
-                    'img' => 5,
-                    'text' => 'Печать документов напрямую из приложения, или через Google Cloud',
-                ],
-            ];
+            $block2_img_path = '@web/uploads/main_page/';
+
+            if(!empty($blocks[2])){
+                $block2_header = $blocks[2][0]['header'];
+                $block2 = $blocks[2];
+            }
+            else {
+                $block2_header = 'Продавай мобильно';
+                $block2 = [
+                    0 => [
+                        'img' => 'pm_icon_smart.png',
+                        'content' => 'Пользуйтесь всеми базовыми функциями бесплатно',
+                    ],
+                    1 => [
+                        'img' => 'pm_icon_bar.png',
+                        'content' => 'Легко настраиваемые отчеты',
+                    ],
+                    2 => [
+                        'img' => 'pm_icon_se.png',
+                        'content' => 'Мультивалютный учет',
+                    ],
+                    3 => [
+                        'img' => 'pm_icon_barcode.png',
+                        'content' => 'Использование камеры телефона как сканера штрих-кода',
+                    ],
+                    4 => [
+                        'img' => 'pm_icon_people.png',
+                        'content' => 'Многопользовательский режим',
+                    ],
+                    5 => [
+                        'img' => 'pm_icon_cloud.png',
+                        'content' => 'Печать документов напрямую из приложения, или через Google Cloud',
+                    ],
+                ];
+            }
             $block2_chunked = array_chunk($block2, 2);
             ?>
             <div class="row">
@@ -187,10 +186,10 @@ $gplay_text = 'Android app on';
                         <div class="col-lg-6">
                             <div class="row">
                                 <div class="col-lg-3 bmb-icon-block">
-                                    <img class="bmb2-icon" src="<?=\yii\helpers\Url::to([$block2_img_path . $block2_images[$b2_item['img']]]); ?>" alt="Icon Smart"/>
+                                    <img class="bmb2-icon" src="<?=\yii\helpers\Url::to([$block2_img_path . $b2_item['img']]); ?>" alt="Icon Smart"/>
                                 </div>
                                 <div class="col-lg-9 vcentered-block">
-                                    <div class="bmb2-text vcentered-content"><?= $b2_item['text']; ?></div>
+                                    <div class="bmb2-text vcentered-content"><?= $b2_item['content']; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -215,17 +214,23 @@ $gplay_text = 'Android app on';
                 $block3_img_path = '@web/images/';
                 $block3_header = 'Весь бизнес <br/>у вас в кармане';
                 $block3_img = 'vbvk_yellow_tag.png';
-                $block3 = [
-                    0 => [
-                        'text' => 'Управляйте торговлей в несколько кликов, в любом месте, на любом девайсе.',
-                    ],
-                    1 => [
-                        'text' => 'Интуитивно понятный интерфейс, многопользовательский режим и мультивалютность – это то, что выделяет нас среди других учётных программ, и помогает вам в работе.',
-                    ],
-                    2 => [
-                        'text' => 'Приложение идеально подходит для предпринимателей (ИП, СПД, ЧП).',
-                    ],
-                ];
+                if(!empty($blocks[3])){
+                    $block3_header = $blocks[3][0]['header'];
+                    $block3 = $blocks[3];
+                }
+                else {
+                    $block3 = [
+                        0 => [
+                            'content' => 'Управляйте торговлей в несколько кликов, в любом месте, на любом девайсе.',
+                        ],
+                        1 => [
+                            'content' => 'Интуитивно понятный интерфейс, многопользовательский режим и мультивалютность – это то, что выделяет нас среди других учётных программ, и помогает вам в работе.',
+                        ],
+                        2 => [
+                            'content' => 'Приложение идеально подходит для предпринимателей (ИП, СПД, ЧП).',
+                        ],
+                    ];
+                }
                 ?>
                 <div class="row">
                     <div class="col-lg-2"></div>
@@ -239,7 +244,7 @@ $gplay_text = 'Android app on';
                         <img src="<?=\yii\helpers\Url::to([$block3_img_path . $block3_img]); ?>" alt="Block 3 Tag"/>
                     </div>
                     <div class="col-lg-10">
-                        <p class="bmb3-p"><?= $b3_row['text']; ?></p>
+                        <p class="bmb3-p"><?= $b3_row['content']; ?></p>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -578,10 +583,16 @@ $gplay_text = 'Android app on';
         <div class="container">
             <div class="row">
                 <?php
-                $block7_header = 'Стать партнером Boss';
-                $block7_text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda autem beatae deleniti dolores doloribus ea, eligendi eos esse eveniet facere facilis ipsam itaque magni minima minus, necessitatibus nobis numquam officia perspiciatis quaerat quidem quo sed sunt tempora unde voluptatum. Dolor dolore dolores officia quam tempora. Facere fugit iure voluptatibus!';
+                if(!empty($blocks[7])){
+                    $block7_header = $blocks[7][0]['header'];
+                    $block7_text = $blocks[7][0]['content'];
+                }
+                else {
+                    $block7_header = 'Стать партнером Boss';
+                    $block7_text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda autem beatae deleniti dolores doloribus ea, eligendi eos esse eveniet facere facilis ipsam itaque magni minima minus, necessitatibus nobis numquam officia perspiciatis quaerat quidem quo sed sunt tempora unde voluptatum. Dolor dolore dolores officia quam tempora. Facere fugit iure voluptatibus!';
+                }
                 ?>
-                <div class="col-lg-6 col-lg-offset-3 bmb7-content">
+                <div class="col-lg-12 bmb7-content">
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <img src="<?=\yii\helpers\Url::to(['images/sp_icon.png']); ?>" alt="Partners Icon"/>
@@ -593,7 +604,7 @@ $gplay_text = 'Android app on';
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6 col-lg-offset-3">
                             <p class="text-center"><?= $block7_text; ?></p>
                         </div>
                     </div>
@@ -606,30 +617,36 @@ $gplay_text = 'Android app on';
 <div class="boss-main-block8">
     <div class="container">
         <?php
-        $block8_header = 'Чем <b>boss</b> облегчит вам жизнь';
-        $block8_img_path = '@web/images/';
-        $block8 = [
-            0 => [
-                'img' => 'cbovz_pig.png',
-                'text' => 'Вы экономите до 400$ на покупке ноутбука, так как он вам не нужен в работе.',
-            ],
-            1 => [
-                'img' => 'cbovz_laptop.png',
-                'text' => 'Не нужно отдельное место для работы.',
-            ],
-            2 => [
-                'img' => 'cbovz_peoples.png',
-                'text' => 'Не нужно бегать к компьютелу, будьте всегда рядом с клиентом.',
-            ],
-            3 => [
-                'img' => 'cbovz_labirint.png',
-                'text' => 'Не покупайте отдельно сканер штрих-кодов, он встроен в приложение.',
-            ],
-            4 => [
-                'img' => 'cbovz_smartphone.png',
-                'text' => 'Не нужно покупать специальное программное обеспечение.',
-            ],
-        ];
+        $block8_img_path = '@web/uploads/main_page/';
+        if(!empty($blocks[8])){
+            $block8 = $blocks[8];
+            $block8_header = $blocks[8][0]['header'];
+        }
+        else {
+            $block8_header = 'Чем <b>boss</b> облегчит вам жизнь';
+            $block8 = [
+                0 => [
+                    'img' => 'cbovz_pig.png',
+                    'content' => 'Вы экономите до 400$ на покупке ноутбука, так как он вам не нужен в работе.',
+                ],
+                1 => [
+                    'img' => 'cbovz_laptop.png',
+                    'content' => 'Не нужно отдельное место для работы.',
+                ],
+                2 => [
+                    'img' => 'cbovz_peoples.png',
+                    'content' => 'Не нужно бегать к компьютеру, будьте всегда рядом с клиентом.',
+                ],
+                3 => [
+                    'img' => 'cbovz_labirint.png',
+                    'content' => 'Не покупайте отдельно сканер штрих-кодов, он встроен в приложение.',
+                ],
+                4 => [
+                    'img' => 'cbovz_smartphone.png',
+                    'content' => 'Не нужно покупать специальное программное обеспечение.',
+                ],
+            ];
+        }
         ?>
         <div class="row">
             <div class="col-lg-12">
@@ -658,7 +675,7 @@ $gplay_text = 'Android app on';
                         <img class="bmb8-quote" src="<?=\yii\helpers\Url::to([$block8_img_path . $b8_row['img']]); ?>" alt="Icon <?=$b8_row['img']; ?>"/>
                     </div>
                     <div class="col-lg-9 vcentered-block">
-                        <div class="bmb2-text vcentered-content"><?= $b8_row['text']; ?></div>
+                        <div class="bmb2-text vcentered-content"><?= $b8_row['content']; ?></div>
                     </div>
                 </div>
             <?php endforeach; ?>
