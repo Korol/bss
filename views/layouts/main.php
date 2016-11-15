@@ -12,6 +12,7 @@ use app\assets\AppAsset;
 AppAsset::register($this);
 $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect->isMobile())) ? true : false;
 //var_dump($is_mobile);
+//var_dump($this->params['current_language']);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -93,15 +94,22 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
                             <li><a href="#">Мы на связи</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span class="flag flag-ua" alt="Ukraine"></span>
+                                    <span class="flag flag-<?= $this->params['current_language']['flag']; ?>" alt="<?= $this->params['current_language']['title_en']; ?>"></span>
                                     <span class="glyphicon glyphicon-menu-down boss-countries-icon" aria-hidden="true"></span>
                                 </a>
+                            <?php
+                            if(!empty($this->params['all_languages'])):
+                            ?>
                                 <ul class="dropdown-menu boss-countries">
-                                    <li><a href="/"><span class="flag flag-ua" alt="Ukraine"></span></a></li>
-                                    <li><a href="/ru/"><span class="flag flag-ru" alt="Russia"></span></a></li>
-                                    <li><a href="/en/"><span class="flag flag-us" alt="United States"></span></a></li>
-                                    <li><a href="/de/"><span class="flag flag-de" alt="Germany"></span></a></li>
+                                <?php foreach($this->params['all_languages'] as $lang): ?>
+                                    <li>
+                                        <a href="<?= '/' . $lang['url']; ?>" title="<?= $lang['title_en']; ?>">
+                                            <span class="flag flag-<?= $lang['flag']; ?>" alt="<?= $lang['title_en']; ?>"></span>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
                                 </ul>
+                            <?php endif; ?>
                             </li>
                         </ul>
                     </div>

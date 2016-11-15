@@ -2,14 +2,18 @@
 
 namespace app\controllers;
 
+use app\models\Banner;
 use app\models\Language;
-use app\modules\admin\models\MainPage;
+use app\models\MainPage;
+use app\models\Video;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\web\View;
 
 class SiteController extends Controller
 {
@@ -62,8 +66,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->setLanguages();
         $language = Language::findOne(['url' => Yii::$app->language]);
-        $main_page = \app\models\MainPage::find()
+        $main_page = MainPage::find()
             ->where(['language_id' => $language->id, 'enabled' => 1])
             ->asArray()
             ->orderBy('sort_order ASC')
@@ -74,7 +79,15 @@ class SiteController extends Controller
                 $blocks[$row['block_id']][] = $row;
             }
         }
-        return $this->render('index', compact('blocks'));
+        $banners = Banner::find()
+            ->where(['language_id' => $language->id, 'position' => 'main_top', 'enabled' => 1])
+            ->asArray()
+            ->all();
+        $videos = Video::find()
+            ->where(['language_id' => $language->id, 'position' => 'main_bottom', 'enabled' => 1])
+            ->asArray()
+            ->all();
+        return $this->render('index', compact('blocks', 'banners', 'videos'));
     }
 
     /**
@@ -135,5 +148,17 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function setLanguages()
+    {
+        $language = Language::findOne(['url' => Yii::$app->language]);
+        $languages = Language::find()
+            ->where(['enabled' => 1])
+            ->andWhere(['!=', 'id', $language->id])
+            ->asArray()
+            ->all();
+        $this->view->params['current_language'] = ArrayHelper::toArray($language);
+        $this->view->params['all_languages'] = $languages;
     }
 }

@@ -3,57 +3,62 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Boss';
-$appstore_text = 'Available on the iPhone';
-$gplay_text = 'Android app on';
+$appstore_text = Yii::t('site', 'Available on the iPhone');
+$gplay_text = Yii::t('site', 'Android app on');
 ?>
 <!--BLOCK 1-->
 <div class="boss-main-block1">
     <div class="container">
         <?php
-        $block1_img_path = '@web/images/';
-        $block1_banners_path = '@web/images/';
-        $block1 = [
-            0 => [
-                'type' => 'image_text',
-                'code' => '',
-                'img' => 'banner4.jpg',
-                'header' => 'Заголовок!',
-                'text' => 'Привет! Спасибо, что зашел к Боссу! Держи удобное приложение для учета бизнеса, и продавай мобильно<br/>БЕСПЛАТНО',
-                'buttons' => 1,
-            ],
-            1 => [
-                'type' => 'video',
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
-                'img' => '',
-                'header' => '',
-                'text' => '',
-                'buttons' => 0,
-            ],
-            2 => [
-                'type' => 'image',
-                'code' => '',
-                'img' => 'banner1.jpg',
-                'header' => '',
-                'text' => '',
-                'buttons' => 0,
-            ],
-            3 => [
-                'type' => 'image_text',
-                'code' => '',
-                'img' => 'banner5.jpg',
-                'header' => '',
-                'text' => 'Привет! Спасибо, что зашел к Боссу! Держи удобное приложение для учета бизнеса, и продавай мобильно<br/>БЕСПЛАТНО',
-                'buttons' => 1,
-            ],
-            4 => [
-                'type' => 'image',
-                'code' => '',
-                'img' => 'banner2.jpg',
-                'header' => '',
-                'text' => '',
-                'buttons' => 0,
-            ],
-        ];
+        if(!empty($banners)){
+            $block1_banners_path = '@web/uploads/banners/';
+            $block1 = $banners;
+        }
+        else {
+            $block1_banners_path = '@web/images/';
+            $block1 = [
+                0 => [
+                    'type' => 'image_text',
+                    'code' => '',
+                    'img' => 'banner4.jpg',
+                    'header' => 'Заголовок!',
+                    'content' => 'Привет! Спасибо, что зашел к Боссу! Держи удобное приложение для учета бизнеса, и продавай мобильно<br/>БЕСПЛАТНО',
+                    'buttons' => 1,
+                ],
+                1 => [
+                    'type' => 'video',
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                    'img' => '',
+                    'header' => '',
+                    'content' => '',
+                    'buttons' => 0,
+                ],
+                2 => [
+                    'type' => 'image',
+                    'code' => '',
+                    'img' => 'banner1.jpg',
+                    'header' => '',
+                    'content' => '',
+                    'buttons' => 0,
+                ],
+                3 => [
+                    'type' => 'image_text',
+                    'code' => '',
+                    'img' => 'banner5.jpg',
+                    'header' => '',
+                    'content' => 'Привет! Спасибо, что зашел к Боссу! Держи удобное приложение для учета бизнеса, и продавай мобильно<br/>БЕСПЛАТНО',
+                    'buttons' => 1,
+                ],
+                4 => [
+                    'type' => 'image',
+                    'code' => '',
+                    'img' => 'banner2.jpg',
+                    'header' => '',
+                    'content' => '',
+                    'buttons' => 0,
+                ],
+            ];
+        }
         // banners size 1140x640
         ?>
         <div class="row">
@@ -80,7 +85,7 @@ $gplay_text = 'Android app on';
                                                         <div class="col-lg-4 col-lg-offset-7">
                                                             <h2 class="bmb1-ib-title"><?= $b1_item['header']; ?></h2>
                                                             <div class="bmb1-ib-text">
-                                                                <p><?= $b1_item['text']; ?></p>
+                                                                <p><?= $b1_item['content']; ?></p>
                                                             </div>
                                                             <?php if(!empty($b1_item['buttons'])): ?>
                                                             <div class="bmb1-ib-buttons-block">
@@ -135,13 +140,13 @@ $gplay_text = 'Android app on';
     <div class="bmb2-wrap">
         <div class="container">
             <?php
-            $block2_img_path = '@web/uploads/main_page/';
-
-            if(!empty($blocks[2])){
-                $block2_header = $blocks[2][0]['header'];
-                $block2 = $blocks[2];
+            if(!empty($blocks[1])){
+                $block2_header = $blocks[1][0]['header'];
+                $block2 = $blocks[1];
+                $block2_img_path = '@web/uploads/main_page/';
             }
             else {
+                $block2_img_path = '@web/images/';
                 $block2_header = 'Продавай мобильно';
                 $block2 = [
                     0 => [
@@ -214,9 +219,9 @@ $gplay_text = 'Android app on';
                 $block3_img_path = '@web/images/';
                 $block3_header = 'Весь бизнес <br/>у вас в кармане';
                 $block3_img = 'vbvk_yellow_tag.png';
-                if(!empty($blocks[3])){
-                    $block3_header = $blocks[3][0]['header'];
-                    $block3 = $blocks[3];
+                if(!empty($blocks[2])){
+                    $block3_header = $blocks[2][0]['header'];
+                    $block3 = $blocks[2];
                 }
                 else {
                     $block3 = [
@@ -261,47 +266,53 @@ $gplay_text = 'Android app on';
 <div class="boss-main-block4">
     <div class="container">
         <?php
-        $block4_img_path = '@web/images/';
-        $block4 = [
-            0 => [
-                'title' => 'Товары',
-                'text' => 'Использование камеры телефона как сканера штрих-кода. Добавление фото к товарам. Различные типы цен.',
-                'img' => '1.Goods.gif',
-            ],
-            1 => [
-                'title' => 'Закупки и склад',
-                'text' => 'Остатки товаров во всех торговых точках сети. Инвентаризация и переоценка.',
-                'img' => '2.Purchasing.gif',
-            ],
-            2 => [
-                'title' => 'Контрагенты',
-                'text' => 'Клиенты, поставщики, сотрудники, финагенты. Добавление клиентов из адресной книги телефона.',
-                'img' => '3.Clients.gif',
-            ],
-            3 => [
-                'title' => 'Деньги',
-                'text' => 'Мультивалютность. Контроль финансов. Акты сверки с детализацией до товаров и текущих долгов.',
-                'img' => '4.Money.gif',
-            ],
-            4 => [
-                'title' => 'Отчеты',
-                'text' => 'Легко настраиваемые отчеты со множеством фильтров (продажи, прибыль, динамика, финансовый результат и многое другое).',
-                'img' => '5.Reports.gif',
-            ],
-            5 => [
-                'title' => 'Другие полезности',
-                'text' => 'Отправка ссылки на документ, или отчет в любой мессенджер, на почту, в СМС. Печать на обычных и мобильных принтерах - через облако или напрямую через Bluetooth, USB, WiFi и т.д.',
-                'img' => '6.Other.gif',
-            ],
+        if(!empty($blocks[3])){
+            $block4_img_path = '@web/uploads/main_page/';
+            $block4 = $blocks[3];
+        }
+        else {
+            $block4_img_path = '@web/images/';
+            $block4 = [
+                0 => [
+                    'header' => 'Товары',
+                    'content' => 'Использование камеры телефона как сканера штрих-кода. Добавление фото к товарам. Различные типы цен.',
+                    'img' => '1.Goods.gif',
+                ],
+                1 => [
+                    'header' => 'Закупки и склад',
+                    'content' => 'Остатки товаров во всех торговых точках сети. Инвентаризация и переоценка.',
+                    'img' => '2.Purchasing.gif',
+                ],
+                2 => [
+                    'header' => 'Контрагенты',
+                    'content' => 'Клиенты, поставщики, сотрудники, финагенты. Добавление клиентов из адресной книги телефона.',
+                    'img' => '3.Clients.gif',
+                ],
+                3 => [
+                    'header' => 'Деньги',
+                    'content' => 'Мультивалютность. Контроль финансов. Акты сверки с детализацией до товаров и текущих долгов.',
+                    'img' => '4.Money.gif',
+                ],
+                4 => [
+                    'header' => 'Отчеты',
+                    'content' => 'Легко настраиваемые отчеты со множеством фильтров (продажи, прибыль, динамика, финансовый результат и многое другое).',
+                    'img' => '5.Reports.gif',
+                ],
+                5 => [
+                    'header' => 'Другие полезности',
+                    'content' => 'Отправка ссылки на документ, или отчет в любой мессенджер, на почту, в СМС. Печать на обычных и мобильных принтерах - через облако или напрямую через Bluetooth, USB, WiFi и т.д.',
+                    'img' => '6.Other.gif',
+                ],
 
-        ];
+            ];
+        }
         ?>
         <div class="row">
             <div class="col-lg-4 bmb4-left-block-wrap">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
                 <div class="row bmb4-left-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_lb_<?=$b4_key; ?>">
                     <div class="col-lg-10 bmb4-row-title" id="bmb4_title_<?=$b4_key; ?>">
-                        <span><?= $b4_row['title']; ?></span>
+                        <span><?= $b4_row['header']; ?></span>
                     </div>
                     <div class="col-lg-2 bmb4-row-tag">
                         <img class="bmb4-row-tag-img" src="<?= \yii\helpers\Url::to(['images/t_tag.png']); ?>" alt="Block 4 Tag Image"/>
@@ -312,7 +323,7 @@ $gplay_text = 'Android app on';
             <div class="col-lg-4">
                 <div class="bmb4-phone-block">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
-                    <img id="bmb4_pbi_<?=$b4_key; ?>" class="bmb4-row-img <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" src="<?=\yii\helpers\Url::to([$block4_img_path . $b4_row['img']]); ?>" alt="Block 4 Image <?=$b4_row['title']; ?>"/>
+                    <img id="bmb4_pbi_<?=$b4_key; ?>" class="bmb4-row-img <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" src="<?=\yii\helpers\Url::to([$block4_img_path . $b4_row['img']]); ?>" alt="Block 4 Image <?=$b4_row['header']; ?>"/>
                 <?php endforeach; ?>
                 </div>
             </div>
@@ -321,8 +332,8 @@ $gplay_text = 'Android app on';
                 <div class="row bmb4-right-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_rb_<?=$b4_key; ?>">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-10  bmb4-row-text">
-                        <h1 class="bmb3-header"><?= $b4_row['title']; ?></h1>
-                        <p class="bmb3-p"><?= $b4_row['text']; ?></p>
+                        <h1 class="bmb3-header"><?= $b4_row['header']; ?></h1>
+                        <p class="bmb3-p"><?= $b4_row['content']; ?></p>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -583,9 +594,9 @@ $gplay_text = 'Android app on';
         <div class="container">
             <div class="row">
                 <?php
-                if(!empty($blocks[7])){
-                    $block7_header = $blocks[7][0]['header'];
-                    $block7_text = $blocks[7][0]['content'];
+                if(!empty($blocks[4])){
+                    $block7_header = $blocks[4][0]['header'];
+                    $block7_text = $blocks[4][0]['content'];
                 }
                 else {
                     $block7_header = 'Стать партнером Boss';
@@ -617,12 +628,13 @@ $gplay_text = 'Android app on';
 <div class="boss-main-block8">
     <div class="container">
         <?php
-        $block8_img_path = '@web/uploads/main_page/';
-        if(!empty($blocks[8])){
-            $block8 = $blocks[8];
-            $block8_header = $blocks[8][0]['header'];
+        if(!empty($blocks[5])){
+            $block8_img_path = '@web/uploads/main_page/';
+            $block8 = $blocks[5];
+            $block8_header = $blocks[5][0]['header'];
         }
         else {
+            $block8_img_path = '@web/images/';
             $block8_header = 'Чем <b>boss</b> облегчит вам жизнь';
             $block8 = [
                 0 => [
@@ -704,27 +716,33 @@ $gplay_text = 'Android app on';
 <div class="boss-main-block9">
     <div class="container">
         <?php
-        $block9_header = 'Узнай больше о boss';
-        $block9 = [
-            0 => [
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
-            ],
-            1 => [
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
-            ],
-            2 => [
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
-            ],
-            3 => [
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
-            ],
-            4 => [
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
-            ],
-            5 => [
-                'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
-            ],
-        ];
+        if(!empty($videos)){
+            $block9 = $videos;
+            $block9_header = $videos[0]['header'];
+        }
+        else {
+            $block9_header = 'Узнай больше о boss';
+            $block9 = [
+                0 => [
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                ],
+                1 => [
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
+                ],
+                2 => [
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
+                ],
+                3 => [
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
+                ],
+                4 => [
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                ],
+                5 => [
+                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
+                ],
+            ];
+        }
         $block9_chunked = array_chunk($block9, 3);
         ?>
         <div class="row">

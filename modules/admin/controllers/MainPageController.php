@@ -18,7 +18,7 @@ use yii\web\UploadedFile;
  */
 class MainPageController extends Controller
 {
-    public $blocks_num = 11;
+    public $blocks_num = 5;
     public $app_language_id = 0;
     /**
      * @inheritdoc

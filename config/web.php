@@ -55,7 +55,8 @@ $config = [
             'showScriptName' => false,
             // List all supported languages here
             // Make sure, you include your app's default language.
-            'languages' => ['ru', 'en', 'fr', 'de'],
+//            'languages' => ['ru', 'en', 'ua', 'de'],
+            'languages' => require(__DIR__ . '/languages.php'),
             'ignoreLanguageUrlPatterns' => [
                 '#^images/#' => '#^images/#', // исключение роутингов и URL типа images/ из области действия модуля, может также быть полезным для AJAX-запросов
                 '#^uploads/#' => '#^uploads/#',
@@ -72,6 +73,10 @@ $config = [
         'i18n' => [
             'translations' => [
                 'admin' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'on missingTranslation' => ['app\components\TranslationEventHandler', 'handleMissingTranslation']
+                ],
+                'site' => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'on missingTranslation' => ['app\components\TranslationEventHandler', 'handleMissingTranslation']
                 ],

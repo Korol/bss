@@ -6,11 +6,11 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\MainPage */
 
-$this->title = $model->header . ' ' . $model->id;
+$this->title = $model->header . ' - ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'Main Page'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['container'] = 'container';
-$language = \app\models\Language::findOne(['id' => $model->language_id])
+$language = \app\models\Language::findOne(['id' => $model->language_id]);
 ?>
 <div class="main-page-view">
 
@@ -44,7 +44,7 @@ $language = \app\models\Language::findOne(['id' => $model->language_id])
             'content:ntext',
             [
                 'label' => Yii::t('admin', 'Image'),
-                'value' => (!empty($model->img)) ? Html::img(\yii\helpers\Url::to(['@web/uploads/main_page/' . $model->img])) : '',
+                'value' => (!empty($model->img)) ? Html::img(\yii\helpers\Url::to(['@web/uploads/main_page/' . $model->img]), ['width' => '300']) : '',
                 'format' => 'html',
             ],
 //            'sort_order',

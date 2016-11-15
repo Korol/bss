@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\admin\models\MainPageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('admin', 'Main Page');
+$this->title = Yii::t('admin', 'Main Page Blocks');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="main-page-index">
@@ -73,7 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'contentOptions'=>['style'=>'width: 280px;'],
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'header' => Yii::t('admin', 'Actions')],
         ],
     ]); ?>
 </div>

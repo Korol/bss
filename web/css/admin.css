@@ -139,3 +139,6 @@ a.desc:after {
 .admin-green {
     color: #398439;
 }
+.hint-block {
+    font-style: italic;
+}
