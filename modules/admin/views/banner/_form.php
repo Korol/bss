@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Banner */
 /* @var $form yii\widgets\ActiveForm */
-$code_hint = htmlentities('YouTube video embed code, by this template: <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>');
+$code_hint = htmlentities('YouTube video embed code, by this template: <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/') . '<b style="color: #000;">4cTGrUQIYeo</b>' . htmlentities('" allowfullscreen></iframe>');
 ?>
 
 <div class="banner-form">
@@ -29,7 +29,7 @@ $code_hint = htmlentities('YouTube video embed code, by this template: <iframe c
     <?php $model->position = ($model->isNewRecord) ? 'main_top' : $model->position; ?>
     <?= $form->field($model, 'position')->dropDownList($model::getPositions(), ['prompt' => '']) ?>
 
-    <?= $form->field($model, 'code', ['template' => "{label}\n{hint}\n{input}"])->hint($code_hint)->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'code', ['template' => "{label}\n{hint}\n{input}"])->hint($code_hint)->textInput(['maxlength' => true, 'placeholder' => '4cTGrUQIYeo']) ?>
 
     <?php
     if(!$model->isNewRecord && !empty($model->img)){

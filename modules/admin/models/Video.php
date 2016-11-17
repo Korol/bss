@@ -45,7 +45,7 @@ class Video extends \yii\db\ActiveRecord
             'id' => 'ID',
             'language_id' => Yii::t('admin', 'Language'),
             'position' => Yii::t('admin', 'Position'),
-            'code' => Yii::t('admin', 'Code'),
+            'code' => Yii::t('admin', 'YouTube Video Code'),
             'enabled' => Yii::t('admin', 'Enabled'),
             'header' => Yii::t('admin', 'Header'),
         ];

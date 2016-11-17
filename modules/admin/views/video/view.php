@@ -44,6 +44,11 @@ $positions = $model::getPositions();
             'header:ntext',
             'code:raw',
             [
+                'label' => Yii::t('admin', 'YouTube Video'),
+                'value' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' . $model->code . '?rel=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>',
+                'format' => 'raw',
+            ],
+            [
                 'label' => Yii::t('admin', 'Enabled'),
                 'value' => ($model->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled'),
             ],

@@ -8,7 +8,7 @@ $gplay_text = Yii::t('site', 'Android app on');
 ?>
 <!--BLOCK 1-->
 <div class="boss-main-block1">
-    <div class="container">
+<!--    <div class="container">-->
         <?php
         if(!empty($banners)){
             $block1_banners_path = '@web/uploads/banners/';
@@ -27,7 +27,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                 ],
                 1 => [
                     'type' => 'video',
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                    'code' => '4cTGrUQIYeo',
                     'img' => '',
                     'header' => '',
                     'content' => '',
@@ -60,26 +60,35 @@ $gplay_text = Yii::t('site', 'Android app on');
             ];
         }
         // banners size 1140x640
+        // full screen video 1440x810
         ?>
-        <div class="row">
-            <div class="col-lg-12">
+<!--        <div class="row">-->
+<!--            <div class="col-lg-12">-->
                 <div class="bmb1-carousel-wrapper">
+                    <?php if(!empty($block1) && ($block1[0]['type'] == 'video')): ?>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $block1[0]['code']; ?>?rel=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
+                    </div>
+                    <?php elseif(!empty($block1)): ?>
                     <div id="block1_carousel" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <?php foreach($block1 as $b1_key => $b1_item): ?>
+                                <?php if($b1_item['type'] == 'video') continue; ?>
                                 <div class="item <?= ($b1_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                        <?php if($b1_item['type'] == 'video'): ?>
+                                        <?php /*if($b1_item['type'] == 'video'): ?>
                                             <div class="embed-responsive embed-responsive-16by9"><?= $b1_item['code']; ?></div>
-                                        <?php elseif($b1_item['type'] == 'image'): ?>
+                                        <?php elseif($b1_item['type'] == 'image'): */?>
+                                        <?php if($b1_item['type'] == 'image'): ?>
                                             <div class="bmb1-image-block">
-                                                <img src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
+                                                <img class="top-banner-img" src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
                                             </div>
                                         <?php elseif($b1_item['type'] == 'image_text'): ?>
                                             <div class="bmb1-image-block">
-                                                <img src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
+                                                <img class="top-banner-img" src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
+                                                <?php if((!Yii::$app->devicedetect->isMobile()) && (!Yii::$app->devicedetect->isTablet())): ?>
                                                 <div class="bmb1-ib-caption">
                                                     <div class="row">
                                                         <div class="col-lg-4 col-lg-offset-7">
@@ -112,6 +121,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
                                         </div>
@@ -130,10 +140,11 @@ $gplay_text = Yii::t('site', 'Android app on');
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
+                    <?php endif; ?>
                 </div>
-            </div>
-        </div>
-    </div>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <!--BLOCK 2-->
 <div class="boss-main-block2">
@@ -183,17 +194,17 @@ $gplay_text = Yii::t('site', 'Android app on');
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
+                <div class="col-lg-1 col-sm-1"></div>
+                <div class="col-lg-10 col-sm-10">
                     <?php foreach($block2_chunked as $b2_chunk): ?>
                     <div class="row bmb2-row">
                         <?php foreach($b2_chunk as $b2_item): ?>
                         <div class="col-lg-6">
                             <div class="row">
-                                <div class="col-lg-3 bmb-icon-block">
+                                <div class="col-lg-3 col-sm-3 col-xs-3 bmb-icon-block">
                                     <img class="bmb2-icon" src="<?=\yii\helpers\Url::to([$block2_img_path . $b2_item['img']]); ?>" alt="Icon Smart"/>
                                 </div>
-                                <div class="col-lg-9 vcentered-block">
+                                <div class="col-lg-9 col-sm-9 col-xs-9 vcentered-block">
                                     <div class="bmb2-text vcentered-content"><?= $b2_item['content']; ?></div>
                                 </div>
                             </div>
@@ -202,7 +213,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="col-lg-1"></div>
+                <div class="col-lg-1 col-sm-1"></div>
             </div>
         </div>
     </div>
@@ -212,7 +223,7 @@ $gplay_text = Yii::t('site', 'Android app on');
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <img src="<?=\yii\helpers\Url::to(['images/vbvk_phone_tablet2.png']); ?>" alt="Block 3 Image"/>
+                <img class="bmb3-left-img" src="<?=\yii\helpers\Url::to(['images/vbvk_phone_tablet2.png']); ?>" alt="Block 3 Image"/>
             </div>
             <div class="col-lg-6">
                 <?php
@@ -245,10 +256,10 @@ $gplay_text = Yii::t('site', 'Android app on');
                 </div>
                 <?php foreach($block3 as $b3_row): ?>
                 <div class="row">
-                    <div class="col-lg-2 bmb3-tag-block">
+                    <div class="col-lg-2 col-sm-2 col-xs-2 bmb3-tag-block">
                         <img src="<?=\yii\helpers\Url::to([$block3_img_path . $block3_img]); ?>" alt="Block 3 Tag"/>
                     </div>
-                    <div class="col-lg-10">
+                    <div class="col-lg-10 col-sm-10 col-xs-10">
                         <p class="bmb3-p"><?= $b3_row['content']; ?></p>
                     </div>
                 </div>
@@ -311,10 +322,10 @@ $gplay_text = Yii::t('site', 'Android app on');
             <div class="col-lg-4 bmb4-left-block-wrap">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
                 <div class="row bmb4-left-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_lb_<?=$b4_key; ?>">
-                    <div class="col-lg-10 bmb4-row-title" id="bmb4_title_<?=$b4_key; ?>">
+                    <div class="col-lg-10 col-sm-10 col-xs-10 bmb4-row-title" id="bmb4_title_<?=$b4_key; ?>">
                         <span><?= $b4_row['header']; ?></span>
                     </div>
-                    <div class="col-lg-2 bmb4-row-tag">
+                    <div class="col-lg-2 col-sm-2 col-xs-2 bmb4-row-tag">
                         <img class="bmb4-row-tag-img" src="<?= \yii\helpers\Url::to(['images/t_tag.png']); ?>" alt="Block 4 Tag Image"/>
                     </div>
                 </div>
@@ -381,10 +392,10 @@ $gplay_text = Yii::t('site', 'Android app on');
             </div>
             <div class="col-lg-2">
                 <div class="row bmb5-subscribe-block">
-                    <div class="col-lg-3 bmb5-subscribe-img">
+                    <div class="col-lg-3 col-xs-3 bmb5-subscribe-img">
                         <img src="<?= \yii\helpers\Url::to(['images/cnub_mail.png']); ?>" alt="Subscribe Image"/>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-9 col-xs-9">
                         <a href="#" class="bmb5-subscribe-link">
                             <span class="bmb5-subscribe-text"><?= $block5_subscribe_text; ?></span>
                         </a>
@@ -434,7 +445,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                     <div class="carousel-inner" role="listbox">
                         <?php foreach($block5_chunked as $b5_chunk_key => $b5_chunk): ?>
                         <div class="item <?= ($b5_chunk_key == 0) ? 'active' : ''; ?>">
-                            <div class="row">
+<!--                            <div class="row">-->
                                 <?php foreach($b5_chunk as $b5_key => $b5_item): ?>
                                 <div class="col-lg-4">
                                     <div class="bmb5-carousel-item <?= ($b5_key < 2) ? 'bmb5-slider-item-left' : 'bmb5-slider-item-both'; ?>">
@@ -449,7 +460,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
-                            </div>
+<!--                            </div>-->
                         </div>
                         <?php endforeach; ?>
                     </div>
@@ -486,7 +497,7 @@ $gplay_text = Yii::t('site', 'Android app on');
             $block6 = [
                 0 => [
                     'type' => 'video',
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                    'code' => '4cTGrUQIYeo',
                     'user_photo' => '',
                     'user_name' => '',
                     'user_text' => '',
@@ -514,7 +525,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                 ],
                 4 => [
                     'type' => 'video',
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
+                    'code' => 'X78wiDUt9SM',
                     'user_photo' => '',
                     'user_name' => '',
                     'user_text' => '',
@@ -553,7 +564,9 @@ $gplay_text = Yii::t('site', 'Android app on');
                                         <?php foreach($b6_chunk as $b6_key => $b6_item): ?>
                                             <div class="col-lg-3">
                                             <?php if($b6_item['type'] == 'video'): ?>
-                                                <div class="embed-responsive embed-responsive-4by3"><?= $b6_item['code']; ?></div>
+                                                <div class="embed-responsive embed-responsive-4by3">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $b6_item['code']; ?>?rel=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
+                                                </div>
                                             <?php else: ?>
                                                 <div class="thumbnail bmb6-thumb">
                                                     <img class="img-circle pull-left" src="<?= \yii\helpers\Url::to([$block6_img_path . $b6_item['user_photo']]); ?>" alt="Image <?=$b6_item['user_name']; ?>">
@@ -676,17 +689,17 @@ $gplay_text = Yii::t('site', 'Android app on');
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <img src="<?=\yii\helpers\Url::to(['images/cbovz_boss.png']); ?>" alt="Boss Image"/>
+                        <img class="bmb8-boss-img" src="<?=\yii\helpers\Url::to(['images/cbovz_boss.png']); ?>" alt="Boss Image"/>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
             <?php foreach($block8 as $b8_row): ?>
                 <div class="row bmb8-row">
-                    <div class="col-lg-3 text-right">
+                    <div class="col-lg-3 col-xs-3 text-right">
                         <img class="bmb8-quote" src="<?=\yii\helpers\Url::to([$block8_img_path . $b8_row['img']]); ?>" alt="Icon <?=$b8_row['img']; ?>"/>
                     </div>
-                    <div class="col-lg-9 vcentered-block">
+                    <div class="col-lg-9 col-xs-9 vcentered-block">
                         <div class="bmb2-text vcentered-content"><?= $b8_row['content']; ?></div>
                     </div>
                 </div>
@@ -724,22 +737,22 @@ $gplay_text = Yii::t('site', 'Android app on');
             $block9_header = 'Узнай больше о boss';
             $block9 = [
                 0 => [
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                    'code' => '4cTGrUQIYeo',
                 ],
                 1 => [
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
+                    'code' => 'X78wiDUt9SM',
                 ],
                 2 => [
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
+                    'code' => 'rXKVYb59uhA',
                 ],
                 3 => [
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
+                    'code' => 'rXKVYb59uhA',
                 ],
                 4 => [
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>',
+                    'code' => '4cTGrUQIYeo',
                 ],
                 5 => [
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X78wiDUt9SM" allowfullscreen></iframe>',
+                    'code' => 'X78wiDUt9SM',
                 ],
             ];
         }
@@ -761,7 +774,9 @@ $gplay_text = Yii::t('site', 'Android app on');
                                     <div class="row">
                                         <?php foreach($b9_chunk as $b9_key => $b9_item): ?>
                                             <div class="col-lg-4">
-                                                <div class="embed-responsive embed-responsive-16by9"><?= $b9_item['code']; ?></div>
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $b9_item['code']; ?>?rel=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
+                                                </div>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
@@ -798,17 +813,17 @@ $gplay_text = Yii::t('site', 'Android app on');
             </div>
             <div class="col-lg-3">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube.png']); ?>" alt="Youtube Icon"/>
                         </a>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb.png']); ?>" alt="Facebook Icon"/>
                         </a>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk.png']); ?>" alt="VK Icon"/>
                         </a>

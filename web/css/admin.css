@@ -142,3 +142,8 @@ a.desc:after {
 .hint-block {
     font-style: italic;
 }
+.blocks-map-help {
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+}

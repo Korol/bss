@@ -35,9 +35,9 @@ class Banner extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type', 'position', 'code', 'content'], 'string'],
+            [['type', 'position', 'content'], 'string'],
             [['buttons', 'enabled', 'language_id'], 'integer'],
-            [['header'], 'string', 'max' => 255],
+            [['header', 'code'], 'string', 'max' => 255],
             [['img'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, gif, jpeg'],
             [['img'], 'safe'],
         ];
@@ -52,7 +52,7 @@ class Banner extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type' => Yii::t('admin', 'Type'),
             'position' => Yii::t('admin', 'Position'),
-            'code' => Yii::t('admin', 'Code'),
+            'code' => Yii::t('admin', 'YouTube Video Code'),
             'img' => Yii::t('admin', 'Img'),
             'header' => Yii::t('admin', 'Header'),
             'content' => Yii::t('admin', 'Content'),

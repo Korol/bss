@@ -1,0 +1,146 @@
+@media (max-width: 480px) {
+    /* smartphones */
+    .bmb5-slider-item-left {
+        border-left: none;
+    }
+    .bmb5-slider-item-both {
+        border-left: none;
+        border-right: none;
+    }
+    #block5_carousel .carousel-control .glyphicon-menu-left {
+        top: 50%;
+    }
+    #block5_carousel .carousel-control .glyphicon-menu-right {
+        top: 50%;
+    }
+    .bmb8-buttons-block {
+        margin-bottom: 20px;
+    }
+    .bmb2-row {
+        margin-bottom: 0;
+    }
+    .bmb2-row .row {
+        margin-bottom: 25px;
+    }
+    .bmb3-left-img, .bmb8-boss-img {
+        width: 100%;
+    }
+    .bmb8-boss-img {
+        margin-bottom: 25px;
+    }
+    .bmb4-phone-block {
+        width: 300px;
+        height: 615px;
+        background: url("../images/t_phone_mobile.png");
+    }
+    .bmb4-phone-block img.bmb4-row-img {
+        width: 273px;
+        height: auto;
+        position: relative;
+        top: 64px;
+        left: 13px;
+    }
+    .bmb4-buttons-block {
+        bottom: -40px;
+        margin-bottom: 50px;
+    }
+    .bmb4-btn-link .pull-right {
+        float: none !important;
+        margin-bottom: 20px;
+    }
+    .bmb10-p {
+        text-align: center !important;
+        margin-top: 10px;
+    }
+    .b11-row, .bmb11-header, .bmb11-social-icon, .bmb11-private-area {
+        text-align: center;
+    }
+    .bmb11-private-area .text-left, .bmb11-content .text-right, .bmb11-center {
+        text-align: center !important;
+    }
+    .boss-main-block1 {
+        min-height: auto;
+    }
+    #block1_carousel .item {
+        height: auto;
+    }
+    .bmb6-carousel-wrapper .embed-responsive {
+        top: 0;
+        margin-bottom: 30px;
+    }
+    .bmb10-social-icon {
+        text-align: center;
+    }
+    .b11-pa-text {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    /* tablets */
+    .bmb5-slider-item-left {
+        border-left: none;
+    }
+    .bmb5-slider-item-both {
+        border-left: none;
+        border-right: none;
+    }
+    #block5_carousel .carousel-control .glyphicon-menu-left {
+        top: 50%;
+    }
+    #block5_carousel .carousel-control .glyphicon-menu-right {
+        top: 50%;
+    }
+    .bmb8-buttons-block {
+        margin-bottom: 20px;
+    }
+    .bmb2-row {
+        margin-bottom: 0;
+    }
+    .bmb2-row .row {
+        margin-bottom: 25px;
+    }
+    .bmb3-left-img, .bmb8-boss-img {
+        width: 100%;
+    }
+    .bmb8-boss-img {
+        margin-bottom: 25px;
+    }
+    .bmb10-p {
+        text-align: center !important;
+        margin-top: 10px;
+    }
+    .boss-main-block1 {
+        min-height: auto;
+    }
+    #block1_carousel .item {
+        height: auto;
+    }
+    .bmb6-carousel-wrapper .embed-responsive {
+        top: 0;
+        margin-bottom: 30px;
+    }
+    .bmb10-social-icon {
+        text-align: center;
+    }
+    .b11-row, .bmb11-header, .bmb11-social-icon, .bmb11-private-area {
+        text-align: center;
+    }
+    .bmb11-private-area .text-left, .bmb11-content .text-right, .bmb11-center {
+        text-align: center !important;
+    }
+    .b11-pa-text {
+        margin-left: 0;
+    }
+    .bmb4-phone-block, .bmb4-black-appstore, .bmb4-black-gplay {
+        margin: 0 auto;
+    }
+    .bmb4-black-appstore, .bmb4-black-gplay {
+        margin-bottom: 10px;
+    }
+    .bmb4-buttons-block {
+        bottom: -40px;
+        margin-bottom: 50px;
+    }
+}
+

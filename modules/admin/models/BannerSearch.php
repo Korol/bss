@@ -64,6 +64,7 @@ class BannerSearch extends Banner
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'language_id' => $this->language_id,
             'type' => $this->type,
             'position' => $this->position,
             'buttons' => $this->buttons,

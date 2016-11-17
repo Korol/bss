@@ -288,6 +288,9 @@ body {
 /*#block1_carousel .left, #block1_carousel .right {*/
     /*width: 50px;*/
 /*}*/
+.top-banner-img {
+    width: 100%;
+}
 
 /* BLOCK 2 */
 .boss-main-block2 {

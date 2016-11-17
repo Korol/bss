@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Video */
 /* @var $form yii\widgets\ActiveForm */
-$code_hint = htmlentities('YouTube video embed code, by this template: <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4cTGrUQIYeo" allowfullscreen></iframe>');
+$code_hint = htmlentities('YouTube video embed code, by this template: <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/') . '<b style="color: #000;">4cTGrUQIYeo</b>' . htmlentities('" allowfullscreen></iframe>');
 ?>
 
 <div class="video-form">
@@ -29,8 +29,10 @@ $code_hint = htmlentities('YouTube video embed code, by this template: <iframe c
 
     <?= $form->field($model, 'header')->textInput(); ?>
 
-    <?= $form->field($model, 'code', ['template' => "{label}\n{hint}\n{input}"])->hint($code_hint)->textarea(['rows' => 6]) ?>
-    <?= (!empty($model->code)) ? $model->code : ''; ?>
+    <?= $form->field($model, 'code', ['template' => "{label}\n{hint}\n{input}"])->hint($code_hint)->textInput(['maxlength' => true, 'placeholder' => '4cTGrUQIYeo']) ?>
+    <?= (!empty($model->code))
+        ? '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' . $model->code . '?rel=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>'
+        : ''; ?>
 
     <?php
     $model->enabled = ($model->isNewRecord) ? 1 : $model->enabled;

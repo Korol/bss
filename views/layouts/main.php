@@ -10,7 +10,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
-$is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect->isMobile())) ? true : false;
+$is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect->isTablet())) ? true : false;
 //var_dump($is_mobile);
 //var_dump($this->params['current_language']);
 ?>
@@ -143,30 +143,22 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
                                 <li><a href="#">Мы на связи</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <span class="flag flag-ua" alt="Ukraine"></span>  <span class="caret boss-yellow-color"></span>
+                                        <span class="flag flag-<?= $this->params['current_language']['flag']; ?>" alt="<?= $this->params['current_language']['title_en']; ?>"></span>
+                                        <span class="glyphicon glyphicon-menu-down boss-countries-icon" aria-hidden="true"></span>
                                     </a>
-                                    <ul class="dropdown-menu boss-countries">
-                                        <li><a href="/"><span class="flag flag-ua" alt="Ukraine"></span></a></li>
-                                        <li><a href="/ru/"><span class="flag flag-ru" alt="Russia"></span></a></li>
-                                        <li><a href="/en/"><span class="flag flag-us" alt="United States"></span></a></li>
-                                        <li><a href="/de/"><span class="flag flag-de" alt="Germany"></span></a></li>
-                                        <li><a href="/"><span class="flag flag-ua" alt="Ukraine"></span></a></li>
-                                        <li><a href="/ru/"><span class="flag flag-ru" alt="Russia"></span></a></li>
-                                        <li><a href="/en/"><span class="flag flag-us" alt="United States"></span></a></li>
-                                        <li><a href="/de/"><span class="flag flag-de" alt="Germany"></span></a></li>
-                                        <li><a href="/"><span class="flag flag-ua" alt="Ukraine"></span></a></li>
-                                        <li><a href="/ru/"><span class="flag flag-ru" alt="Russia"></span></a></li>
-                                        <li><a href="/en/"><span class="flag flag-us" alt="United States"></span></a></li>
-                                        <li><a href="/de/"><span class="flag flag-de" alt="Germany"></span></a></li>
-                                        <li><a href="/"><span class="flag flag-ua" alt="Ukraine"></span></a></li>
-                                        <li><a href="/ru/"><span class="flag flag-ru" alt="Russia"></span></a></li>
-                                        <li><a href="/en/"><span class="flag flag-us" alt="United States"></span></a></li>
-                                        <li><a href="/de/"><span class="flag flag-de" alt="Germany"></span></a></li>
-                                        <li><a href="/"><span class="flag flag-ua" alt="Ukraine"></span></a></li>
-                                        <li><a href="/ru/"><span class="flag flag-ru" alt="Russia"></span></a></li>
-                                        <li><a href="/en/"><span class="flag flag-us" alt="United States"></span></a></li>
-                                        <li><a href="/de/"><span class="flag flag-de" alt="Germany"></span></a></li>
-                                    </ul>
+                                    <?php
+                                    if(!empty($this->params['all_languages'])):
+                                        ?>
+                                        <ul class="dropdown-menu boss-countries">
+                                            <?php foreach($this->params['all_languages'] as $lang): ?>
+                                                <li>
+                                                    <a href="<?= '/' . $lang['url']; ?>" title="<?= $lang['title_en']; ?>">
+                                                        <span class="flag flag-<?= $lang['flag']; ?>" alt="<?= $lang['title_en']; ?>"></span>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
                                 </li>
                             </ul>
                         </div>
@@ -246,17 +238,17 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
                     <div class="col-lg-9">
                         <h1 class="bmb11-header"><?= $block11_header; ?></h1>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-xs-4 bmb11-social-icon">
                                 <a href="#">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_fb.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-xs-4 bmb11-social-icon">
                                 <a href="#">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_vk.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-xs-4 bmb11-social-icon">
                                 <a href="#">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_youtube.png']); ?>" alt="Youtube Icon"/>
                                 </a>
@@ -266,9 +258,9 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
                 </div>
             </div>
             <div class="col-lg-7 bmb11-content">
-                <diw class="row">
+                <div class="row">
                     <?php foreach($block11 as $b11_key => $b11_part): ?>
-                        <div class="col-lg-<?=($b11_key < 2) ? 3 : 6; ?>">
+                        <div class="col-lg-<?=($b11_key < 2) ? 3 : 6; ?> col-sm-<?=($b11_key < 2) ? 3 : 6; ?>">
                             <?php if($b11_key == 2): ?>
                                 <div class="bmb11-private-area">
                                     <div class="row">
@@ -288,9 +280,9 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
-                </diw>
+                </div>
             </div>
-            <div class="col-lg-2 text-right">
+            <div class="col-lg-2 text-right bmb11-center">
                 <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'warta_logo.png']); ?>" alt="Warta Logo"/>
             </div>
         </div>
