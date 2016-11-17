@@ -10,6 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'Banners'), 'url' =
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('admin', 'Update');
 $this->params['container'] = 'container';
+$language = \app\models\Language::findOne(['url' => Yii::$app->language]);
 ?>
 <div class="banner-update">
 
@@ -17,6 +18,7 @@ $this->params['container'] = 'container';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'language_id' => $language->id,
     ]) ?>
 
 </div>

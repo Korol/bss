@@ -19,7 +19,7 @@ $code_hint = htmlentities('YouTube video embed code, by this template: <iframe c
     }
     else{
         // other can add element only in his language version!
-        echo $form->field($model, 'language_id')->hiddenInput(['value' => $language_id]);
+        echo $form->field($model, 'language_id')->hiddenInput(['value' => $language_id])->label(false);
     }
     ?>
 
