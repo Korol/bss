@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'format' => 'html',
         ],
         'header',
-        'content:ntext',
+        'content:html',
         [
             'attribute' => 'buttons',
             'value' => function($data){

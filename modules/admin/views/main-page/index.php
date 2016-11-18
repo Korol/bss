@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'filter' => $blocks_filter,
         ],
         'header:html',
-        'content:ntext',
+        'content:html',
         [
             'attribute' => 'img',
             'value' => function($data){
