@@ -6,6 +6,7 @@ $this->title = 'Boss';
 $appstore_text = Yii::t('site', 'Available on the iPhone');
 $gplay_text = Yii::t('site', 'Android app on');
 ?>
+<?= $this->render('_subscribe_form'); ?>
 <!--BLOCK 1-->
 <div class="boss-main-block1">
 <!--    <div class="container">-->
@@ -396,7 +397,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                         <img src="<?= \yii\helpers\Url::to(['images/cnub_mail.png']); ?>" alt="Subscribe Image"/>
                     </div>
                     <div class="col-lg-9 col-xs-9">
-                        <a href="#" class="bmb5-subscribe-link">
+                        <a href="#" class="bmb5-subscribe-link" data-toggle="modal" data-target="#subscribeModal">
                             <span class="bmb5-subscribe-text"><?= $block5_subscribe_text; ?></span>
                         </a>
                     </div>
