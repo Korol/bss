@@ -83,11 +83,15 @@ class SiteController extends Controller
             ->where(['language_id' => $language->id, 'position' => 'main_top', 'enabled' => 1])
             ->asArray()
             ->all();
+        $banner_middle = Banner::find()
+            ->where(['language_id' => $language->id, 'position' => 'main_middle', 'enabled' => 1])
+            ->asArray()
+            ->one();
         $videos = Video::find()
             ->where(['language_id' => $language->id, 'position' => 'main_bottom', 'enabled' => 1])
             ->asArray()
             ->all();
-        return $this->render('index', compact('blocks', 'banners', 'videos'));
+        return $this->render('index', compact('blocks', 'banners', 'videos', 'banner_middle'));
     }
 
     /**

@@ -773,3 +773,16 @@ body {
 .b11-pa-text:hover {
     text-decoration: none;
 }
+
+/* ADVERTISEMENT BLOCK */
+.boss-main-advertising {
+    border-bottom: 1px solid #222;
+}
+.middle-banner-img {
+    width: 100%;
+}
+.top-banner-link, .top-banner-link:hover,
+.top-banner-link:active, .top-banner-link:focus {
+    color: #fff;
+    text-decoration: none;
+}

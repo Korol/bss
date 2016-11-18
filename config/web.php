@@ -83,7 +83,6 @@ $config = [
             ],
         ],
     ],
-    'params' => $params,
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
@@ -115,6 +114,30 @@ $config = [
             'layout' => '@app/modules/admin/views/layouts/admin',
         ],
     ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+//            'access' => ['@'],
+            'access' => ['admin', 'language_manager'],
+            'root' => [
+                'baseUrl'=>'/web',
+//                'baseUrl'=>'@web',
+//                'basePath'=>'@webroot',
+                'path' => 'uploads/global',
+                'name' => 'Global'
+            ],
+//            'watermark' => [
+//                'source'         => __DIR__.'/logo.png', // Path to Water mark image
+//                'marginRight'    => 5,          // Margin right pixel
+//                'marginBottom'   => 5,          // Margin bottom pixel
+//                'quality'        => 95,         // JPEG image save quality
+//                'transparency'   => 70,         // Water mark image transparency ( other than PNG )
+//                'targetType'     => IMG_GIF|IMG_JPG|IMG_PNG|IMG_WBMP, // Target image formats ( bit-field )
+//                'targetMinPixel' => 200         // Target image minimum pixel size
+//            ]
+        ]
+    ],
+    'params' => $params,
 ];
 
 if (YII_ENV_DEV) {

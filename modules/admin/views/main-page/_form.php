@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\MainPage */
@@ -27,7 +29,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?php //echo $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?php
+    echo $form->field($model, 'content')->widget(CKEditor::className(),[
+        'editorOptions' => ElFinder::ckeditorOptions('elfinder',[/* Some CKEditor Options */]),
+    ]);
+    ?>
 
     <?php //echo $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
     <?php

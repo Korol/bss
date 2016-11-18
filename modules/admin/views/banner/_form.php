@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Banner */
@@ -31,6 +33,8 @@ $code_hint = htmlentities('YouTube video embed code, by this template: <iframe c
 
     <?= $form->field($model, 'code', ['template' => "{label}\n{hint}\n{input}"])->hint($code_hint)->textInput(['maxlength' => true, 'placeholder' => '4cTGrUQIYeo']) ?>
 
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true, 'placeholder' => 'http://...']) ?>
+
     <?php
     if(!$model->isNewRecord && !empty($model->img)){
         echo Html::img(\yii\helpers\Url::to(['@web/uploads/banners/' . $model->img]), ['width' => '300']) . '<br/>';
@@ -40,7 +44,12 @@ $code_hint = htmlentities('YouTube video embed code, by this template: <iframe c
 
     <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?php //echo $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?php
+    echo $form->field($model, 'content')->widget(CKEditor::className(),[
+        'editorOptions' => ElFinder::ckeditorOptions('elfinder',[/* Some CKEditor Options */]),
+    ]);
+    ?>
 
     <?php
     $model->buttons = ($model->isNewRecord) ? 0 : $model->buttons;

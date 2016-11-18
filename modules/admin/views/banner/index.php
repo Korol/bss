@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'filter' => \app\modules\admin\models\Banner::getPositions(),
         ],
         'code:ntext',
+        'url:url',
         [
             'attribute' => 'img',
             'value' => function($data){

@@ -12,6 +12,7 @@ use app\models\Language;
  * @property string $type
  * @property string $position
  * @property string $code
+ * @property string $url
  * @property string $img
  * @property string $header
  * @property string $content
@@ -37,7 +38,7 @@ class Banner extends \yii\db\ActiveRecord
         return [
             [['type', 'position', 'content'], 'string'],
             [['buttons', 'enabled', 'language_id'], 'integer'],
-            [['header', 'code'], 'string', 'max' => 255],
+            [['header', 'code', 'url'], 'string', 'max' => 255],
             [['img'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, gif, jpeg'],
             [['img'], 'safe'],
         ];
@@ -53,6 +54,7 @@ class Banner extends \yii\db\ActiveRecord
             'type' => Yii::t('admin', 'Type'),
             'position' => Yii::t('admin', 'Position'),
             'code' => Yii::t('admin', 'YouTube Video Code'),
+            'url' => Yii::t('admin', 'Url'),
             'img' => Yii::t('admin', 'Img'),
             'header' => Yii::t('admin', 'Header'),
             'content' => Yii::t('admin', 'Content'),

@@ -46,13 +46,14 @@ $positions = $model::getPositions();
                 'value' => $positions[$model->position],
             ],
             'code:ntext',
+            'url:url',
             [
                 'label' => Yii::t('admin', 'Image'),
                 'value' => (!empty($model->img)) ? Html::img(\yii\helpers\Url::to(['@web/uploads/banners/' . $model->img]), ['width' => '300']) : '',
                 'format' => 'html',
             ],
             'header',
-            'content:ntext',
+            'content:html',
             [
                 'label' => Yii::t('admin', 'Buttons'),
                 'value' => ($model->buttons > 0) ? Yii::t('admin', 'Yes') : Yii::t('admin', 'No'),

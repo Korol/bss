@@ -76,6 +76,13 @@ $gplay_text = Yii::t('site', 'Android app on');
                         <div class="carousel-inner" role="listbox">
                             <?php foreach($block1 as $b1_key => $b1_item): ?>
                                 <?php if($b1_item['type'] == 'video') continue; ?>
+                                <?php
+                                $bmt_a_open = $bmt_a_close = '';
+                                if(!empty($b1_item['url'])){
+                                    $bmt_a_open = '<a class="top-banner-link" href="' . $b1_item['url'] . '">';
+                                    $bmt_a_close = '</a>';
+                                }
+                                ?>
                                 <div class="item <?= ($b1_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -84,10 +91,18 @@ $gplay_text = Yii::t('site', 'Android app on');
                                         <?php elseif($b1_item['type'] == 'image'): */?>
                                         <?php if($b1_item['type'] == 'image'): ?>
                                             <div class="bmb1-image-block">
+                                                <?= $bmt_a_open; ?>
                                                 <img class="top-banner-img" src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
+                                                <?= $bmt_a_close; ?>
                                             </div>
                                         <?php elseif($b1_item['type'] == 'image_text'): ?>
+                                            <?php
+                                            if(!empty($b1_item['buttons'])){
+                                                $bmt_a_open = $bmt_a_close = '';
+                                            }
+                                            ?>
                                             <div class="bmb1-image-block">
+                                                <?= $bmt_a_open; ?>
                                                 <img class="top-banner-img" src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
                                                 <?php if((!Yii::$app->devicedetect->isMobile()) && (!Yii::$app->devicedetect->isTablet())): ?>
                                                 <div class="bmb1-ib-caption">
@@ -122,6 +137,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <?= $bmt_a_close; ?>
                                                 <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
@@ -602,6 +618,22 @@ $gplay_text = Yii::t('site', 'Android app on');
         </div>
     </div>
 </div>
+<?php if(!empty($banner_middle)): ?>
+<!--BLOCK ADVERTISING-->
+<div class="boss-main-advertising">
+    <?php
+    $banner_middle_path = '@web/uploads/banners/';
+    $bmp_a_open = $bmp_a_close = '';
+    if(!empty($banner_middle['url'])){
+        $bmp_a_open = '<a href="' . $banner_middle['url'] . '">';
+        $bmp_a_close = '</a>';
+    }
+    ?>
+    <?= $bmp_a_open; ?>
+    <img class="middle-banner-img" src="<?=\yii\helpers\Url::to([$banner_middle_path . $banner_middle['img']]); ?>" alt="Banner Middle <?=$b1_key; ?>"/>
+    <?= $bmp_a_close; ?>
+</div>
+<?php endif; ?>
 <!--BLOCK 7-->
 <div class="boss-main-block7">
     <div class="bmb2-wrap">

@@ -41,7 +41,7 @@ $language = \app\models\Language::findOne(['id' => $model->language_id]);
                 'value' => Yii::t('admin', 'Block') . ' ' . $model->block_id,
             ],
             'header',
-            'content:ntext',
+            'content:html',
             [
                 'label' => Yii::t('admin', 'Image'),
                 'value' => (!empty($model->img)) ? Html::img(\yii\helpers\Url::to(['@web/uploads/main_page/' . $model->img]), ['width' => '300']) : '',
