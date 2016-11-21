@@ -5,12 +5,12 @@ namespace app\modules\admin\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\admin\models\News;
+use app\modules\admin\models\Feedback;
 
 /**
- * NewsSearch represents the model behind the search form about `app\modules\admin\models\News`.
+ * FeedbackSearch represents the model behind the search form about `app\modules\admin\models\Feedback`.
  */
-class NewsSearch extends News
+class FeedbackSearch extends Feedback
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class NewsSearch extends News
     {
         return [
             [['id', 'language_id', 'enabled'], 'integer'],
-            [['header', 'content', 'pubdate', 'keywords', 'description'], 'safe'],
+            [['type', 'code', 'username', 'content'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class NewsSearch extends News
      */
     public function search($params)
     {
-        $query = News::find();
+        $query = Feedback::find();
         // language condition
         if(!Yii::$app->user->can('admin')){
             $query->andWhere(['language_id' => Yii::$app->user->identity->language_id]);
@@ -65,14 +65,13 @@ class NewsSearch extends News
         $query->andFilterWhere([
             'id' => $this->id,
             'language_id' => $this->language_id,
-            'pubdate' => $this->pubdate,
             'enabled' => $this->enabled,
+            'type' => $this->type,
         ]);
 
-        $query->andFilterWhere(['like', 'header', $this->header])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'keywords', $this->keywords])
-            ->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'code', $this->code])
+            ->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;
     }

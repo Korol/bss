@@ -3,18 +3,19 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\News;
-use app\modules\admin\models\NewsSearch;
+use app\modules\admin\models\Feedback;
+use app\modules\admin\models\FeedbackSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\Language;
 use app\modules\admin\models\User;
+use yii\web\UploadedFile;
+use app\models\Language;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * FeedbackController implements the CRUD actions for Feedback model.
  */
-class NewsController extends Controller
+class FeedbackController extends Controller
 {
     public $app_language_id = 0;
 
@@ -34,13 +35,13 @@ class NewsController extends Controller
     }
 
     /**
-     * Lists all News models.
+     * Lists all Feedback models.
      * @return mixed
      */
     public function actionIndex()
     {
         $this->checkAccess();
-        $searchModel = new NewsSearch();
+        $searchModel = new FeedbackSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -50,7 +51,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Displays a single News model.
+     * Displays a single Feedback model.
      * @param integer $id
      * @return mixed
      */
@@ -63,16 +64,23 @@ class NewsController extends Controller
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new Feedback model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
         $this->checkAccess();
-        $model = new News();
+        $model = new Feedback();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->img = UploadedFile::getInstance($model, 'img');
+            if($model->img){
+                $model->upload();
+                $model->img = $model->img->baseName . '.' . $model->img->extension;
+                $model->save();
+            }
+            Yii::$app->session->setFlash('success', Yii::t('admin', 'Item successfully added!'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -82,7 +90,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Feedback model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,8 +99,20 @@ class NewsController extends Controller
     {
         $this->checkAccess();
         $model = $this->findModel($id);
+        $img = $model->img;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->img = UploadedFile::getInstance($model, 'img');
+            if($model->img){
+                $model->upload();
+                $model->img = $model->img->baseName . '.' . $model->img->extension;
+                $model->save();
+            }
+            else{
+                $model->img = $img;
+                $model->save();
+            }
+            Yii::$app->session->setFlash('success', Yii::t('admin', 'Item successfully updated!'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -102,7 +122,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Feedback model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,17 +136,17 @@ class NewsController extends Controller
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Feedback model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return Feedback the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
         $conditions = (Yii::$app->user->can('admin')) ? ['id' => $id] : ['id' => $id, 'language_id' => $this->app_language_id];
-//        if (($model = News::findOne($id)) !== null) {
-        if (($model = News::findOne($conditions)) !== null) {
+//        if (($model = Feedback::findOne($id)) !== null) {
+        if (($model = Feedback::findOne($conditions)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -2,18 +2,17 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use mihaildev\ckeditor\CKEditor;
-use mihaildev\elfinder\ElFinder;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\News */
+/* @var $model app\modules\admin\models\Feedback */
 /* @var $form yii\widgets\ActiveForm */
+$code_hint = htmlentities('YouTube video embed code, by this template: <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/') . '<b style="color: #000;">4cTGrUQIYeo</b>' . htmlentities('" allowfullscreen></iframe>');
 $language = \app\models\Language::findOne(['url' => Yii::$app->language]);
 ?>
 
-<div class="news-form">
+<div class="feedback-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?php
     if(Yii::$app->user->can('admin')){
@@ -26,27 +25,20 @@ $language = \app\models\Language::findOne(['url' => Yii::$app->language]);
     }
     ?>
 
-    <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'type')->dropDownList([ 'text' => 'Text', 'video' => 'Video', ], ['prompt' => '']) ?>
 
-    <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'code', ['template' => "{label}\n{hint}\n{input}"])->hint($code_hint)->textInput(['maxlength' => true, 'placeholder' => '4cTGrUQIYeo']) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]); ?>
+    <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
     <?php
-    echo $form->field($model, 'content')->widget(CKEditor::className(),[
-        'editorOptions' => ElFinder::ckeditorOptions('elfinder',[/* Some CKEditor Options */]),
-    ]);
+    if(!$model->isNewRecord && !empty($model->img)){
+        echo Html::img(\yii\helpers\Url::to(['@web/uploads/feedbacks/' . $model->img]), ['width' => '100']) . '<br/>';
+    }
     ?>
+    <?= $form->field($model, 'img')->fileInput() ?>
 
-    <?php $model->added = ($model->isNewRecord) ? date('Y-m-d H:i:s') : $model->added; ?>
-    <?= $form->field($model, 'added')->hiddenInput(['value' => $model->added])->label(false) ?>
-
-    <?php $model->pubdate = ($model->isNewRecord) ? date('Y-m-d') : $model->pubdate; ?>
-    <?= $form->field($model, 'pubdate')->widget(\yii\jui\DatePicker::classname(), [
-        'language' => 'ru',
-        'dateFormat' => 'yyyy-MM-dd',
-        'options' => ['class' => 'form-control']
-    ]) ?>
+    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
     <?php $model->enabled = ($model->isNewRecord) ? 1 : $model->enabled; ?>
     <?= $form->field($model, 'enabled')->radioList([0 => Yii::t('admin', 'Disabled'), 1 => Yii::t('admin', 'Enabled')], ['class' => 'main-page-radio']) ?>
