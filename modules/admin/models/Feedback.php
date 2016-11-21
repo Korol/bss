@@ -81,13 +81,13 @@ class Feedback extends \yii\db\ActiveRecord
     {
         if ($this->validate()) {
             $path = 'uploads/feedbacks/';
-            $this->img->saveAs($path . $this->img->baseName . '.' . $this->img->extension);
-            return true;
+            $filename = md5(uniqid(rand(),true)) . '.' . $this->img->extension;
+            if($this->img->saveAs($path . $filename)) {
+                $this->img = $filename;
+                $this->save();
+                return true;
+            }
         } else {
-//            header('Content-type: text/html; charset=utf-8');
-//            var_dump($this->img->extension);
-//            print_r($this->errors);
-//            die();
             return false;
         }
     }

@@ -77,8 +77,6 @@ class BannerController extends Controller
             $model->img = UploadedFile::getInstance($model, 'img');
             if($model->img){
                 $model->upload();
-                $model->img = $model->img->baseName . '.' . $model->img->extension;
-                $model->save();
             }
             Yii::$app->session->setFlash('success', Yii::t('admin', 'Item successfully added!'));
             return $this->redirect(['view', 'id' => $model->id]);
@@ -105,8 +103,6 @@ class BannerController extends Controller
             $model->img = UploadedFile::getInstance($model, 'img');
             if($model->img){
                 $model->upload();
-                $model->img = $model->img->baseName . '.' . $model->img->extension;
-                $model->save();
             }
             else{
                 $model->img = $img;

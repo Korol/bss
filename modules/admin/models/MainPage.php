@@ -74,8 +74,12 @@ class MainPage extends \yii\db\ActiveRecord
     {
         if ($this->validate()) {
             $path = 'uploads/main_page/';
-            $this->img->saveAs($path . $this->img->baseName . '.' . $this->img->extension);
-            return true;
+            $filename = md5(uniqid(rand(),true)) . '.' . $this->img->extension;
+            if($this->img->saveAs($path . $filename)) {
+                $this->img = $filename;
+                $this->save();
+                return true;
+            }
         } else {
             return false;
         }

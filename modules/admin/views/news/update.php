@@ -5,9 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\News */
 
-$this->title = Yii::t('admin', 'Update {modelClass}: ', [
-    'modelClass' => 'News',
-]) . $model->id;
+$this->title = Yii::t('admin', 'Update News') . ': ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'News'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('admin', 'Update');
