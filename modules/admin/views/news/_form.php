@@ -28,6 +28,10 @@ $language = \app\models\Language::findOne(['url' => Yii::$app->language]);
 
     <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]); ?>
+
     <?php
     echo $form->field($model, 'content')->widget(CKEditor::className(),[
         'editorOptions' => ElFinder::ckeditorOptions('elfinder',[/* Some CKEditor Options */]),

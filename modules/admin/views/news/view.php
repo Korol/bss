@@ -38,6 +38,8 @@ $language = \app\models\Language::findOne(['id' => $model->language_id]);
             ],
             'header',
             'content:html',
+            'keywords',
+            'description:ntext',
             'added:datetime',
             'pubdate:date',
             [
