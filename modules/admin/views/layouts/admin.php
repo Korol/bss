@@ -21,6 +21,7 @@ $menu = [
                 ['label' => Yii::t('admin', 'Videos'), 'url' => ['/admin/video/index']],
             ],
         ],
+        ['label' => Yii::t('admin', 'News'), 'url' => ['/admin/news/index']],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [
@@ -31,6 +32,7 @@ $menu = [
                 ['label' => Yii::t('admin', 'Banners'), 'url' => ['/admin/banner/index']],
                 ['label' => Yii::t('admin', 'Videos'), 'url' => ['/admin/video/index']],
             ],
+            ['label' => Yii::t('admin', 'News'), 'url' => ['/admin/news/index']],
         ],
     ],
     'guest' => [],
