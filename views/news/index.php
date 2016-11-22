@@ -6,7 +6,7 @@
 
 //use yii\helpers\Html;
 use yii\helpers\Url;
-$header = $this->title;
+
 $subscribe_text = 'Хочу быть в курсе новостей BOSS';
 $this->params['wrap_class'] = 'wrap-news';
 ?>
@@ -15,7 +15,7 @@ $this->params['wrap_class'] = 'wrap-news';
     <div class="container">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="bmb2-header"><?= $header; ?></h1>
+                <h1 class="bmb2-header"><?= $news_header; ?></h1>
             </div>
             <div class="col-lg-3">
                 <div class="row bmb5-subscribe-block">
@@ -65,7 +65,7 @@ $this->params['wrap_class'] = 'wrap-news';
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="bmb2-header"><?= $header; ?></h1>
+                        <h1 class="bmb2-header"><?= $news_header; ?></h1>
                     </div>
                 </div>
                 <div class="row">

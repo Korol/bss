@@ -13,6 +13,8 @@ use app\models\News;
 
 class NewsController  extends FrontendController
 {
+    public $news_header = 'Что нового у Босса';
+
     public function actionIndex()
     {
         $news = News::find()
@@ -22,8 +24,8 @@ class NewsController  extends FrontendController
             ->all();
         $current_news = (!empty($news)) ? array_shift($news) : array();
         $this->view->params['active_top_menu'] = 'news';
-        $this->view->title = 'Что нового у Босса';
-        return $this->render('index', compact('current_news', 'news'));
+        $this->view->title = $news_header = $this->news_header;
+        return $this->render('index', compact('current_news', 'news', 'news_header'));
     }
 
     public function actionView($id)
@@ -38,8 +40,8 @@ class NewsController  extends FrontendController
             foreach($news as $key => $item){
                 if($item['id'] == $id){
                     $current_news = $item;
-                    $this->view->registerMetaTag(['name' => 'keywords', 'content' => $item['keywords']]);
-                    $this->view->registerMetaTag(['name' => 'description', 'content' => $item['description']]);
+                    $this->view->registerMetaTag(['name' => 'keywords', 'content' => $item['keywords']], 'keywords');
+                    $this->view->registerMetaTag(['name' => 'description', 'content' => $item['description']], 'description');
                     unset($news[$key]);
                     break;
                 }
@@ -47,6 +49,7 @@ class NewsController  extends FrontendController
         }
         $this->view->params['active_top_menu'] = 'news';
         $this->view->title = ((!empty($current_news['header'])) ? $current_news['header'] . ' – ' : '') . 'Что нового у Босса';
-        return $this->render('index', compact('current_news', 'news'));
+        $news_header = $this->news_header;
+        return $this->render('index', compact('current_news', 'news', 'news_header'));
     }
 } 
