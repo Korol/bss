@@ -48,6 +48,9 @@ $language = \app\models\Language::findOne(['url' => Yii::$app->language]);
         'options' => ['class' => 'form-control']
     ]) ?>
 
+    <?php $model->mainpage = ($model->isNewRecord) ? 1 : $model->mainpage; ?>
+    <?= $form->field($model, 'mainpage')->radioList([0 => Yii::t('admin', 'No'), 1 => Yii::t('admin', 'Yes')], ['class' => 'main-page-radio']) ?>
+
     <?php $model->enabled = ($model->isNewRecord) ? 1 : $model->enabled; ?>
     <?= $form->field($model, 'enabled')->radioList([0 => Yii::t('admin', 'Disabled'), 1 => Yii::t('admin', 'Enabled')], ['class' => 'main-page-radio']) ?>
 

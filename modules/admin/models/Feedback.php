@@ -16,6 +16,7 @@ use app\models\Language;
  * @property string $img
  * @property string $content
  * @property integer $enabled
+ * @property integer $mainpage
  */
 class Feedback extends \yii\db\ActiveRecord
 {
@@ -33,7 +34,7 @@ class Feedback extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['language_id', 'enabled'], 'integer'],
+            [['language_id', 'enabled', 'mainpage'], 'integer'],
             [['type', 'content'], 'string'],
             [['code', 'username'], 'string', 'max' => 255],
             [['img'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,gif,jpeg'],
@@ -55,6 +56,7 @@ class Feedback extends \yii\db\ActiveRecord
             'img' => Yii::t('admin', 'Img'),
             'content' => Yii::t('admin', 'Content'),
             'enabled' => Yii::t('admin', 'Enabled'),
+            'mainpage' => Yii::t('admin', 'Main Page'),
         ];
     }
 

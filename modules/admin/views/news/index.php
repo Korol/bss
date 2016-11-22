@@ -37,6 +37,21 @@ $this->params['breadcrumbs'][] = $this->title;
             'format' => 'html',
         ],
         [
+            'attribute' => 'mainpage',
+            'value' => function($data){
+                $color = 'green';
+                $text = Yii::t('admin', 'Yes');
+                if($data->mainpage <= 0){
+                    $color = 'red';
+                    $text = Yii::t('admin', 'No');
+                }
+                $return = '<span class="admin-' . $color . '">' . $text . '</span>';
+                return $return;
+            },
+            'format' => 'html',
+            'filter' => [0 => Yii::t('admin', 'No'), 1 => Yii::t('admin', 'Yes')],
+        ],
+        [
             'attribute' => 'enabled',
             'value' => function($data){
                 $color = 'green';

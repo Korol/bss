@@ -43,6 +43,10 @@ $language = \app\models\Language::findOne(['id' => $model->language_id]);
             'added:datetime',
             'pubdate:date',
             [
+                'label' => Yii::t('admin', 'Main Page'),
+                'value' => ($model->mainpage > 0) ? Yii::t('admin', 'Yes') : Yii::t('admin', 'No'),
+            ],
+            [
                 'label' => Yii::t('admin', 'Enabled'),
                 'value' => ($model->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled'),
             ],

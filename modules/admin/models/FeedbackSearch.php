@@ -18,7 +18,7 @@ class FeedbackSearch extends Feedback
     public function rules()
     {
         return [
-            [['id', 'language_id', 'enabled'], 'integer'],
+            [['id', 'language_id', 'enabled', 'mainpage'], 'integer'],
             [['type', 'code', 'username', 'content'], 'safe'],
         ];
     }
@@ -67,6 +67,7 @@ class FeedbackSearch extends Feedback
             'language_id' => $this->language_id,
             'enabled' => $this->enabled,
             'type' => $this->type,
+            'mainpage' => $this->mainpage,
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])

@@ -18,7 +18,7 @@ class NewsSearch extends News
     public function rules()
     {
         return [
-            [['id', 'language_id', 'enabled'], 'integer'],
+            [['id', 'language_id', 'enabled', 'mainpage'], 'integer'],
             [['header', 'content', 'pubdate', 'keywords', 'description'], 'safe'],
         ];
     }
@@ -67,6 +67,7 @@ class NewsSearch extends News
             'language_id' => $this->language_id,
             'pubdate' => $this->pubdate,
             'enabled' => $this->enabled,
+            'mainpage' => $this->mainpage,
         ]);
 
         $query->andFilterWhere(['like', 'header', $this->header])
