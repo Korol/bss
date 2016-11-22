@@ -6,7 +6,7 @@
 
 //use yii\helpers\Html;
 use yii\helpers\Url;
-$header = $this->title = 'Что нового у Босса';
+$header = $this->title;
 $subscribe_text = 'Хочу быть в курсе новостей BOSS';
 $this->params['wrap_class'] = 'wrap-news';
 ?>
