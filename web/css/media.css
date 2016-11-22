@@ -74,6 +74,9 @@
     .b11-pa-text {
         margin-left: 0;
     }
+    .boss-news-block {
+        padding-top: 50px;
+    }
 }
 
 @media (max-width: 760px) {
@@ -147,6 +150,9 @@
     }
     .bmb5-subscribe-text {
         bottom: 0;
+    }
+    .boss-news-block {
+        padding-top: 50px;
     }
 }
 

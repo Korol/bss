@@ -3,8 +3,6 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Boss';
-$appstore_text = Yii::t('site', 'Available on the iPhone');
-$gplay_text = Yii::t('site', 'Android app on');
 ?>
 <?= $this->render('_subscribe_form'); ?>
 <!--BLOCK 1-->
@@ -118,7 +116,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                                                                     <div class="col-lg-10 col-lg-offset-1">
                                                                         <a href="#" class="bmb4-btn-link">
                                                                             <div class="bmb1-yellow-appstore">
-                                                                                <span><?= $appstore_text; ?></span>
+                                                                                <span><?= $this->params['appstore_text']; ?></span>
                                                                             </div>
                                                                         </a>
                                                                     </div>
@@ -127,7 +125,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                                                                     <div class="col-lg-10 col-lg-offset-1">
                                                                         <a href="#" class="bmb4-btn-link">
                                                                             <div class="bmb1-yellow-gplay">
-                                                                                <span><?= $gplay_text; ?></span>
+                                                                                <span><?= $this->params['gplay_text']; ?></span>
                                                                             </div>
                                                                         </a>
                                                                     </div>
@@ -373,7 +371,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                     <div class="col-lg-10">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb4-black-appstore">
-                                <span><?= $appstore_text; ?></span>
+                                <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
@@ -387,7 +385,7 @@ $gplay_text = Yii::t('site', 'Android app on');
                     <div class="col-lg-10">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb4-black-gplay">
-                                <span><?= $gplay_text; ?></span>
+                                <span><?= $this->params['gplay_text']; ?></span>
                             </div>
                         </a>
                     </div>
@@ -741,130 +739,19 @@ $gplay_text = Yii::t('site', 'Android app on');
                     <div class="col-lg-6">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb8-black-white-appstore pull-right">
-                                <span><?= $appstore_text; ?></span>
+                                <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb8-black-white-gplay">
-                                <span><?= $gplay_text; ?></span>
+                                <span><?= $this->params['gplay_text']; ?></span>
                             </div>
                         </a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--BLOCK 9-->
-<div class="boss-main-block9">
-    <div class="container">
-        <?php
-        if(!empty($videos)){
-            $block9 = $videos;
-            $block9_header = $videos[0]['header'];
-        }
-        else {
-            $block9_header = 'Узнай больше о boss';
-            $block9 = [
-                0 => [
-                    'code' => '4cTGrUQIYeo',
-                ],
-                1 => [
-                    'code' => 'X78wiDUt9SM',
-                ],
-                2 => [
-                    'code' => 'rXKVYb59uhA',
-                ],
-                3 => [
-                    'code' => 'rXKVYb59uhA',
-                ],
-                4 => [
-                    'code' => '4cTGrUQIYeo',
-                ],
-                5 => [
-                    'code' => 'X78wiDUt9SM',
-                ],
-            ];
-        }
-        $block9_chunked = array_chunk($block9, 3);
-        ?>
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="bmb3-header header-white text-left ml30"><?= $block9_header; ?></h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="bmb9-carousel-wrapper">
-                    <div id="block9_carousel" class="carousel slide" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <?php foreach($block9_chunked as $b9_chunk_key => $b9_chunk): ?>
-                                <div class="item <?= ($b9_chunk_key == 0) ? 'active' : ''; ?>">
-                                    <div class="row">
-                                        <?php foreach($b9_chunk as $b9_key => $b9_item): ?>
-                                            <div class="col-lg-4">
-                                                <div class="embed-responsive embed-responsive-16by9">
-                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $b9_item['code']; ?>?rel=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
-                                                </div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#block9_carousel" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#block9_carousel" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--BLOCK 10-->
-<div class="boss-main-block10">
-    <div class="container">
-        <?php
-        $block10_left = 'Подписывайтесь<br/>на наш канал';
-        $block10_right = 'Будем рады подружиться с вами<br/>в социальных сетях';
-        $block10_img_path = '@web/images/';
-        ?>
-        <div class="row bmb10-content">
-            <div class="col-lg-4">
-                <p class="bmb10-p text-right"><?= $block10_left; ?></p>
-            </div>
-            <div class="col-lg-3">
-                <div class="row">
-                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
-                        <a href="#">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube.png']); ?>" alt="Youtube Icon"/>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
-                        <a href="#">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb.png']); ?>" alt="Facebook Icon"/>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
-                        <a href="#">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk.png']); ?>" alt="VK Icon"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <p class="bmb10-p text-left"><?= $block10_right; ?></p>
             </div>
         </div>
     </div>
