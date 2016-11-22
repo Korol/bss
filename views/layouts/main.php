@@ -28,7 +28,7 @@ $top_menu = [
         ],
         'feedback' => [
             'title' => 'Feedback',
-            'url' => '/#',
+            'url' => '/feedback',
         ],
         'faq' => [
             'title' => 'FAQ',

@@ -833,3 +833,64 @@ h3.news-title a, h3.news-title a:hover {
 .news-gplay-btn {
     margin-left: 50px;
 }
+
+/* FEEDBACK PAGE */
+.boss-feedback-block {
+    background-color: #6fcd9b;
+}
+.feedback-wrapper {
+    /*background: url('../images/boss-bg.png') repeat;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.feedback-wrapper > .container {
+    padding-top: 215px;
+    /*padding-bottom: 265px;*/
+    padding-bottom: 50px;
+}
+.wrap-feedback {
+    background-color: #6fcd9b;
+    padding-bottom: 20px;
+}
+.feedback-wrapper .bmb2-header {
+    text-align: left;
+    margin-left: 28px;
+}
+.vfeed-carousel-wrapper {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.vfeed-carousel-wrapper .item {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vfeed-carousel-wrapper .carousel-control.left, .vfeed-carousel-wrapper .carousel-control.right {
+    background-image: none !important;
+    filter: none !important;
+}
+.vfeed-carousel-wrapper .carousel-control {
+    width: 30px;
+}
+.vfeed-carousel-wrapper .glyphicon-menu-right, .vfeed-carousel-wrapper .glyphicon-menu-left {
+    color: #000;
+    position: absolute;
+    top: 45%;
+}
+.vfeed-carousel-wrapper .glyphicon-menu-right {
+    right: 0;
+}
+.vfeed-carousel-wrapper .glyphicon-menu-left {
+    left: 0;
+}
+#text_feedback_carousel .bmb6-thumb {
+    background-color: transparent;
+}
+.feed-about-gplay {
+    font-size: 26px;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+.boss-feedback-block .bmb1-yellow-gplay {
+    margin-left: 25px;
+}
