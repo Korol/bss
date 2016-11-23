@@ -22,6 +22,7 @@ class FrontendController extends Controller
     {
         $this->view->params['appstore_text'] = Yii::t('site', 'Available on the iPhone');
         $this->view->params['gplay_text'] = Yii::t('site', 'Android app on');
+        $this->view->params['subscribe_text'] = Yii::t('site', 'I want to be informed about BOSS news');
         $this->setLanguages();
         $this->setVideos();
     }

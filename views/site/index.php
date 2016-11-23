@@ -83,7 +83,7 @@ $this->title = 'Boss';
                                 ?>
                                 <div class="item <?= ($b1_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
                                         <?php /*if($b1_item['type'] == 'video'): ?>
                                             <div class="embed-responsive embed-responsive-16by9"><?= $b1_item['code']; ?></div>
                                         <?php elseif($b1_item['type'] == 'image'): */?>
@@ -102,10 +102,10 @@ $this->title = 'Boss';
                                             <div class="bmb1-image-block">
                                                 <?= $bmt_a_open; ?>
                                                 <img class="top-banner-img" src="<?=\yii\helpers\Url::to([$block1_banners_path . $b1_item['img']]); ?>" alt="Banner Image <?=$b1_key; ?>"/>
-                                                <?php if((!Yii::$app->devicedetect->isMobile()) && (!Yii::$app->devicedetect->isTablet())): ?>
+                                                <?php //if((!Yii::$app->devicedetect->isMobile()) && (!Yii::$app->devicedetect->isTablet())): ?>
                                                 <div class="bmb1-ib-caption">
                                                     <div class="row">
-                                                        <div class="col-lg-4 col-lg-offset-7">
+                                                        <div class="col-lg-4 col-lg-offset-7 col-md-4 col-md-offset-7 col-sm-5 col-sm-offset-6 col-xs-6 col-xs-offset-5">
                                                             <h2 class="bmb1-ib-title"><?= $b1_item['header']; ?></h2>
                                                             <div class="bmb1-ib-text">
                                                                 <p><?= $b1_item['content']; ?></p>
@@ -113,7 +113,7 @@ $this->title = 'Boss';
                                                             <?php if(!empty($b1_item['buttons'])): ?>
                                                             <div class="bmb1-ib-buttons-block">
                                                                 <div class="row">
-                                                                    <div class="col-lg-10 col-lg-offset-1">
+                                                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                                                                         <a href="#" class="bmb4-btn-link">
                                                                             <div class="bmb1-yellow-appstore">
                                                                                 <span><?= $this->params['appstore_text']; ?></span>
@@ -122,7 +122,7 @@ $this->title = 'Boss';
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-lg-10 col-lg-offset-1">
+                                                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                                                                         <a href="#" class="bmb4-btn-link">
                                                                             <div class="bmb1-yellow-gplay">
                                                                                 <span><?= $this->params['gplay_text']; ?></span>
@@ -136,7 +136,7 @@ $this->title = 'Boss';
                                                     </div>
                                                 </div>
                                                 <?= $bmt_a_close; ?>
-                                                <?php endif; ?>
+                                                <?php //endif; ?>
                                             </div>
                                         <?php endif; ?>
                                         </div>
@@ -209,17 +209,17 @@ $this->title = 'Boss';
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-1 col-sm-1"></div>
-                <div class="col-lg-10 col-sm-10">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-sm-12 col-md-10">
                     <?php foreach($block2_chunked as $b2_chunk): ?>
                     <div class="row bmb2-row">
                         <?php foreach($b2_chunk as $b2_item): ?>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="row">
-                                <div class="col-lg-3 col-sm-3 col-xs-3 bmb-icon-block">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bmb-icon-block">
                                     <img class="bmb2-icon" src="<?=\yii\helpers\Url::to([$block2_img_path . $b2_item['img']]); ?>" alt="Icon Smart"/>
                                 </div>
-                                <div class="col-lg-9 col-sm-9 col-xs-9 vcentered-block">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 vcentered-block">
                                     <div class="bmb2-text vcentered-content"><?= $b2_item['content']; ?></div>
                                 </div>
                             </div>
@@ -228,7 +228,7 @@ $this->title = 'Boss';
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="col-lg-1 col-sm-1"></div>
+                <div class="col-lg-1 col-md-1"></div>
             </div>
         </div>
     </div>
@@ -237,10 +237,10 @@ $this->title = 'Boss';
 <div class="boss-main-block3">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <img class="bmb3-left-img" src="<?=\yii\helpers\Url::to(['images/vbvk_phone_tablet2.png']); ?>" alt="Block 3 Image"/>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <?php
                 $block3_img_path = '@web/images/';
                 $block3_header = 'Весь бизнес <br/>у вас в кармане';
@@ -264,17 +264,17 @@ $this->title = 'Boss';
                 }
                 ?>
                 <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10">
+                    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10">
                         <h1 class="bmb3-header"><?= $block3_header; ?></h1>
                     </div>
                 </div>
                 <?php foreach($block3 as $b3_row): ?>
                 <div class="row">
-                    <div class="col-lg-2 col-sm-2 col-xs-2 bmb3-tag-block">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bmb3-tag-block">
                         <img src="<?=\yii\helpers\Url::to([$block3_img_path . $block3_img]); ?>" alt="Block 3 Tag"/>
                     </div>
-                    <div class="col-lg-10 col-sm-10 col-xs-10">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                         <p class="bmb3-p"><?= $b3_row['content']; ?></p>
                     </div>
                 </div>
@@ -282,7 +282,7 @@ $this->title = 'Boss';
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <img class="bmb3-bottom-img" src="<?=\yii\helpers\Url::to(['images/vbvk_peoples_png24-3.png']); ?>" alt="Block 3 Bottom Image"/>
             </div>
         </div>
@@ -334,30 +334,30 @@ $this->title = 'Boss';
         }
         ?>
         <div class="row">
-            <div class="col-lg-4 bmb4-left-block-wrap">
+            <div class="col-lg-4 col-md-4 col-sm-4 bmb4-left-block-wrap">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
                 <div class="row bmb4-left-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_lb_<?=$b4_key; ?>">
-                    <div class="col-lg-10 col-sm-10 col-xs-10 bmb4-row-title" id="bmb4_title_<?=$b4_key; ?>">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 bmb4-row-title" id="bmb4_title_<?=$b4_key; ?>">
                         <span><?= $b4_row['header']; ?></span>
                     </div>
-                    <div class="col-lg-2 col-sm-2 col-xs-2 bmb4-row-tag">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bmb4-row-tag">
                         <img class="bmb4-row-tag-img" src="<?= \yii\helpers\Url::to(['images/t_tag.png']); ?>" alt="Block 4 Tag Image"/>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="bmb4-phone-block">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
                     <img id="bmb4_pbi_<?=$b4_key; ?>" class="bmb4-row-img <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" src="<?=\yii\helpers\Url::to([$block4_img_path . $b4_row['img']]); ?>" alt="Block 4 Image <?=$b4_row['header']; ?>"/>
                 <?php endforeach; ?>
                 </div>
             </div>
-            <div class="col-lg-4 bmb4-right-block-wrap">
+            <div class="col-lg-4 col-md-4 col-sm-4 bmb4-right-block-wrap">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
                 <div class="row bmb4-right-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_rb_<?=$b4_key; ?>">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10  bmb4-row-text">
+                    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 bmb4-row-text">
                         <h1 class="bmb3-header"><?= $b4_row['header']; ?></h1>
                         <p class="bmb3-p"><?= $b4_row['content']; ?></p>
                     </div>
@@ -366,23 +366,23 @@ $this->title = 'Boss';
             </div>
         </div>
         <div class="row bmb4-buttons-block">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb4-black-appstore">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-2"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2"></div>
                 </div>
             </div>
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-4"></div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-10">
+                    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb4-black-gplay">
                                 <span><?= $this->params['gplay_text']; ?></span>
@@ -399,27 +399,26 @@ $this->title = 'Boss';
     <div class="container">
         <?php
         $block5_header = 'Что нового у босса';
-        $block5_subscribe_text = 'Хочу быть в курсе новостей BOSS';
         ?>
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-10 col-md-9 col-sm-9">
                 <h1 class="bmb3-header ml30"><?= $block5_header; ?></h1>
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="row bmb5-subscribe-block">
-                    <div class="col-lg-3 col-xs-3 bmb5-subscribe-img">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bmb5-subscribe-img">
                         <img src="<?= \yii\helpers\Url::to(['images/cnub_mail.png']); ?>" alt="Subscribe Image"/>
                     </div>
-                    <div class="col-lg-9 col-xs-9">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                         <a href="#" class="bmb5-subscribe-link" data-toggle="modal" data-target="#subscribeModal">
-                            <span class="bmb5-subscribe-text"><?= $block5_subscribe_text; ?></span>
+                            <span class="bmb5-subscribe-text"><?= $this->params['subscribe_text']; ?></span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <?php
                 if(!empty($news)){
                     $block5 = $news;
@@ -470,7 +469,7 @@ $this->title = 'Boss';
                                     <?php
                                     $url = ($b5_item['id'] == '#') ? '#' : \yii\helpers\Url::to(['/news/' . $b5_item['id']]);
                                     ?>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="bmb5-carousel-item <?= ($b5_key == 0) ? 'bmb5-slider-item-both' : 'bmb5-slider-item-right'; ?>">
                                         <div class="bmb5-ci-header">
                                             <h3 class="bmb5-h3">
@@ -514,7 +513,7 @@ $this->title = 'Boss';
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
             <?php
             if(!empty($feedback)){
                 $block6 = $feedback;
@@ -591,7 +590,7 @@ $this->title = 'Boss';
                                 <div class="item <?= ($b6_chunk_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
                                         <?php foreach($b6_chunk as $b6_key => $b6_item): ?>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-3 col-md-3 col-sm-3">
                                             <?php if($b6_item['type'] == 'video'): ?>
                                                 <div class="embed-responsive embed-responsive-4by3">
                                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $b6_item['code']; ?>?rel=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
@@ -661,19 +660,19 @@ $this->title = 'Boss';
                     $block7_text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda autem beatae deleniti dolores doloribus ea, eligendi eos esse eveniet facere facilis ipsam itaque magni minima minus, necessitatibus nobis numquam officia perspiciatis quaerat quidem quo sed sunt tempora unde voluptatum. Dolor dolore dolores officia quam tempora. Facere fugit iure voluptatibus!';
                 }
                 ?>
-                <div class="col-lg-12 bmb7-content">
+                <div class="col-lg-12 col-md-12 bmb7-content">
                     <div class="row">
-                        <div class="col-lg-12 text-center">
+                        <div class="col-lg-12 col-md-12 text-center">
                             <img src="<?=\yii\helpers\Url::to(['images/sp_icon.png']); ?>" alt="Partners Icon"/>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 col-md-12">
                             <h1 class="bmb3-header text-center"><a href="#"><?= $block7_header; ?></a></h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-lg-offset-3">
+                        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
                             <p class="text-center"><?= $block7_text; ?></p>
                         </div>
                     </div>
@@ -719,45 +718,45 @@ $this->title = 'Boss';
         }
         ?>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <h1 class="bmb3-header text-center"><?= $block8_header; ?></h1>
             </div>
         </div>
         <div class="row bmb8-content">
-            <div class="col-lg-5 bmb8-content-images">
+            <div class="col-lg-5 col-md-5 col-sm-5 bmb8-content-images">
                 <div class="row">
-                    <div class="col-lg-12 text-right">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-right">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to(['images/cbovz_quote.png']); ?>" alt="Quote Image"/>
                         </a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
                         <img class="bmb8-boss-img" src="<?=\yii\helpers\Url::to(['images/cbovz_boss.png']); ?>" alt="Boss Image"/>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 col-md-7 col-sm-7">
             <?php foreach($block8 as $b8_row): ?>
                 <div class="row bmb8-row">
-                    <div class="col-lg-3 col-xs-3 text-right">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                         <img class="bmb8-quote" src="<?=\yii\helpers\Url::to([$block8_img_path . $b8_row['img']]); ?>" alt="Icon <?=$b8_row['img']; ?>"/>
                     </div>
-                    <div class="col-lg-9 col-xs-9 vcentered-block">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 vcentered-block">
                         <div class="bmb2-text vcentered-content"><?= $b8_row['content']; ?></div>
                     </div>
                 </div>
             <?php endforeach; ?>
                 <div class="row bmb8-buttons-block">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb8-black-white-appstore pull-right">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="#" class="bmb4-btn-link">
                             <div class="bmb8-black-white-gplay">
                                 <span><?= $this->params['gplay_text']; ?></span>

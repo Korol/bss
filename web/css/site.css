@@ -217,7 +217,7 @@ body {
     margin-top: 50px;
 }
 #block1_carousel .item {
-    height: 640px;
+    /*height: 640px;*/
 }
 #block1_carousel .carousel-control.left,
 #block1_carousel .carousel-control.right {
@@ -325,6 +325,9 @@ body {
     background-color: #ebebec;
     border-bottom: 1px solid #222;
     padding-top: 30px;
+}
+.bmb3-left-img {
+    width: 100%;
 }
 .bmb3-bottom-img {
     width: 100%;
@@ -640,6 +643,9 @@ body {
 }
 .bmb8-row {
     margin-bottom: 30px;
+}
+.bmb8-boss-img {
+    width: 100%;
 }
 .bmb8-quote {
     cursor: pointer;

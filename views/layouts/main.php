@@ -109,7 +109,7 @@ $top_menu = [
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="row">
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-5">
                         <ul class="nav navbar-nav">
 <!--                            <li class="active"><a href="#">Главная</a></li>-->
                             <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
@@ -119,13 +119,13 @@ $top_menu = [
                             <?php endforeach; ?>
                         </ul>
                     </div>
-                    <div class="col-lg-2 blb">
+                    <div class="col-lg-2 col-md-2 blb">
                         <div id="top_logo" class="boss-logo-block">
 
                         </div>
                         <p id="blb_title">boss</p>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-5">
                         <ul class="nav navbar-nav navbar-left">
                             <?php foreach($top_menu['right'] as $tmr_key =>$tm_right): ?>
                                 <li <?=($tmr_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
@@ -159,7 +159,7 @@ $top_menu = [
     </nav>
     <?php else: ?>
         <nav class="navbar navbar-inverse navbar-fixed-top navbar-boss-mobile">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -173,14 +173,16 @@ $top_menu = [
                     <div class="row">
                         <div class="col-lg-12">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Главная</a></li>
-                                <li><a href="#">Кто такой Boss</a></li>
-                                <li><a href="#">Тарифы</a></li>
-                                <li><a href="#">Отзывы</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Наши новости</a></li>
-                                <li><a href="#">Стать партнером</a></li>
-                                <li><a href="#">Мы на связи</a></li>
+                                <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
+                                    <li <?=($tml_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
+                                        <a href="<?= \yii\helpers\Url::to([$tm_left['url']]); ?>"><?= $tm_left['title']; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                                <?php foreach($top_menu['right'] as $tmr_key =>$tm_right): ?>
+                                    <li <?=($tmr_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
+                                        <a href="<?= \yii\helpers\Url::to([$tm_right['url']]); ?>"><?= $tm_right['title']; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <span class="flag flag-<?= $this->params['current_language']['flag']; ?>" alt="<?= $this->params['current_language']['title_en']; ?>"></span>
@@ -250,12 +252,12 @@ $top_menu = [
         $block9_chunked = array_chunk($block9, 3);
         ?>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <h1 class="bmb3-header header-white text-left ml30"><?= $block9_header; ?></h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="bmb9-carousel-wrapper">
                     <div id="block9_carousel" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
@@ -264,7 +266,7 @@ $top_menu = [
                                 <div class="item <?= ($b9_chunk_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
                                         <?php foreach($b9_chunk as $b9_key => $b9_item): ?>
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-4 col-md-4 col-sm-4">
                                                 <div class="embed-responsive embed-responsive-16by9">
                                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $b9_item['code']; ?>?rel=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
                                                 </div>
@@ -299,29 +301,29 @@ $top_menu = [
         $block10_img_path = '@web/images/';
         ?>
         <div class="row bmb10-content">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <p class="bmb10-p text-right"><?= $block10_left; ?></p>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="row">
-                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube.png']); ?>" alt="Youtube Icon"/>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb.png']); ?>" alt="Facebook Icon"/>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-xs-4 bmb10-social-icon">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon">
                         <a href="#">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk.png']); ?>" alt="VK Icon"/>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 col-md-5 col-sm-4">
                 <p class="bmb10-p text-left"><?= $block10_right; ?></p>
             </div>
         </div>
@@ -384,22 +386,22 @@ $top_menu = [
         ];
         ?>
         <div class="row">
-            <div class="col-lg-3 bmb11-content">
+            <div class="col-lg-3 col-md-3 col-sm-3 bmb11-content">
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-lg-9 col-md-9 col-sm-9">
                         <h1 class="bmb11-header"><?= $block11_header; ?></h1>
                         <div class="row">
-                            <div class="col-lg-4 col-xs-4 bmb11-social-icon">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
                                 <a href="#">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_fb.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
-                            <div class="col-lg-4 col-xs-4 bmb11-social-icon">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
                                 <a href="#">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_vk.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
-                            <div class="col-lg-4 col-xs-4 bmb11-social-icon">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
                                 <a href="#">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_youtube.png']); ?>" alt="Youtube Icon"/>
                                 </a>
@@ -408,17 +410,17 @@ $top_menu = [
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 bmb11-content">
+            <div class="col-lg-7 col-md-7 col-sm-7 bmb11-content">
                 <div class="row">
                     <?php foreach($block11 as $b11_key => $b11_part): ?>
-                        <div class="col-lg-<?=($b11_key < 2) ? 3 : 6; ?> col-sm-<?=($b11_key < 2) ? 3 : 6; ?>">
+                        <div class="col-lg-<?=($b11_key < 2) ? 3 : 6; ?> col-md-<?=($b11_key < 2) ? 3 : 6; ?> col-sm-<?=($b11_key < 2) ? 3 : 6; ?>">
                             <?php if($b11_key == 2): ?>
                                 <div class="bmb11-private-area">
                                     <div class="row">
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-2 col-md-2 col-sm-2">
                                             <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_case.png']); ?>" alt="Footer Case Icon"/>
                                         </div>
-                                        <div class="col-lg-10 text-left">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 text-left">
                                             <a href="#" class="b11-pa-text"><?= $block11_pa_text; ?></a>
                                         </div>
                                     </div>
@@ -433,7 +435,7 @@ $top_menu = [
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="col-lg-2 text-right bmb11-center">
+            <div class="col-lg-2 col-md-2 col-sm-2 text-right bmb11-center">
                 <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'warta_logo.png']); ?>" alt="Warta Logo"/>
             </div>
         </div>

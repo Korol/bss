@@ -12,7 +12,7 @@ $this->params['wrap_class'] = 'wrap-feedback';
     <div class="feedback-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h1 class="bmb2-header"><?= $page_header; ?></h1>
                 </div>
             </div>
@@ -26,7 +26,7 @@ $this->params['wrap_class'] = 'wrap-feedback';
                                 <div class="item <?= ($v_chunk_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
                                         <?php foreach($v_chunk as $v_key => $v_item): ?>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                                 <div class="embed-responsive embed-responsive-4by3">
                                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $v_item['code']; ?>?rel=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
                                                 </div>
@@ -64,7 +64,7 @@ $this->params['wrap_class'] = 'wrap-feedback';
                                 <div class="item <?= ($t_chunk_key == 0) ? 'active' : ''; ?>">
                                     <div class="row">
                                         <?php foreach($t_chunk as $t_key => $t_item): ?>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                             <div class="thumbnail bmb6-thumb">
                                                 <img class="img-circle pull-left" src="<?= \yii\helpers\Url::to([$feed_img_path . $t_item['img']]); ?>" alt="Image <?=$t_item['username']; ?>">
                                                 <div class="clearfix"></div>
@@ -97,16 +97,16 @@ $this->params['wrap_class'] = 'wrap-feedback';
                 </div>
             <?php endif; ?>
             <div class="row feed-buttons">
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
                             <a href="#" class="bmb4-btn-link">
                                 <div class="bmb1-yellow-gplay">
                                     <span><?= $this->params['gplay_text']; ?></span>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-6">
                             <div class="feed-about-gplay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
                         </div>
                     </div>
