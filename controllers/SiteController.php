@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\Banner;
 use app\models\MainPage;
+use app\models\News;
+use app\models\Feedback;
 use Yii;
 use yii\filters\VerbFilter;
 
@@ -66,7 +68,17 @@ class SiteController extends FrontendController
             ->where(['language_id' => $this->language->id, 'position' => 'main_middle', 'enabled' => 1])
             ->asArray()
             ->one();
+        $news = News::find()
+            ->where(['language_id' => $this->language->id, 'mainpage' => 1, 'enabled' => 1])
+            ->orderBy(['pubdate' => SORT_DESC, 'added' => SORT_DESC])
+            ->asArray()
+            ->all();
+        $feedback = Feedback::find()
+            ->where(['language_id' => $this->language->id, 'mainpage' => 1, 'enabled' => 1])
+            ->orderBy(['id' => SORT_DESC])
+            ->asArray()
+            ->all();
         $this->view->params['active_top_menu'] = 'main';
-        return $this->render('index', compact('blocks', 'banners', 'banner_middle'));
+        return $this->render('index', compact('blocks', 'banners', 'banner_middle', 'news', 'feedback'));
     }
 }

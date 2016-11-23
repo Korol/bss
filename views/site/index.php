@@ -421,38 +421,43 @@ $this->title = 'Boss';
         <div class="row">
             <div class="col-lg-12">
                 <?php
-                $block5 = [
-                    0 => [
-                        'title' => 'Новые возможности Босса',
-                        'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
-                        'url' => '#',
-                    ],
-                    1 => [
-                        'title' => 'Что нового у BOSS?',
-                        'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
-                        'url' => '#',
-                    ],
-                    2 => [
-                        'title' => 'Как сэкономить с BOSS?',
-                        'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
-                        'url' => '#',
-                    ],
-                    3 => [
-                        'title' => 'Бесплатно и ещё бесплатнее!',
-                        'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
-                        'url' => '#',
-                    ],
-                    4 => [
-                        'title' => 'Скидки вам и вашим друзьям! и вашим друзьям! и вашим друзьям!',
-                        'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
-                        'url' => '#',
-                    ],
-                    5 => [
-                        'title' => 'Станьте первым!',
-                        'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
-                        'url' => '#',
-                    ],
-                ];
+                if(!empty($news)){
+                    $block5 = $news;
+                }
+                else {
+                    $block5 = [
+                        0 => [
+                            'header' => 'Новые возможности Босса',
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
+                            'id' => '#',
+                        ],
+                        1 => [
+                            'header' => 'Что нового у BOSS?',
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
+                            'id' => '#',
+                        ],
+                        2 => [
+                            'header' => 'Как сэкономить с BOSS?',
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
+                            'id' => '#',
+                        ],
+                        3 => [
+                            'header' => 'Бесплатно и ещё бесплатнее!',
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
+                            'id' => '#',
+                        ],
+                        4 => [
+                            'header' => 'Скидки вам и вашим друзьям! и вашим друзьям! и вашим друзьям!',
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
+                            'id' => '#',
+                        ],
+                        5 => [
+                            'header' => 'Станьте первым!',
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet ipsam nemo pariatur quidem rerum?',
+                            'id' => '#',
+                        ],
+                    ];
+                }
                 $block5_chunked = array_chunk($block5, 3);
                 ?>
                 <div id="block5_carousel" class="carousel slide" data-ride="carousel">
@@ -462,15 +467,18 @@ $this->title = 'Boss';
                         <div class="item <?= ($b5_chunk_key == 0) ? 'active' : ''; ?>">
 <!--                            <div class="row">-->
                                 <?php foreach($b5_chunk as $b5_key => $b5_item): ?>
+                                    <?php
+                                    $url = ($b5_item['id'] == '#') ? '#' : \yii\helpers\Url::to(['/news/' . $b5_item['id']]);
+                                    ?>
                                 <div class="col-lg-4">
-                                    <div class="bmb5-carousel-item <?= ($b5_key < 2) ? 'bmb5-slider-item-left' : 'bmb5-slider-item-both'; ?>">
+                                    <div class="bmb5-carousel-item <?= ($b5_key == 0) ? 'bmb5-slider-item-both' : 'bmb5-slider-item-right'; ?>">
                                         <div class="bmb5-ci-header">
                                             <h3 class="bmb5-h3">
-                                                <a href="<?=$b5_item['url']; ?>"><?= $b5_item['title']; ?></a>
+                                                <a href="<?=$url; ?>"><?= $b5_item['header']; ?></a>
                                             </h3>
                                         </div>
                                         <div class="bmb5-ci-text">
-                                            <p class="bmb5-p"><?= $b5_item['text']; ?></p>
+                                            <p class="bmb5-p"><?= $b5_item['content']; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -508,65 +516,71 @@ $this->title = 'Boss';
         <div class="row">
             <div class="col-lg-12">
             <?php
-            $block6_img_path = '@web/images/';
-            $block6 = [
-                0 => [
-                    'type' => 'video',
-                    'code' => '4cTGrUQIYeo',
-                    'user_photo' => '',
-                    'user_name' => '',
-                    'user_text' => '',
-                ],
-                1 => [
-                    'type' => 'text',
-                    'code' => '',
-                    'user_photo' => 'user1.jpg',
-                    'user_name' => 'Марина Соколова',
-                    'user_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor ducimus eligendi harum id nemo neque nulla ullam voluptate.',
-                ],
-                2 => [
-                    'type' => 'text',
-                    'code' => '',
-                    'user_photo' => 'user2.jpg',
-                    'user_name' => 'Иван Петров',
-                    'user_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis error labore molestiae pariatur unde.',
-                ],
-                3 => [
-                    'type' => 'text',
-                    'code' => '',
-                    'user_photo' => 'user3.jpg',
-                    'user_name' => 'Наталья Борисова',
-                    'user_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ea earum, enim eveniet, molestiae nam perspiciatis quibusdam quis quod sequi totam vel voluptates. Accusamus, pariatur.',
-                ],
-                4 => [
-                    'type' => 'video',
-                    'code' => 'X78wiDUt9SM',
-                    'user_photo' => '',
-                    'user_name' => '',
-                    'user_text' => '',
-                ],
-                5 => [
-                    'type' => 'text',
-                    'code' => '',
-                    'user_photo' => 'user1.jpg',
-                    'user_name' => 'Марина Соколова',
-                    'user_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis error labore molestiae pariatur unde.',
-                ],
-                6 => [
-                    'type' => 'video',
-                    'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
-                    'user_photo' => '',
-                    'user_name' => '',
-                    'user_text' => '',
-                ],
-                7 => [
-                    'type' => 'text',
-                    'code' => '',
-                    'user_photo' => 'user2.jpg',
-                    'user_name' => 'Владимир Смирнов',
-                    'user_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor ducimus eligendi harum id nemo neque nulla ullam voluptate.',
-                ],
-            ];
+            if(!empty($feedback)){
+                $block6 = $feedback;
+                $block6_img_path = '@web/uploads/feedbacks/';
+            }
+            else {
+                $block6_img_path = '@web/images/';
+                $block6 = [
+                    0 => [
+                        'type' => 'video',
+                        'code' => '4cTGrUQIYeo',
+                        'img' => '',
+                        'username' => '',
+                        'content' => '',
+                    ],
+                    1 => [
+                        'type' => 'text',
+                        'code' => '',
+                        'img' => 'user1.jpg',
+                        'username' => 'Марина Соколова',
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor ducimus eligendi harum id nemo neque nulla ullam voluptate.',
+                    ],
+                    2 => [
+                        'type' => 'text',
+                        'code' => '',
+                        'img' => 'user2.jpg',
+                        'username' => 'Иван Петров',
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis error labore molestiae pariatur unde.',
+                    ],
+                    3 => [
+                        'type' => 'text',
+                        'code' => '',
+                        'img' => 'user3.jpg',
+                        'username' => 'Наталья Борисова',
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ea earum, enim eveniet, molestiae nam perspiciatis quibusdam quis quod sequi totam vel voluptates. Accusamus, pariatur.',
+                    ],
+                    4 => [
+                        'type' => 'video',
+                        'code' => 'X78wiDUt9SM',
+                        'img' => '',
+                        'username' => '',
+                        'content' => '',
+                    ],
+                    5 => [
+                        'type' => 'text',
+                        'code' => '',
+                        'img' => 'user1.jpg',
+                        'username' => 'Марина Соколова',
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis error labore molestiae pariatur unde.',
+                    ],
+                    6 => [
+                        'type' => 'video',
+                        'code' => '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rXKVYb59uhA" allowfullscreen></iframe>',
+                        'img' => '',
+                        'username' => '',
+                        'content' => '',
+                    ],
+                    7 => [
+                        'type' => 'text',
+                        'code' => '',
+                        'img' => 'user2.jpg',
+                        'username' => 'Владимир Смирнов',
+                        'contetn' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor ducimus eligendi harum id nemo neque nulla ullam voluptate.',
+                    ],
+                ];
+            }
             $block6_chunked = array_chunk($block6, 4);
             ?>
                 <div class="bmb6-carousel-wrapper">
@@ -584,12 +598,12 @@ $this->title = 'Boss';
                                                 </div>
                                             <?php else: ?>
                                                 <div class="thumbnail bmb6-thumb">
-                                                    <img class="img-circle pull-left" src="<?= \yii\helpers\Url::to([$block6_img_path . $b6_item['user_photo']]); ?>" alt="Image <?=$b6_item['user_name']; ?>">
+                                                    <img class="img-circle pull-left" src="<?= \yii\helpers\Url::to([$block6_img_path . $b6_item['img']]); ?>" alt="Image <?=$b6_item['username']; ?>">
                                                     <div class="clearfix"></div>
                                                     <div class="caption">
-                                                        <h3><?= $b6_item['user_name']; ?></h3>
+                                                        <h3><?= $b6_item['username']; ?></h3>
                                                         <div class="bmb6-thumb-text">
-                                                            <p><?= $b6_item['user_text']; ?></p>
+                                                            <p><?= $b6_item['content']; ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
