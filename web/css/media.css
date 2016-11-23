@@ -164,6 +164,24 @@
 }
 
 @media (max-width: 1199px) {
+    .navbar-boss {
+        font-size: 14px !important;
+    }
+    .navbar-boss .navbar-nav > li > a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .boss-logo-block {
+        /*display: none;*/
+        width: 160px;
+        height: 117px;
+        background: url('../images/logo_png24_md.png');
+    }
+    /*#blb_title {*/
+        /*color: #ffd715 !important;*/
+        /*position: relative;*/
+        /*top: -14px;*/
+    /*}*/
     .bmb4-phone-block {
         width: 300px;
         height: 615px;
@@ -183,10 +201,10 @@
         margin-top: 30px;
     }
     .feedback-wrapper > .container {
-        padding-top: 50px;
+        /*padding-top: 50px;*/
     }
     .boss-news-block {
-        padding-top: 50px;
+        /*padding-top: 50px;*/
     }
     .bmb1-ib-caption {
         top: 20%;

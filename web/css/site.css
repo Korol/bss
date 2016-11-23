@@ -188,7 +188,7 @@ body {
 .boss-logo-block {
     width: 195px;
     height: 142px;
-    background: url("/images/logo_png8.png");
+    background: url("../images/logo_png24.png");
 }
 .blb-hide {
     display: none;
