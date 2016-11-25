@@ -3,22 +3,18 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\News;
-use app\modules\admin\models\NewsSearch;
+use app\modules\admin\models\Option;
+use app\modules\admin\models\OptionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\Language;
-use app\modules\admin\models\User;
 use yii\web\ForbiddenHttpException;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * OptionController implements the CRUD actions for Option model.
  */
-class NewsController extends Controller
+class OptionController extends Controller
 {
-    public $app_language_id = 0;
-
     /**
      * @inheritdoc
      */
@@ -35,13 +31,13 @@ class NewsController extends Controller
     }
 
     /**
-     * Lists all News models.
+     * Lists all Option models.
      * @return mixed
      */
     public function actionIndex()
     {
         $this->checkAccess();
-        $searchModel = new NewsSearch();
+        $searchModel = new OptionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -51,7 +47,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Displays a single News model.
+     * Displays a single Option model.
      * @param integer $id
      * @return mixed
      */
@@ -64,14 +60,14 @@ class NewsController extends Controller
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new Option model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
         $this->checkAccess();
-        $model = new News();
+        $model = new Option();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -83,7 +79,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Option model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,31 +99,28 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Option model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
     {
-        $this->checkAccess();
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Option model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return Option the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        $conditions = (Yii::$app->user->can('admin')) ? ['id' => $id] : ['id' => $id, 'language_id' => $this->app_language_id];
-//        if (($model = News::findOne($id)) !== null) {
-        if (($model = News::findOne($conditions)) !== null) {
+        if (($model = Option::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -140,15 +133,7 @@ class NewsController extends Controller
             return true;
         }
         else {
-            $language = Language::findOne(['url' => Yii::$app->language]);
-            $this->app_language_id = $language->id;
-            $user = User::findOne(Yii::$app->user->id);
-            if($language->id == $user->language_id){
-                return true;
-            }
-            else{
-                throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
-            }
+            throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
         }
     }
 }

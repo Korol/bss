@@ -23,6 +23,15 @@ $menu = [
         ],
         ['label' => Yii::t('admin', 'News'), 'url' => ['/admin/news/index']],
         ['label' => Yii::t('admin', 'Feedbacks'), 'url' => ['/admin/feedback/index']],
+        [
+            'label' => Yii::t('admin', 'Price'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Tariffs'), 'url' => ['/admin/price/index']],
+                ['label' => Yii::t('admin', 'Options'), 'url' => ['/admin/option/index']],
+                ['label' => Yii::t('admin', 'Tariffs <-> Options'), 'url' => ['/admin/price-option/index']],
+                ['label' => Yii::t('admin', 'Translation Tariffs'), 'url' => ['/admin/price-lang/index']],
+            ],
+        ],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [

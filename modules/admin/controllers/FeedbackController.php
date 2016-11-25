@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use app\modules\admin\models\User;
 use yii\web\UploadedFile;
 use app\models\Language;
+use yii\web\ForbiddenHttpException;
 
 /**
  * FeedbackController implements the CRUD actions for Feedback model.
