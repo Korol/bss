@@ -147,3 +147,9 @@ a.desc:after {
     color: #555;
     font-style: italic;
 }
+.choose-language, .set-price-format {
+    margin-bottom: 20px;
+}
+.price-format-input {
+    width: 100px !important;
+}

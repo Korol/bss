@@ -6,6 +6,8 @@ use Yii;
 use app\models\Language;
 use app\modules\admin\models\User;
 use app\modules\admin\models\PriceLang;
+use app\modules\admin\models\Price;
+use app\modules\admin\models\PriceFormat;
 use yii\web\ForbiddenHttpException;
 use yii\web\Controller;
 
@@ -38,10 +40,60 @@ class PriceLangController extends Controller
                 ->indexBy('price_id')
                 ->all();
         }
+        $languages = Language::find()->asArray()->all();
+        $price = Price::find()->asArray()->all();
+        $format = PriceFormat::find()->where(['language_id' => $lang_id])->asArray()->one();
 
-        return $this->render('index', compact('lang_id', 'admin', 'price_lang'));
+        return $this->render('index', compact('lang_id', 'admin', 'price_lang', 'languages', 'price', 'format'));
     }
 
+    public function actionSave()
+    {
+        $this->checkAccess();
+        $post = Yii::$app->request->post();
+        if(empty($post['translation']) || empty($post['language_id'])){
+            return $this->redirect(['index']);
+        }
+
+        $model = new PriceLang();
+        $model->deleteAll(['language_id' => $post['language_id']]);
+        $insert = [];
+        foreach($post['translation'] as $price_id => $translation){
+            $insert[] = [$price_id, $post['language_id'], $translation];
+        }
+        if(!empty($insert)){
+            Yii::$app->db->createCommand()->batchInsert(
+                'price_lang',
+                ['price_id', 'language_id', 'title'],
+                $insert
+            )->execute();
+        }
+
+        return $this->redirect(['index', 'lang_id' => $post['language_id']]);
+    }
+
+    public function actionFormat()
+    {
+        $this->checkAccess();
+        $post = Yii::$app->request->post();
+        if(empty($post) || empty($post['language_id'])){
+            return $this->redirect(['index']);
+        }
+
+        $model = new PriceFormat();
+        if(!empty($post['format_before']) || !empty($post['format_after'])){
+            $model->deleteAll(['language_id' => $post['language_id']]);
+            $format = (!empty($post['format_before'])) ? $post['format_before'] : '';
+            $format .= '{sum}';
+            $format .= (!empty($post['format_after'])) ? $post['format_after'] : '';
+
+            $model->language_id = $post['language_id'];
+            $model->format = $format;
+            $model->save(false);
+        }
+
+        return $this->redirect(['index', 'lang_id' => $post['language_id']]);
+    }
 
 
     public function checkAccess()
