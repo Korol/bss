@@ -906,3 +906,55 @@ h3.news-title a, h3.news-title a:hover {
 .boss-feedback-block .bmb1-yellow-gplay {
     margin-left: 25px;
 }
+
+/* PRICE PAGE */
+.boss-price-block {
+    background-color: #ebebec;
+}
+.price-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.price-wrapper > .container {
+    padding-top: 215px;
+    padding-bottom: 50px;
+}
+.price-table > tbody > tr > td {
+    border-top: none;
+    vertical-align: middle;
+}
+.price-title, .price-cost {
+    text-align: right;
+}
+.option-title {
+    padding-left: 30px !important;
+}
+/*.option-td-circle:last-child {*/
+.option-td-circle {
+    padding-right: 20px !important;
+    max-width: 80px;
+}
+.price-tr-light {
+    background: #ebebec;
+}
+.price-tr-dark {
+    background: #e0e1e2;
+}
+.price-circle {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    float: right;
+}
+.option-circle-yes {
+    border: 2px solid #000;
+    background: #000;
+}
+.option-circle-no {
+    border: 2px solid #777;
+    background: transparent;
+}
+.option-circle-planned {
+    border: 2px solid #b5b7b9;
+    background: #b5b7b9;
+}

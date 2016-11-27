@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\models;
 
 use Yii;
 
@@ -8,9 +8,9 @@ use Yii;
  * This is the model class for table "option".
  *
  * @property integer $id
+ * @property string $title
  * @property integer $enabled
  * @property integer $star
- * @property string $title
  */
 class Option extends \yii\db\ActiveRecord
 {
@@ -39,10 +39,10 @@ class Option extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => Yii::t('admin', 'Title'),
-            'enabled' => Yii::t('admin', 'Enabled'),
-            'star' => Yii::t('admin', 'Star'),
+            'id' => Yii::t('site', 'ID'),
+            'title' => Yii::t('site', 'Title'),
+            'enabled' => Yii::t('site', 'Enabled'),
+            'star' => Yii::t('site', 'Star'),
         ];
     }
 }
