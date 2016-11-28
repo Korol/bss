@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $price_id
  * @property integer $option_id
+ * @property integer $star
  * @property string $value
  */
 class PriceOption extends \yii\db\ActiveRecord
@@ -28,7 +29,7 @@ class PriceOption extends \yii\db\ActiveRecord
     {
         return [
             [['price_id'], 'required'],
-            [['price_id', 'option_id'], 'integer'],
+            [['price_id', 'option_id', 'star'], 'integer'],
             [['value'], 'string'],
         ];
     }
@@ -42,6 +43,7 @@ class PriceOption extends \yii\db\ActiveRecord
             'price_id' => Yii::t('admin', 'Price ID'),
             'option_id' => Yii::t('admin', 'Option ID'),
             'value' => Yii::t('admin', 'Value'),
+            'star' => Yii::t('admin', 'Star'),
         ];
     }
 }

@@ -925,14 +925,21 @@ h3.news-title a, h3.news-title a:hover {
 }
 .price-title, .price-cost {
     text-align: right;
+    font-size: 18px;
 }
 .option-title {
     padding-left: 30px !important;
+    font-size: 18px;
+}
+.price-cost-span {
+    font-size: 20px;
+    font-weight: bold;
 }
 /*.option-td-circle:last-child {*/
 .option-td-circle {
     padding-right: 20px !important;
-    max-width: 80px;
+    min-width: 150px;
+    position: relative;
 }
 .price-tr-light {
     background: #ebebec;
@@ -957,4 +964,37 @@ h3.news-title a, h3.news-title a:hover {
 .option-circle-planned {
     border: 2px solid #b5b7b9;
     background: #b5b7b9;
+}
+.price-header {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.option-note-block {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.price-buttons .bmb4-black-appstore, .price-buttons .bmb4-black-gplay {
+    display: inline-block;
+}
+.price-buttons .bmb4-black-gplay {
+    position: relative;
+    top: -4px;
+    margin-left: 50px;
+}
+.price-note {
+    font-size: 12px;
+    font-style: italic;
+    color: #777;
+}
+.option-td-circle > .price-note {
+    float: right;
+}
+.with-note {
+    vertical-align: top;
+}
+.price-star {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 18px;
 }

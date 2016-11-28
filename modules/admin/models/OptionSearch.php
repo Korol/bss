@@ -18,7 +18,7 @@ class OptionSearch extends Option
     public function rules()
     {
         return [
-            [['id', 'enabled', 'star'], 'integer'],
+            [['id', 'enabled'], 'integer'],
             [['title'], 'safe'],
         ];
     }
@@ -61,7 +61,6 @@ class OptionSearch extends Option
         $query->andFilterWhere([
             'id' => $this->id,
             'enabled' => $this->enabled,
-            'star' => $this->star,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title]);

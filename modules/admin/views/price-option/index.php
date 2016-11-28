@@ -30,7 +30,9 @@ $this->params['container'] = 'container';
             <tr>
                 <td><?= $o_row['title']; ?></td>
                 <?php foreach($price as $op_row): ?>
-                <?php $checked = (!empty($price_option[$o_row['id']][$op_row['id']])) ? $price_option[$o_row['id']][$op_row['id']] : ''; ?>
+                <?php //$checked = (!empty($price_option[$o_row['id']][$op_row['id']])) ? $price_option[$o_row['id']][$op_row['id']] : ''; ?>
+                <?php $checked = (!empty($price_option[$o_row['id']][$op_row['id']]['value'])) ? $price_option[$o_row['id']][$op_row['id']]['value'] : ''; ?>
+                <?php $star = (!empty($price_option[$o_row['id']][$op_row['id']]['star'])) ? 'checked' : ''; ?>
                 <td>
                     <?php foreach($list as $l_key => $l_value): ?>
                     <div class="radio">
@@ -40,6 +42,12 @@ $this->params['container'] = 'container';
                         </label>
                     </div>
                     <?php endforeach; ?>
+                    <div class="checkbox top-dotted">
+                        <label>
+                            <input type="checkbox" name="stars[<?=$o_row['id']; ?>][<?=$op_row['id']; ?>]" id="str_<?=$o_row['id']; ?>_<?=$op_row['id']; ?>" value="1" <?= $star; ?>>
+                            <?= Yii::t('admin', 'Star'); ?>
+                        </label>
+                    </div>
                 </td>
                 <?php endforeach; ?>
             </tr>

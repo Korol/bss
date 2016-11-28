@@ -6,6 +6,10 @@
 /* @var $languages app\modules\admin\controllers\PriceLangController */
 /* @var $price app\modules\admin\controllers\PriceLangController */
 /* @var $format app\modules\admin\controllers\PriceLangController */
+/* @var $price_note app\modules\admin\controllers\PriceLangController */
+
+use mihaildev\ckeditor\CKEditor;
+use yii\helpers\Html;
 
 $this->title = Yii::t('admin', 'Translation Tariffs');
 $this->params['breadcrumbs'][] = $this->title;
@@ -83,4 +87,28 @@ if(!empty($format['format'])){
         </form>
     </div>
 </div>
+
+    <div class="row option-note-block">
+        <div class="col-lg-12">
+            <form method="post" action="/admin/price-lang/note">
+                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
+                <div class="form-group">
+                    <label for="option_note"><?= Yii::t('admin', 'Star Note'); ?> (description for possible star in the bottom of Tariffs table on Price page):</label>
+                    <?php
+                    echo CKEditor::widget([
+                        'name' => 'price_note',
+                        'value' => (!empty($price_note['note'])) ? $price_note['note'] : '',
+                        'editorOptions' => [
+                            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                            'inline' => false, //по умолчанию false
+                            'height' => 250,
+                        ]
+                    ]);
+                    ?>
+                </div>
+                <button type="submit" class="btn btn-success"><?= Yii::t('admin', 'Save note'); ?></button>
+            </form>
+        </div>
+    </div>
 <?php endif; ?>

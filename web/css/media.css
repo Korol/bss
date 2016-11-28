@@ -80,6 +80,15 @@
     .bmb1-ib-caption {
         display: none;
     }
+    .price-wrapper > .container {
+        padding-top: 50px;
+    }
+    .price-header {
+        font-size: 24px;
+    }
+    .price-table {
+        max-width: 500px;
+    }
 }
 
 @media (max-width: 760px) {
@@ -160,6 +169,12 @@
     }
     .bmb1-ib-caption {
         display: none;
+    }
+    .price-wrapper > .container {
+        padding-top: 50px;
+    }
+    .price-table {
+        max-width: 800px;
     }
 }
 

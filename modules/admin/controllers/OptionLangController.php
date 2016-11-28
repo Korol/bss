@@ -7,6 +7,7 @@ use app\models\Language;
 use app\modules\admin\models\User;
 use app\modules\admin\models\OptionLang;
 use app\modules\admin\models\Option;
+use app\modules\admin\models\OptionNote;
 use yii\web\ForbiddenHttpException;
 use yii\web\Controller;
 
@@ -26,9 +27,13 @@ class OptionLangController extends Controller
                     ->asArray()
                     ->indexBy('option_id')
                     ->all();
+                $option_note = OptionNote::find()
+                    ->where(['language_id' => $lang_id])
+                    ->asArray()
+                    ->one();
             }
             else{
-                $option_lang = [];
+                $option_lang = $option_note = [];
             }
         }
         else{
@@ -38,11 +43,15 @@ class OptionLangController extends Controller
                 ->asArray()
                 ->indexBy('option_id')
                 ->all();
+            $option_note = OptionNote::find()
+                ->where(['language_id' => $lang_id])
+                ->asArray()
+                ->one();
         }
         $languages = Language::find()->asArray()->all();
         $option = Option::find()->asArray()->all();
 
-        return $this->render('index', compact('lang_id', 'admin', 'option_lang', 'languages', 'option'));
+        return $this->render('index', compact('lang_id', 'admin', 'option_lang', 'languages', 'option', 'option_note'));
     }
 
     public function actionSave()
@@ -66,6 +75,23 @@ class OptionLangController extends Controller
                 $insert
             )->execute();
         }
+
+        return $this->redirect(['index', 'lang_id' => $post['language_id']]);
+    }
+
+    public function actionNote()
+    {
+        $this->checkAccess();
+        $post = Yii::$app->request->post();
+        if(empty($post['option_note']) || empty($post['language_id'])){
+            return $this->redirect(['index']);
+        }
+
+        $model = new OptionNote();
+        $model->deleteAll(['language_id' => $post['language_id']]);
+        $model->language_id = $post['language_id'];
+        $model->note = $post['option_note'];
+        $model->save();
 
         return $this->redirect(['index', 'lang_id' => $post['language_id']]);
     }

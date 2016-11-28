@@ -153,3 +153,11 @@ a.desc:after {
 .price-format-input {
     width: 100px !important;
 }
+.option-note-block {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.top-dotted {
+    border-top: 1px dotted #000;
+    padding-top: 10px;
+}

@@ -17,9 +17,6 @@ use yii\widgets\ActiveForm;
     <?php $model->enabled = ($model->isNewRecord) ? 1 : $model->enabled; ?>
     <?= $form->field($model, 'enabled')->radioList([0 => Yii::t('admin', 'Disabled'), 1 => Yii::t('admin', 'Enabled')], ['class' => 'main-page-radio']) ?>
 
-    <?php $model->star = ($model->isNewRecord) ? 0 : $model->star; ?>
-    <?= $form->field($model, 'star')->radioList([0 => Yii::t('admin', 'No'), 1 => Yii::t('admin', 'Yes')], ['class' => 'main-page-radio']) ?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('admin', 'Create') : Yii::t('admin', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

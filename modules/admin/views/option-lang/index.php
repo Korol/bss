@@ -5,6 +5,10 @@
 /* @var $option_lang app\modules\admin\controllers\PriceLangController */
 /* @var $languages app\modules\admin\controllers\PriceLangController */
 /* @var $option app\modules\admin\controllers\PriceLangController */
+/* @var $option_note app\modules\admin\controllers\PriceLangController */
+
+use mihaildev\ckeditor\CKEditor;
+use yii\helpers\Html;
 
 $this->title = Yii::t('admin', 'Translation Options');
 $this->params['breadcrumbs'][] = $this->title;
@@ -56,6 +60,30 @@ $this->params['container'] = 'container';
                     </tbody>
                 </table>
                 <button type="submit" class="btn btn-success"><?= Yii::t('admin', 'Save translations'); ?></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row option-note-block">
+        <div class="col-lg-12">
+            <form method="post" action="/admin/option-lang/note">
+                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
+                <div class="form-group">
+                    <label for="option_note"><?= Yii::t('admin', 'Note'); ?> (text after the Tariffs table on Price page):</label>
+                    <?php
+                    echo CKEditor::widget([
+                        'name' => 'option_note',
+                        'value' => (!empty($option_note['note'])) ? $option_note['note'] : '',
+                        'editorOptions' => [
+                            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                            'inline' => false, //по умолчанию false
+                            'height' => 250,
+                        ]
+                    ]);
+                    ?>
+                </div>
+                <button type="submit" class="btn btn-success"><?= Yii::t('admin', 'Save note'); ?></button>
             </form>
         </div>
     </div>

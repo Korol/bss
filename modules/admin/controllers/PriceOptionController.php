@@ -18,7 +18,15 @@ class PriceOptionController extends \yii\web\Controller
         $option = Option::find()->asArray()->all();
         $price_option = PriceOption::find()->all();
         if(!empty($price_option)){
-            $price_option = ArrayHelper::map($price_option, 'price_id', 'value', 'option_id');
+//            $price_option = ArrayHelper::map($price_option, 'price_id', 'value', 'option_id');
+            $new_price_option = [];
+            foreach($price_option as $k => $v){
+                $new_price_option[$v['option_id']][$v['price_id']] = [
+                    'value' => $v['value'],
+                    'star' => $v['star'],
+                ];
+            }
+            $price_option = $new_price_option;
         }
         else{
             $price_option = [];
@@ -50,13 +58,14 @@ class PriceOptionController extends \yii\web\Controller
             $insert = [];
             if(!empty($prices)){
                 foreach($prices as $p_key => $p_value){
-                    $insert[] = [$option, $p_key, $p_value];
+                    $star = (!empty($post['stars'][$option][$p_key])) ? 1 : 0;
+                    $insert[] = [$option, $p_key, $p_value, $star];
                 }
             }
             if(!empty($insert)){
                 Yii::$app->db->createCommand()->batchInsert(
                     'price_option',
-                    ['option_id', 'price_id', 'value'],
+                    ['option_id', 'price_id', 'value', 'star'],
                     $insert
                 )->execute();
             }

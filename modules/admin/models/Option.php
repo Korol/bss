@@ -9,7 +9,6 @@ use Yii;
  *
  * @property integer $id
  * @property integer $enabled
- * @property integer $star
  * @property string $title
  */
 class Option extends \yii\db\ActiveRecord
@@ -28,7 +27,7 @@ class Option extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['enabled', 'star'], 'integer'],
+            [['enabled'], 'integer'],
             [['title'], 'string', 'max' => 255],
         ];
     }
@@ -42,7 +41,6 @@ class Option extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => Yii::t('admin', 'Title'),
             'enabled' => Yii::t('admin', 'Enabled'),
-            'star' => Yii::t('admin', 'Star'),
         ];
     }
 }

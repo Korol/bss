@@ -36,10 +36,6 @@ $this->params['container'] = 'container';
                 'label' => Yii::t('admin', 'Enabled'),
                 'value' => ($model->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled'),
             ],
-            [
-                'label' => Yii::t('admin', 'Star'),
-                'value' => ($model->star > 0) ? Yii::t('admin', 'Yes') : Yii::t('admin', 'No'),
-            ],
         ],
     ]) ?>
 

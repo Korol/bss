@@ -8,6 +8,7 @@ use app\modules\admin\models\User;
 use app\modules\admin\models\PriceLang;
 use app\modules\admin\models\Price;
 use app\modules\admin\models\PriceFormat;
+use app\modules\admin\models\PriceNote;
 use yii\web\ForbiddenHttpException;
 use yii\web\Controller;
 
@@ -27,9 +28,13 @@ class PriceLangController extends Controller
                     ->asArray()
                     ->indexBy('price_id')
                     ->all();
+                $price_note = PriceNote::find()
+                    ->where(['language_id' => $lang_id])
+                    ->asArray()
+                    ->one();
             }
             else{
-                $price_lang = [];
+                $price_lang = $price_note = [];
             }
         }
         else{
@@ -39,12 +44,16 @@ class PriceLangController extends Controller
                 ->asArray()
                 ->indexBy('price_id')
                 ->all();
+            $price_note = PriceNote::find()
+                ->where(['language_id' => $lang_id])
+                ->asArray()
+                ->one();
         }
         $languages = Language::find()->asArray()->all();
         $price = Price::find()->asArray()->all();
         $format = PriceFormat::find()->where(['language_id' => $lang_id])->asArray()->one();
 
-        return $this->render('index', compact('lang_id', 'admin', 'price_lang', 'languages', 'price', 'format'));
+        return $this->render('index', compact('lang_id', 'admin', 'price_lang', 'languages', 'price', 'format', 'price_note'));
     }
 
     public function actionSave()
@@ -95,6 +104,22 @@ class PriceLangController extends Controller
         return $this->redirect(['index', 'lang_id' => $post['language_id']]);
     }
 
+    public function actionNote()
+    {
+        $this->checkAccess();
+        $post = Yii::$app->request->post();
+        if(empty($post['price_note']) || empty($post['language_id'])){
+            return $this->redirect(['index']);
+        }
+
+        $model = new PriceNote();
+        $model->deleteAll(['language_id' => $post['language_id']]);
+        $model->language_id = $post['language_id'];
+        $model->note = $post['price_note'];
+        $model->save();
+
+        return $this->redirect(['index', 'lang_id' => $post['language_id']]);
+    }
 
     public function checkAccess()
     {

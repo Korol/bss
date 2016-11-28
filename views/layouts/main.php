@@ -24,7 +24,7 @@ $top_menu = [
         ],
         'price' => [
             'title' => 'Price',
-            'url' => '/#',
+            'url' => '/price',
         ],
         'feedback' => [
             'title' => 'Feedback',
