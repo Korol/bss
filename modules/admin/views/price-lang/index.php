@@ -9,7 +9,7 @@
 /* @var $price_note app\modules\admin\controllers\PriceLangController */
 
 use mihaildev\ckeditor\CKEditor;
-use yii\helpers\Html;
+use mihaildev\elfinder\ElFinder;
 
 $this->title = Yii::t('admin', 'Translation Tariffs');
 $this->params['breadcrumbs'][] = $this->title;
@@ -99,11 +99,7 @@ if(!empty($format['format'])){
                     echo CKEditor::widget([
                         'name' => 'price_note',
                         'value' => (!empty($price_note['note'])) ? $price_note['note'] : '',
-                        'editorOptions' => [
-                            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-                            'inline' => false, //по умолчанию false
-                            'height' => 250,
-                        ]
+                        'editorOptions' => ElFinder::ckeditorOptions('elfinder', ['height' => 250]),
                     ]);
                     ?>
                 </div>

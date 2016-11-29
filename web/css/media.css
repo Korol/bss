@@ -89,6 +89,16 @@
     .price-table {
         max-width: 500px;
     }
+    .about-images img {
+        max-width: 100%;
+        margin-bottom: 2px;
+    }
+    .bmb2-header {
+        font-size: 24px;
+    }
+    .about-block-wrapper > .container {
+        padding-top: 50px;
+    }
 }
 
 @media (max-width: 760px) {
@@ -175,6 +185,9 @@
     }
     .price-table {
         max-width: 800px;
+    }
+    .about-block-wrapper > .container {
+        padding-top: 50px;
     }
 }
 

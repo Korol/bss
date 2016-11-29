@@ -20,7 +20,7 @@ $top_menu = [
         ],
         'about' => [
             'title' => 'About Boss',
-            'url' => '/#',
+            'url' => '/about',
         ],
         'price' => [
             'title' => 'Price',

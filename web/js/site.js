@@ -25,4 +25,15 @@ jQuery(document).ready(function ($) {
         $('#bmb4_rb_'+tid[2]).addClass('bmb4-row-active');
         $('#bmb4_pbi_'+tid[2]).addClass('bmb4-row-active');
     });
+
+    //$('.about-images').gpGallery('img', {row_max_height: 180});
+    $('.about-images').kirpi4i();
+
+    $(".fancybox").fancybox({
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
 });

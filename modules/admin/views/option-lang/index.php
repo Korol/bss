@@ -8,7 +8,7 @@
 /* @var $option_note app\modules\admin\controllers\PriceLangController */
 
 use mihaildev\ckeditor\CKEditor;
-use yii\helpers\Html;
+use mihaildev\elfinder\ElFinder;
 
 $this->title = Yii::t('admin', 'Translation Options');
 $this->params['breadcrumbs'][] = $this->title;
@@ -75,11 +75,7 @@ $this->params['container'] = 'container';
                     echo CKEditor::widget([
                         'name' => 'option_note',
                         'value' => (!empty($option_note['note'])) ? $option_note['note'] : '',
-                        'editorOptions' => [
-                            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-                            'inline' => false, //по умолчанию false
-                            'height' => 250,
-                        ]
+                        'editorOptions' => ElFinder::ckeditorOptions('elfinder', ['height' => 250]),
                     ]);
                     ?>
                 </div>

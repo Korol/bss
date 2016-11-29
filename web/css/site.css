@@ -998,3 +998,86 @@ h3.news-title a, h3.news-title a:hover {
     top: 5px;
     font-size: 18px;
 }
+
+/* ABOUT PAGE */
+.about-block {
+    background: #ffd715;
+    border-bottom: 1px solid #222;
+    /*margin-top: 50px;*/
+    font-size: 18px;
+}
+.about-content {
+    font-size: 18px;
+}
+.about-block-wrapper {
+    background: url('../images/boss-bg.png') repeat;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.about-block-wrapper > .container {
+    padding-top: 215px;
+    /*padding-bottom: 265px;*/
+    padding-bottom: 50px;
+}
+.about-block .bmb2-header,
+.about-images-block .bmb2-header,
+.about-vacancy .bmb2-header  {
+    text-align: left;
+}
+.about-images-block {
+    background: #6fcd9b;
+    border-bottom: 1px solid #222;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.about-vacancy {
+    background: #ffd715;
+}
+.about-vacancy-wrapper {
+    background: url('../images/boss-bg.png') repeat;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.about-vacancies {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.about-vacancies .panel, .about-vacancies .panel-default > .panel-heading {
+    background: transparent;
+    border: none;
+}
+.about-vacancies .panel-group .panel-heading + .panel-collapse > .panel-body,
+.about-vacancies .panel-group .panel-heading + .panel-collapse > .list-group {
+    border-top: 1px solid #222;
+}
+.about-vacancies .panel-title {
+    font-size: 20px;
+}
+.about-vacancies .panel-body {
+    font-size: 14px;
+}
+.about-mail {
+    width: 88px;
+    height: 73px;
+    background: url("../images/about_mail.png");
+    margin: 10px auto 15px;
+}
+.about-mail-address {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.about-mail-address span {
+    font-size: 22px;
+    border-bottom: 1px dotted #444;
+    padding-bottom: 2px;
+}
+.about-mail-address span:hover {
+    border-bottom: none;
+}
+.about-mail-address a,
+.about-mail-address a:hover
+.about-mail-address a:active
+.about-mail-address a:focus {
+    color: #111;
+    text-decoration: none;
+}
