@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
     });
 
     //$('.about-images').gpGallery('img', {row_max_height: 180});
-    $('.about-images').kirpi4i();
+    $('.about-images').kirpi4i(); // из-за этого плагина глючит fancybox на iPhone Portrait, что-то с рекурсией связано
 
     $(".fancybox").fancybox({
         helpers: {

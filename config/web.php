@@ -85,6 +85,9 @@ $config = [
                 ],
             ],
         ],
+        'assetManager' => [
+            'appendTimestamp' => true, // ОТКЛЮЧИТЬ НА ПРОДАКШЕНЕ!!!!!!!
+        ],
     ],
     'modules' => [
         'admin' => [
