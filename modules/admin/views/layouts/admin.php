@@ -48,6 +48,13 @@ $menu = [
                 ['label' => Yii::t('admin', 'Info'), 'url' => ['/admin/faq-info/index']],
             ],
         ],
+        [
+            'label' => Yii::t('admin', 'Partner'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Partner Info'), 'url' => ['/admin/partner/index']],
+                ['label' => Yii::t('admin', 'Blocks'), 'url' => ['/admin/partner-block/index']],
+            ],
+        ],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [
@@ -80,6 +87,13 @@ $menu = [
             'items' => [
                 ['label' => Yii::t('admin', 'Question/Answer'), 'url' => ['/admin/faq/index']],
                 ['label' => Yii::t('admin', 'Info'), 'url' => ['/admin/faq-info/index']],
+            ],
+        ],
+        [
+            'label' => Yii::t('admin', 'Partner'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Partner Info'), 'url' => ['/admin/partner/index']],
+                ['label' => Yii::t('admin', 'Blocks'), 'url' => ['/admin/partner-block/index']],
             ],
         ],
     ],

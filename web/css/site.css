@@ -1045,6 +1045,8 @@ h3.news-title a, h3.news-title a:hover {
 .about-vacancies .panel, .about-vacancies .panel-default > .panel-heading {
     background: transparent;
     border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 .about-vacancies .panel-group .panel-heading + .panel-collapse > .panel-body,
 .about-vacancies .panel-group .panel-heading + .panel-collapse > .list-group {
