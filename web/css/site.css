@@ -1081,3 +1081,33 @@ h3.news-title a, h3.news-title a:hover {
     color: #111;
     text-decoration: none;
 }
+
+/* FAQ PAGE */
+.faq-block {
+    background: #6fcd9b;
+    font-size: 18px;
+}
+.wrap-faq {
+    background: #6fcd9b;
+}
+.faq-email-text {
+    font-size: 18px;
+}
+.faq-block-wrapper .about-vacancies {
+    margin-top: 0;
+}
+.faq-block-wrapper .panel-heading,
+.faq-block-wrapper .panel-body {
+    padding-left: 0;
+}
+.faq-block-wrapper > .container {
+    padding-top: 215px;
+    /*padding-bottom: 265px;*/
+    padding-bottom: 50px;
+}
+.faq-block .bmb2-header {
+    text-align: left;
+}
+.faq-email-text {
+    padding-top: 25px;
+}

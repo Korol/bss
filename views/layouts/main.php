@@ -32,7 +32,7 @@ $top_menu = [
         ],
         'faq' => [
             'title' => 'FAQ',
-            'url' => '/#',
+            'url' => '/faq',
         ],
     ],
     'right' => [

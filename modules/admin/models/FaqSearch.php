@@ -5,12 +5,12 @@ namespace app\modules\admin\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\admin\models\Vacancy;
+use app\modules\admin\models\Faq;
 
 /**
- * VacancySearch represents the model behind the search form about `app\modules\admin\models\Vacancy`.
+ * FaqSearch represents the model behind the search form about `app\modules\admin\models\Faq`.
  */
-class VacancySearch extends Vacancy
+class FaqSearch extends Faq
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class VacancySearch extends Vacancy
     {
         return [
             [['id', 'language_id', 'enabled'], 'integer'],
-            [['header', 'content'], 'safe'],
+            [['question', 'answer'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class VacancySearch extends Vacancy
      */
     public function search($params)
     {
-        $query = Vacancy::find();
+        $query = Faq::find();
         // language condition
         if(!Yii::$app->user->can('admin')){
             $query->andWhere(['language_id' => Yii::$app->user->identity->language_id]);
@@ -68,8 +68,8 @@ class VacancySearch extends Vacancy
             'enabled' => $this->enabled,
         ]);
 
-        $query->andFilterWhere(['like', 'header', $this->header])
-            ->andFilterWhere(['like', 'content', $this->content]);
+        $query->andFilterWhere(['like', 'question', $this->question])
+            ->andFilterWhere(['like', 'answer', $this->answer]);
 
         return $dataProvider;
     }

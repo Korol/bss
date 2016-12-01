@@ -41,6 +41,13 @@ $menu = [
                 ['label' => Yii::t('admin', 'Vacancies'), 'url' => ['/admin/vacancy/index']],
             ],
         ],
+        [
+            'label' => Yii::t('admin', 'FAQ'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Question/Answer'), 'url' => ['/admin/faq/index']],
+                ['label' => Yii::t('admin', 'Info'), 'url' => ['/admin/faq-info/index']],
+            ],
+        ],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [
@@ -66,6 +73,13 @@ $menu = [
             'items' => [
                 ['label' => Yii::t('admin', 'About'), 'url' => ['/admin/about/index']],
                 ['label' => Yii::t('admin', 'Vacancies'), 'url' => ['/admin/vacancy/index']],
+            ],
+        ],
+        [
+            'label' => Yii::t('admin', 'FAQ'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Question/Answer'), 'url' => ['/admin/faq/index']],
+                ['label' => Yii::t('admin', 'Info'), 'url' => ['/admin/faq-info/index']],
             ],
         ],
     ],
