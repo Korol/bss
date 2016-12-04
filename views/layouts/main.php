@@ -50,6 +50,46 @@ $top_menu = [
         ],
     ],
 ];
+
+// temp:
+$top_menu = [
+    'left' => [
+        'main' => [
+            'title' => 'Главная',
+            'url' => '/',
+        ],
+        'about' => [
+            'title' => 'Кто такой Босс',
+            'url' => '/about',
+        ],
+        'price' => [
+            'title' => 'Тарифы',
+            'url' => '/price',
+        ],
+        'feedback' => [
+            'title' => 'Отзывы',
+            'url' => '/feedback',
+        ],
+        'faq' => [
+            'title' => 'FAQ',
+            'url' => '/faq',
+        ],
+    ],
+    'right' => [
+        'news' => [
+            'title' => 'Наши новости',
+            'url' => '/news',
+        ],
+        'partner' => [
+            'title' => 'Стать партнером',
+            'url' => '/partner',
+        ],
+        'contact' => [
+            'title' => 'Мы на связи',
+            'url' => '/#',
+        ],
+    ],
+];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
