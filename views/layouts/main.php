@@ -42,7 +42,7 @@ $top_menu = [
         ],
         'partner' => [
             'title' => 'Become a partner',
-            'url' => '/#',
+            'url' => '/partner',
         ],
         'contact' => [
             'title' => 'Contact',
