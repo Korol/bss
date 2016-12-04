@@ -102,6 +102,22 @@
     .faq-block-wrapper > .container {
         padding-top: 50px;
     }
+    .partner-block-wrapper > .container {
+        padding-top: 50px;
+    }
+    .partner-dbutton {
+        width: 300px;
+        height: 80px;
+        background: url("../images/partner_btn_mobile.png") no-repeat;
+    }
+    .partner-dbutton-text {
+        width: 190px;
+        right: 10px;
+        top: 6px;
+    }
+    .partn-block {
+        float: left !important;
+    }
 }
 
 @media (max-width: 760px) {
@@ -197,6 +213,12 @@
     }
     .bmb2-header {
         font-size: 24px;
+    }
+    .partner-block-wrapper > .container {
+        padding-top: 50px;
+    }
+    .partn-block {
+        float: left !important;
     }
 }
 

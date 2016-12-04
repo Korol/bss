@@ -1175,3 +1175,61 @@ h3.news-title a, h3.news-title a:hover {
 .partner-block .bmb2-header {
     text-align: left;
 }
+.partner-dbutton-block {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.partner-dbutton {
+    width: 351px;
+    height: 94px;
+    background: url("../images/partner_btn.png") no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.partner-dbutton-text {
+    width: 200px;
+    position: absolute;
+    right: 10px;
+    color: #ffd715;
+    font-size: 22px;
+    top: 14px;
+}
+.partn-block {
+    width: 90%;
+}
+.partn-block-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+.partner-email-block {
+    background: #231f20;
+    padding: 40px 0 0;
+    font-size: 18px;
+    color: #ffd715;
+}
+.partner-mail {
+    width: 89px;
+    height: 73px;
+    background: url("../images/partner_mail.png");
+    margin: 10px auto 15px;
+}
+.partner-mail-address {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.partner-mail-address span {
+    font-size: 22px;
+    border-bottom: 1px dotted #ffd715;
+    padding-bottom: 2px;
+}
+.partner-mail-address span:hover {
+    border-bottom: none;
+}
+.partner-mail-address a,
+.partner-mail-address a:hover
+.partner-mail-address a:active
+.partner-mail-address a:focus {
+    color: #ffd715;
+    text-decoration: none;
+}
