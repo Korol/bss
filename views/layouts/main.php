@@ -77,7 +77,7 @@ $top_menu = [
     ],
     'right' => [
         'news' => [
-            'title' => 'Наши новости',
+            'title' => 'Новости',
             'url' => '/news',
         ],
         'partner' => [
