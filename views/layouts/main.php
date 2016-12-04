@@ -110,7 +110,7 @@ $top_menu = [
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="row">
                     <div class="col-lg-5 col-md-5">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav pull-right">
 <!--                            <li class="active"><a href="#">Главная</a></li>-->
                             <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
                             <li <?=($tml_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
@@ -118,6 +118,7 @@ $top_menu = [
                             </li>
                             <?php endforeach; ?>
                         </ul>
+                        <div class="clearfix"></div>
                     </div>
                     <div class="col-lg-2 col-md-2 blb">
                         <div id="top_logo" class="boss-logo-block">
@@ -132,7 +133,7 @@ $top_menu = [
                                     <a href="<?= \yii\helpers\Url::to([$tm_right['url']]); ?>"><?= $tm_right['title']; ?></a>
                                 </li>
                             <?php endforeach; ?>
-                            <li class="dropdown">
+                            <li class="dropdown flags-dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <span class="flag flag-<?= $this->params['current_language']['flag']; ?>" alt="<?= $this->params['current_language']['title_en']; ?>"></span>
                                     <span class="glyphicon glyphicon-menu-down boss-countries-icon" aria-hidden="true"></span>
@@ -414,7 +415,7 @@ $top_menu = [
                 <div class="row">
                     <?php foreach($block11 as $b11_key => $b11_part): ?>
                         <div class="col-lg-<?=($b11_key < 2) ? 3 : 6; ?> col-md-<?=($b11_key < 2) ? 3 : 6; ?> col-sm-<?=($b11_key < 2) ? 3 : 6; ?>">
-                            <?php if($b11_key == 2): ?>
+                            <?php /*if($b11_key == 2): ?>
                                 <div class="bmb11-private-area">
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2">
@@ -425,7 +426,7 @@ $top_menu = [
                                         </div>
                                     </div>
                                 </div>
-                            <?php endif; ?>
+                            <?php endif;*/ ?>
                             <?php foreach($b11_part as $b11_item): ?>
                                 <div class="b11-row">
                                     <a href="<?=\yii\helpers\Url::to([$b11_item['url']]); ?>"><?= $b11_item['title']; ?></a>

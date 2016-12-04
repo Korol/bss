@@ -726,7 +726,7 @@ $this->title = 'Boss';
             <div class="col-lg-5 col-md-5 col-sm-5 bmb8-content-images">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-right">
-                        <a href="#">
+                        <a href="<?= \yii\helpers\Url::to(['/faq']); ?>">
                             <img src="<?=\yii\helpers\Url::to(['images/cbovz_quote.png']); ?>" alt="Quote Image"/>
                         </a>
                     </div>

@@ -201,11 +201,23 @@ body {
 .boss-countries > li > a {
     padding: 5px 13px;
 }
+/*.boss-countries-icon {*/
+    /*position: absolute;*/
+    /*top: 32px;*/
+    /*left: 14px;*/
+    /*color: #ffd715;;*/
+/*}*/
 .boss-countries-icon {
     position: absolute;
     top: 32px;
-    left: 14px;
-    color: #ffd715;;
+    left: 50%;
+    color: #ffd715;
+    margin-left: -8px;
+    width: 16px;
+}
+.flags-dropdown {
+    width: 46px;
+    text-align: center;
 }
 
 /* BLOCK 1 */
@@ -1055,6 +1067,10 @@ h3.news-title a, h3.news-title a:hover {
 .about-vacancies .panel-title {
     font-size: 20px;
 }
+.panel-title > a:active,
+.panel-title > a:focus {
+    text-decoration: none;
+}
 .about-vacancies .panel-body {
     font-size: 14px;
 }
@@ -1112,4 +1128,7 @@ h3.news-title a, h3.news-title a:hover {
 }
 .faq-email-text {
     padding-top: 25px;
+}
+.faq-block-wrapper .bmb4-black-gplay {
+    top: -1px;
 }
