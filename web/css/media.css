@@ -209,10 +209,10 @@
     .partn-block {
         float: left !important;
     }
-    #block5_carousel .item {
-        display:block;
-        padding-bottom:10px;
-    }
+    /*#block5_carousel .item {*/
+        /*display:block;*/
+        /*padding-bottom:10px;*/
+    /*}*/
 }
 
 /* smartphones */
@@ -360,5 +360,23 @@
     .contact-map-data {
         padding-left: 5px;
         padding-right: 5px;
+    }
+    .vfeed-carousel-wrapper .glyphicon-menu-right {
+        right: 10px;
+    }
+    .vfeed-carousel-wrapper .glyphicon-menu-left {
+        left: 10px;
+    }
+    .boss-feedback-block .bmb1-yellow-gplay {
+        margin-left: 10px;
+    }
+    .feed-about-gplay {
+        margin-left: 15px;
+    }
+    #block6_carousel .carousel-control .glyphicon-menu-left {
+        left: 10px;
+    }
+    #block6_carousel .carousel-control .glyphicon-menu-right {
+        right: 10px;
     }
 }
