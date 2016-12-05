@@ -46,7 +46,7 @@ $top_menu = [
         ],
         'contact' => [
             'title' => 'Contact',
-            'url' => '/#',
+            'url' => '/contact',
         ],
     ],
 ];
@@ -86,7 +86,7 @@ $top_menu = [
         ],
         'contact' => [
             'title' => 'Мы на связи',
-            'url' => '/#',
+            'url' => '/contact',
         ],
     ],
 ];
@@ -420,7 +420,7 @@ $top_menu = [
                 ],
                 1 => [
                     'title' => 'Privacy policy',
-                    'url' => '#',
+                    'url' => '/contact',
                 ],
             ],
         ];
@@ -460,7 +460,7 @@ $top_menu = [
                 ],
                 3 => [
                     'title' => 'Мы на связи',
-                    'url' => '#',
+                    'url' => '/contact',
                 ],
             ],
             2 => [
