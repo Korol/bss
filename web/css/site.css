@@ -154,7 +154,7 @@ body {
     color: #ffd715;
     text-decoration: underline;
     padding-left: 13px;
-    padding-right: 15px;
+    padding-right: 13px;
 }
 .navbar-boss ul.navbar-nav > li > a:hover {
     color: #fff;
@@ -163,21 +163,30 @@ body {
 .navbar-boss .navbar-nav > li.active > a {
     text-decoration: none;
 }
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: transparent;
+}
 .blb {
     padding: 0;
 }
 .blb p {
     text-align: center;
-    font-size: 56px;
+    /*font-size: 56px;*/
+    font-size: 40px;
     text-transform: uppercase;
     font-weight: 900;
     color: #000;
+    display: none;
     /*text-shadow: 2px 2px 1px rgba(255,255,255,.5);*/
 }
 .blb-yellow-title {
+    display: block !important;
     color: #ffd715 !important;
     position: relative;
-    top: -14px;
+    /*top: -14px;*/
+    top: -2px;
 }
 .boss-mobile-title {
     font-size: 36px;
@@ -489,26 +498,28 @@ body {
 #block5_carousel .carousel-control.right {
     background-image:none !important;
     filter:none !important;
+    width: 30px;
 }
 .bmb5-carousel-item {
     padding: 0 30px 15px;
     /*min-height: 225px;*/
-    height: 225px;
+    height: 245px;
 }
 .bmb5-slider-item-right {
     border-right: 1px solid #111;
+    padding-left: 0;
 }
 .bmb5-slider-item-both {
     border-left: 1px solid #111;
     border-right: 1px solid #111;
 }
 .bmb5-ci-header {
-    height: 50px;
+    height: 70px;
     margin-bottom: 10px;
     overflow: hidden;
 }
 .bmb5-ci-text {
-    height: 153px;
+    height: 160px;
     overflow: hidden;
 }
 .ml30 {
@@ -516,9 +527,10 @@ body {
     margin-top: 10px;
 }
 .bmb5-h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 100;
     margin-top: 0;
+    margin-bottom: 0;
 }
 .bmb5-h3 a, .bmb5-h3 a:hover {
     color: #000;
@@ -529,8 +541,8 @@ body {
 .bmb5-h3 a:hover {
     text-decoration: none;
 }
-.bmb5-p {
-    font-size: 20px;
+.bmb5-p, .bmb5-ci-text {
+    font-size: 18px;
     font-weight: 100;
 }
 #block5_carousel .carousel-control .glyphicon-menu-right {
@@ -559,7 +571,8 @@ body {
     padding-bottom: 50px;
 }
 .bmb6-carousel-wrapper {
-    width: 100%;
+    /*width: 100%;*/
+    width: 95%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -585,6 +598,7 @@ body {
 .bmb6-thumb-text {
     height: 155px;
     overflow: hidden;
+    padding: 3px;
 }
 .bmb6-thumb p {
     font-size: 16px;
@@ -613,11 +627,18 @@ body {
 #block6_carousel .carousel-control.right {
     width: 30px;
 }
+#block6_carousel .carousel-control.left {
+    left: -30px;
+}
+#block6_carousel .carousel-control.right{
+    right: -30px;
+}
 .bmb6-carousel-wrapper .embed-responsive {
     top: 60px;
 }
 .bmb6-carousel-wrapper .item {
-    width: 95%;
+    /*width: 95%;*/
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -701,25 +722,32 @@ body {
 /*}*/
 .cbovz-quote-links {
     position: absolute;
-    top: 30px;
-    right: 18px;
+    top: 10px;
+    right: 15px;
     width: 256px;
     text-align: center;
 }
 .cbovz-quote-links:hover span {
     text-decoration: none;
 }
+.cbovz-quote-links a,
+.cbovz-quote-links a:hover {
+    text-decoration: none;
+}
 .cbovz-quote-links span {
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
-    text-decoration: underline;
 }
 .cbovz-quote-links span.line1 {
 
 }
 .cbovz-quote-links span.line2 {
     font-weight: bold;
+    text-decoration: underline;
+}
+.cbovz-quote-links span.line2:hover {
+    text-decoration: none;
 }
 
 /* BLOCK 9 */
@@ -778,7 +806,9 @@ body {
 }
 .bmb10-p {
     color: #fff;
-    font-size: 22px;
+    /*font-size: 22px;*/
+    font-size: 16px;
+    padding-top: 10px;
 }
 /* BLOCK 11 */
 .boss-main-block11 {
@@ -823,6 +853,11 @@ body {
 .b11-pa-text:hover {
     text-decoration: none;
 }
+.warta-logo-img {
+    filter: alpha(opacity=40);
+    -moz-opacity:0.4;
+    opacity: 0.4;
+}
 
 /* ADVERTISEMENT BLOCK */
 .boss-main-advertising {
@@ -840,7 +875,8 @@ body {
 /* NEWS PAGE */
 .boss-news-block {
     background-color: #ebebec;
-    padding-top: 215px;
+    /*padding-top: 215px;*/
+    padding-top: 150px;
 }
 .wrap-news {
     background-color: #ebebec;
@@ -894,8 +930,9 @@ h3.news-title a, h3.news-title a:hover {
     padding-bottom: 20px;
 }
 .feedback-wrapper > .container {
-    padding-top: 215px;
+    /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
+    padding-top: 150px;
     padding-bottom: 50px;
 }
 .wrap-feedback {
@@ -909,15 +946,23 @@ h3.news-title a, h3.news-title a:hover {
 .vfeed-carousel-wrapper {
     padding-top: 20px;
     padding-bottom: 50px;
+    width: 95%;
+    margin: 0 auto;
 }
 .vfeed-carousel-wrapper .item {
-    width: 95%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 .vfeed-carousel-wrapper .carousel-control.left, .vfeed-carousel-wrapper .carousel-control.right {
     background-image: none !important;
     filter: none !important;
+}
+.vfeed-carousel-wrapper .carousel-control.left {
+    left: -30px;
+}
+.vfeed-carousel-wrapper .carousel-control.right {
+    right: -30px;
 }
 .vfeed-carousel-wrapper .carousel-control {
     width: 30px;
@@ -954,7 +999,8 @@ h3.news-title a, h3.news-title a:hover {
     padding-bottom: 20px;
 }
 .price-wrapper > .container {
-    padding-top: 215px;
+    /*padding-top: 215px;*/
+    padding-top: 150px;
     padding-bottom: 50px;
 }
 .price-table > tbody > tr > td {
@@ -1053,9 +1099,10 @@ h3.news-title a, h3.news-title a:hover {
     padding-bottom: 20px;
 }
 .about-block-wrapper > .container {
-    padding-top: 215px;
+    /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-bottom: 50px;
+    padding-top: 150px;
+    padding-bottom: 10px;
 }
 .about-block .bmb2-header,
 .about-images-block .bmb2-header,
@@ -1074,11 +1121,11 @@ h3.news-title a, h3.news-title a:hover {
 .about-vacancy-wrapper {
     background: url('../images/boss-bg.png') repeat;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .about-vacancies {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 .about-vacancies .panel, .about-vacancies .panel-default > .panel-heading {
     background: transparent;
@@ -1145,8 +1192,9 @@ h3.news-title a, h3.news-title a:hover {
     padding-left: 0;
 }
 .faq-block-wrapper > .container {
-    padding-top: 215px;
+    /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
+    padding-top: 150px;
     padding-bottom: 50px;
 }
 .faq-block .bmb2-header {
@@ -1168,8 +1216,9 @@ h3.news-title a, h3.news-title a:hover {
     background: #ffd715;
 }
 .partner-block-wrapper > .container {
-    padding-top: 215px;
+    /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
+    padding-top: 150px;
     padding-bottom: 50px;
 }
 .partner-block .bmb2-header {

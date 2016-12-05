@@ -151,7 +151,6 @@ $top_menu = [
                 <div class="row">
                     <div class="col-lg-5 col-md-5">
                         <ul class="nav navbar-nav pull-right">
-<!--                            <li class="active"><a href="#">Главная</a></li>-->
                             <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
                             <li <?=($tml_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
                                 <a href="<?= \yii\helpers\Url::to([$tm_left['url']]); ?>"><?= $tm_left['title']; ?></a>
@@ -208,7 +207,7 @@ $top_menu = [
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand boss-mobile-title" href="#">Boss</a>
+                    <a class="navbar-brand boss-mobile-title" href="<?=\yii\helpers\Url::to(['/']); ?>">Boss</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="row">
@@ -345,26 +344,26 @@ $top_menu = [
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <p class="bmb10-p text-right"><?= $block10_left; ?></p>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="col-lg-3 col-md-4 col-sm-4">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon">
-                        <a href="#">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
+                        <a href="<?= $this->params['page_links']['youtube']; ?>">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube.png']); ?>" alt="Youtube Icon"/>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon">
-                        <a href="#">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
+                        <a href="<?= $this->params['page_links']['facebook']; ?>">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb.png']); ?>" alt="Facebook Icon"/>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon">
-                        <a href="#">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
+                        <a href="<?= $this->params['page_links']['vk']; ?>">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk.png']); ?>" alt="VK Icon"/>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-4">
+            <div class="col-lg-5 col-md-4 col-sm-4">
                 <p class="bmb10-p text-left"><?= $block10_right; ?></p>
             </div>
         </div>
@@ -377,6 +376,56 @@ $top_menu = [
         $block11_header = 'Boss';
         $block11_img_path = '@web/images/';
         $block11_pa_text = 'Кабинет';
+        $block11 = [
+            0 => [
+                0 => [
+                    'title' => 'Main Page',
+                    'url' => '/',
+                ],
+                1 => [
+                    'title' => 'About Boss',
+                    'url' => '/about',
+                ],
+                2 => [
+                    'title' => 'Price',
+                    'url' => '/price',
+                ],
+                3 => [
+                    'title' => 'Feedback',
+                    'url' => '/feedback',
+                ],
+            ],
+            1 => [
+                0 => [
+                    'title' => 'FAQ',
+                    'url' => '/faq',
+                ],
+                1 => [
+                    'title' => 'News',
+                    'url' => '/news',
+                ],
+                2 => [
+                    'title' => 'Become a partner',
+                    'url' => '/partner',
+                ],
+                3 => [
+                    'title' => 'Contact',
+                    'url' => '#',
+                ],
+            ],
+            2 => [
+                0 => [
+                    'title' => 'Terms of use',
+                    'url' => '#',
+                ],
+                1 => [
+                    'title' => 'Privacy policy',
+                    'url' => '#',
+                ],
+            ],
+        ];
+
+        // temp:
         $block11 = [
             0 => [
                 0 => [
@@ -423,6 +472,10 @@ $top_menu = [
                     'title' => 'Политика конфиденциальности',
                     'url' => '#',
                 ],
+                2 => [
+                    'title' => 'help@boss-app.com',
+                    'url' => 'help@boss-app.com',
+                ],
             ],
         ];
         ?>
@@ -433,17 +486,17 @@ $top_menu = [
                         <h1 class="bmb11-header"><?= $block11_header; ?></h1>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
-                                <a href="#">
+                                <a href="<?= $this->params['page_links']['facebook']; ?>">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_fb.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
-                                <a href="#">
+                                <a href="<?= $this->params['page_links']['vk']; ?>">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_vk.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
-                                <a href="#">
+                                <a href="<?= $this->params['page_links']['youtube']; ?>">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_youtube.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
@@ -469,7 +522,7 @@ $top_menu = [
                             <?php endif;*/ ?>
                             <?php foreach($b11_part as $b11_item): ?>
                                 <div class="b11-row">
-                                    <a href="<?=\yii\helpers\Url::to([$b11_item['url']]); ?>"><?= $b11_item['title']; ?></a>
+                                    <?= (strpos($b11_item['url'], '@') !== false) ? Html::mailto($b11_item['url'], $b11_item['url']) : Html::a($b11_item['title'], \yii\helpers\Url::to([$b11_item['url']])); ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -477,7 +530,7 @@ $top_menu = [
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 text-right bmb11-center">
-                <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'warta_logo.png']); ?>" alt="Warta Logo"/>
+                <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'warta_logo.png']); ?>" alt="Warta Logo" class="warta-logo-img"/>
             </div>
         </div>
     </div>

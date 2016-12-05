@@ -16,6 +16,7 @@ use app\models\Language;
  * @property string $pubdate
  * @property string $keywords
  * @property string $description
+ * @property string $short_content
  * @property integer $enabled
  * @property integer $mainpage
  */
@@ -36,7 +37,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             [['language_id', 'enabled', 'mainpage'], 'integer'],
-            [['content', 'description'], 'string'],
+            [['content', 'description', 'short_content'], 'string'],
             [['added', 'pubdate'], 'safe'],
             [['header', 'keywords'], 'string', 'max' => 255],
         ];
@@ -52,6 +53,7 @@ class News extends \yii\db\ActiveRecord
             'language_id' => Yii::t('admin', 'Language'),
             'header' => Yii::t('admin', 'Header'),
             'content' => Yii::t('admin', 'Content'),
+            'short_content' => Yii::t('admin', 'Short Content'),
             'added' => Yii::t('admin', 'Added'),
             'pubdate' => Yii::t('admin', 'Publication date'),
             'enabled' => Yii::t('admin', 'Enabled'),

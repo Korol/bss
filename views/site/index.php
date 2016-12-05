@@ -66,7 +66,7 @@ $this->title = 'Boss';
                 <div class="bmb1-carousel-wrapper">
                     <?php if(!empty($block1) && ($block1[0]['type'] == 'video')): ?>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $block1[0]['code']; ?>?rel=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $block1[0]['code']; ?>?modestbranding=1&amp;rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
                     </div>
                     <?php elseif(!empty($block1)): ?>
                     <div id="block1_carousel" class="carousel slide" data-ride="carousel">
@@ -114,7 +114,7 @@ $this->title = 'Boss';
                                                             <div class="bmb1-ib-buttons-block">
                                                                 <div class="row">
                                                                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                                                                        <a href="#" class="bmb4-btn-link">
+                                                                        <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
                                                                             <div class="bmb1-yellow-appstore">
                                                                                 <span><?= $this->params['appstore_text']; ?></span>
                                                                             </div>
@@ -123,7 +123,7 @@ $this->title = 'Boss';
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                                                                        <a href="#" class="bmb4-btn-link">
+                                                                        <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
                                                                             <div class="bmb1-yellow-gplay">
                                                                                 <span><?= $this->params['gplay_text']; ?></span>
                                                                             </div>
@@ -369,7 +369,7 @@ $this->title = 'Boss';
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-10">
-                        <a href="#" class="bmb4-btn-link">
+                        <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
                             <div class="bmb4-black-appstore">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
@@ -383,7 +383,7 @@ $this->title = 'Boss';
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2"></div>
                     <div class="col-lg-10 col-md-10 col-sm-10">
-                        <a href="#" class="bmb4-btn-link">
+                        <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
                             <div class="bmb4-black-gplay">
                                 <span><?= $this->params['gplay_text']; ?></span>
                             </div>
@@ -459,7 +459,7 @@ $this->title = 'Boss';
                 }
                 $block5_chunked = array_chunk($block5, 3);
                 ?>
-                <div id="block5_carousel" class="carousel slide" data-ride="carousel">
+                <div id="block5_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <?php foreach($block5_chunked as $b5_chunk_key => $b5_chunk): ?>
@@ -477,7 +477,7 @@ $this->title = 'Boss';
                                             </h3>
                                         </div>
                                         <div class="bmb5-ci-text">
-                                            <p class="bmb5-p"><?= $b5_item['content']; ?></p>
+                                            <p class="bmb5-p"><?= (!empty($b5_item['short_content'])) ? $b5_item['short_content'] : $b5_item['content']; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -576,7 +576,7 @@ $this->title = 'Boss';
                         'code' => '',
                         'img' => 'user2.jpg',
                         'username' => 'Владимир Смирнов',
-                        'contetn' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor ducimus eligendi harum id nemo neque nulla ullam voluptate.',
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor ducimus eligendi harum id nemo neque nulla ullam voluptate.',
                     ],
                 ];
             }
@@ -668,7 +668,7 @@ $this->title = 'Boss';
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <h1 class="bmb3-header text-center"><a href="#"><?= $block7_header; ?></a></h1>
+                            <h1 class="bmb3-header text-center"><a href="<?=\yii\helpers\Url::to(['/partner']); ?>"><?= $block7_header; ?></a></h1>
                         </div>
                     </div>
                     <div class="row">
@@ -727,12 +727,16 @@ $this->title = 'Boss';
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-right">
                             <img src="<?=\yii\helpers\Url::to(['images/cbovz_quote2.png']); ?>" alt="Quote Image"/>
-                        <a href="<?= \yii\helpers\Url::to(['/faq']); ?>" class="cbovz-quote-link">
                             <div class="cbovz-quote-links">
                                 <span class="line1"><?= Yii::t('site', 'Have questions?'); ?></span>
-                                <span class="line2"><?= Yii::t('site', 'Come in here'); ?></span>
+                                <a href="<?= \yii\helpers\Url::to(['/faq']); ?>" class="cbovz-quote-link">
+                                    <span class="line2"><?= Yii::t('site', 'Come here'); ?></span>
+                                </a>
+                                <span class="line1"><?= Yii::t('site', 'or write to'); ?></span>
+                                <a href="mailto:help@boss-app.com">
+                                    <span class="line2">help@boss-app.com</span>
+                                </a>
                             </div>
-                        </a>
                     </div>
                 </div>
                 <div class="row">
@@ -754,14 +758,14 @@ $this->title = 'Boss';
             <?php endforeach; ?>
                 <div class="row bmb8-buttons-block">
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="#" class="bmb4-btn-link">
+                        <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
                             <div class="bmb8-black-white-appstore pull-right">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="#" class="bmb4-btn-link">
+                        <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
                             <div class="bmb8-black-white-gplay">
                                 <span><?= $this->params['gplay_text']; ?></span>
                             </div>

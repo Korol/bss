@@ -19,7 +19,7 @@ class NewsSearch extends News
     {
         return [
             [['id', 'language_id', 'enabled', 'mainpage'], 'integer'],
-            [['header', 'content', 'pubdate', 'keywords', 'description'], 'safe'],
+            [['header', 'content', 'pubdate', 'keywords', 'description', 'short_content'], 'safe'],
         ];
     }
 
@@ -72,6 +72,7 @@ class NewsSearch extends News
 
         $query->andFilterWhere(['like', 'header', $this->header])
             ->andFilterWhere(['like', 'content', $this->content])
+            ->andFilterWhere(['like', 'short_content', $this->short_content])
             ->andFilterWhere(['like', 'keywords', $this->keywords])
             ->andFilterWhere(['like', 'description', $this->description]);
 

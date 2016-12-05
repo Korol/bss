@@ -40,6 +40,7 @@ $language = \app\models\Language::findOne(['id' => $model->language_id]);
             'content:html',
             'keywords',
             'description:ntext',
+            'short_content:ntext',
             'added:datetime',
             'pubdate:date',
             [

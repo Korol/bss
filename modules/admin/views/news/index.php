@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'header',
         'keywords',
         'description:ntext',
+        'short_content:ntext',
         [
             'attribute' => 'pubdate',
             'value' => 'pubdate',

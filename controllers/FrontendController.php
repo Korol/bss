@@ -17,12 +17,20 @@ use yii\helpers\ArrayHelper;
 class FrontendController extends Controller
 {
     public $language;
+    public $page_links = [
+        'itunes' => 'https://itunes.apple.com/us/app/kontejner-torgovla-i-sklad/id1051218771?mt=8',
+        'play' => 'https://play.google.com/store/apps/details?id=boss.sales.accounting.crm.business.trade.debit.invoice.profit_1c&utm_source=global_co&pcampaignid=registered',
+        'facebook' => 'https://www.facebook.com/likeaboss.pro/',
+        'vk' => 'https://vk.com/bossapp',
+        'youtube' => 'https://www.youtube.com/channel/UCSSuNbSPHybHAkcFJA73-mA/videos',
+    ];
 
     public function init()
     {
         $this->view->params['appstore_text'] = Yii::t('site', 'Available on the iPhone');
         $this->view->params['gplay_text'] = Yii::t('site', 'Android app on');
         $this->view->params['subscribe_text'] = Yii::t('site', 'I want to be informed about BOSS news');
+        $this->view->params['page_links'] = $this->page_links;
         $this->setLanguages();
         $this->setVideos();
     }
