@@ -5,6 +5,63 @@
 use yii\helpers\ArrayHelper;
 
 $this->params['wrap_class'] = 'wrap-partner';
+$qty = $rating = $feeds = 0;
+// quantity
+if(!empty($contact['qty'])){
+    $qty = preg_replace('#[\.\,\s]+#', '', $contact['qty']);
+    if(is_numeric($qty)){
+        $qty = intval($qty);
+    }
+}
+// rating
+if(!empty($contact['rating'])){
+    $rating = preg_replace('#[\,]+#', '.', $contact['rating']);
+}
+// feeds
+if(!empty($contact['feedbacks'])){
+    $feeds = intval($contact['feedbacks']);
+}
+
+if(!empty($qty) && !empty($feeds) && !empty($rating)){
+$js = <<<JS
+    var delayy = 5000;
+
+    $('#qty').animateNumber({ number: $qty }, delayy);
+
+    $('#feeds').animateNumber({ number: $feeds }, delayy);
+
+    // how many decimal places allows
+    var decimal_places = 1;
+    var decimal_factor = decimal_places === 0 ? 1 : Math.pow(10, decimal_places);
+
+    $('#rating')
+      .animateNumber(
+        {
+          number: $rating * decimal_factor,
+
+          numberStep: function(now, tween) {
+            var floored_number = Math.floor(now) / decimal_factor,
+                target = $(tween.elem);
+
+            if (decimal_places > 0) {
+              // force decimal places even if they are 0
+              floored_number = floored_number.toFixed(decimal_places);
+
+              // replace '.' separator with ','
+              floored_number = floored_number.toString().replace('.', ',');
+            }
+
+            target.text(floored_number);
+          }
+        },
+        delayy
+      );
+
+JS;
+
+
+    $this->registerJs($js, \yii\web\View::POS_LOAD, 'animate-numbers');
+}
 ?>
 
 <div class="partner-block">
@@ -36,19 +93,19 @@ $this->params['wrap_class'] = 'wrap-partner';
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 contact-map-data">
                                     <div class="cd-small-block">
-                                        <div class="cdsb-num"><?= ArrayHelper::getValue($contact, 'rating'); ?></div>
+                                        <div class="cdsb-num" id="rating">0,0</div>
                                         <div class="cdsb-text"><?= ArrayHelper::getValue($contact, 'rating_text'); ?></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 contact-map-data">
                                     <div class="cd-big-block">
-                                        <div class="cdsb-num"><?= ArrayHelper::getValue($contact, 'qty'); ?></div>
+                                        <div class="cdsb-num" id="qty">0</div>
                                         <div class="cdsb-text"><?= ArrayHelper::getValue($contact, 'qty_text'); ?></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 contact-map-data">
                                     <div class="cd-small-block pull-right">
-                                        <div class="cdsb-num"><?= ArrayHelper::getValue($contact, 'feedbacks'); ?></div>
+                                        <div class="cdsb-num" id="feeds">0</div>
                                         <div class="cdsb-text"><?= ArrayHelper::getValue($contact, 'feedbacks_text'); ?></div>
                                     </div>
                                 </div>
