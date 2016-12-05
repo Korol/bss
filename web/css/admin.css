@@ -161,3 +161,7 @@ a.desc:after {
     border-top: 1px dotted #000;
     padding-top: 10px;
 }
+p.help-block {
+    font-style: italic;
+    font-size: 13px;
+}

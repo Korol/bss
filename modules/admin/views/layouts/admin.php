@@ -55,6 +55,7 @@ $menu = [
                 ['label' => Yii::t('admin', 'Blocks'), 'url' => ['/admin/partner-block/index']],
             ],
         ],
+        ['label' => Yii::t('admin', 'Contact'), 'url' => ['/admin/contact/index']],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [
@@ -96,6 +97,7 @@ $menu = [
                 ['label' => Yii::t('admin', 'Blocks'), 'url' => ['/admin/partner-block/index']],
             ],
         ],
+        ['label' => Yii::t('admin', 'Contact'), 'url' => ['/admin/contact/index']],
     ],
     'guest' => [],
 ];

@@ -469,7 +469,7 @@ $this->title = 'Boss';
                                     <?php
                                     $url = ($b5_item['id'] == '#') ? '#' : \yii\helpers\Url::to(['/news/' . $b5_item['id']]);
                                     ?>
-                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                     <div class="bmb5-carousel-item <?= ($b5_key == 0) ? 'bmb5-slider-item-both' : 'bmb5-slider-item-right'; ?>">
                                         <div class="bmb5-ci-header">
                                             <h3 class="bmb5-h3">

@@ -13,10 +13,10 @@ $this->params['wrap_class'] = 'wrap-news';
 <div class="boss-news-block">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                 <h1 class="bmb2-header"><?= $news_header; ?></h1>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="row bmb5-subscribe-block">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bmb5-subscribe-img">
                         <img src="<?= \yii\helpers\Url::to(['images/cnub_mail.png']); ?>" alt="Subscribe Image"/>
@@ -68,14 +68,14 @@ $this->params['wrap_class'] = 'wrap-news';
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-6">
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12">
                         <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
                             <div class="bmb4-black-appstore">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
                         <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
                             <div class="bmb4-black-gplay news-gplay-btn">
                                 <span><?= $this->params['gplay_text']; ?></span>

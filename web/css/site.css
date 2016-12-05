@@ -596,7 +596,7 @@ body {
     font-style: italic;
 }
 .bmb6-thumb-text {
-    height: 155px;
+    /*height: 155px;*/
     overflow: hidden;
     padding: 3px;
 }
@@ -1281,4 +1281,46 @@ h3.news-title a, h3.news-title a:hover {
 .partner-mail-address a:focus {
     color: #ffd715;
     text-decoration: none;
+}
+
+/* CONTACT PAGE */
+.contact-about-mail {
+    margin-top: 25px;
+}
+.contact-map-content {
+    margin: 50px 0 10px;
+    position: relative;
+}
+.contact-map-content img {
+    width: 100%;
+}
+.contact-digits {
+    position: absolute;
+    top: 140px;
+    font-size: 56px;
+    width: 100%;
+}
+.cd-small-block {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #222;
+    padding-top: 20px;
+}
+.cdsb-num {
+    font-size: 58px;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+}
+.cdsb-text {
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+}
+.cd-big-block {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #222;
+    padding-top: 20px;
+    margin: 0 auto;
 }
