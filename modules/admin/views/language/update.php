@@ -11,6 +11,7 @@ $this->title = Yii::t('admin', 'Update {modelClass}: ', [
 $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'Languages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('admin', 'Update');
+$this->params['container'] = 'container';
 ?>
 <div class="language-update">
 

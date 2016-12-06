@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('admin', 'Languages');
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['container'] = 'container';
 ?>
 <div class="language-index">
 
@@ -24,12 +25,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'url:url',
+//            'id',
+            'url',
             'title_en',
             'title',
             'flag',
-            // 'enabled',
+            [
+                'label' => Yii::t('admin', 'Flag'),
+                'format' => 'html',
+                'value' => function($data){
+                    return '<span class="flag flag-' . $data->flag . '" alt="' . $data->title_en . '"></span>';
+                },
+            ],
+            [
+                'attribute' => 'enabled',
+                'value' => function($data){
+                    $color = 'green';
+                    $text = Yii::t('admin', 'Enabled');
+                    if($data->enabled <= 0){
+                        $color = 'red';
+                        $text = Yii::t('admin', 'Disabled');
+                    }
+                    $return = '<span class="admin-' . $color . '">' . $text . '</span>';
+                    return $return;
+                },
+                'format' => 'html',
+                'filter' => [0 => Yii::t('admin', 'Disabled'), 1 => Yii::t('admin', 'Enabled')],
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

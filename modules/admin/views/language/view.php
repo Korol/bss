@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'Languages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['container'] = 'container';
 ?>
 <div class="language-view">
 
@@ -23,17 +24,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a(Yii::t('admin', 'Create Language'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'url:url',
+            'url',
             'title_en',
             'title',
             'flag',
-            'enabled',
+            [
+                'label' => Yii::t('admin', 'Flag'),
+                'value' => (!empty($model->flag)) ? '<span class="flag flag-' . $model->flag . '" alt="' . $model->title_en . '"></span>' : '',
+                'format' => 'html',
+            ],
+            [
+                'label' => Yii::t('admin', 'Enabled'),
+                'value' => ($model->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled'),
+            ],
         ],
     ]) ?>
 

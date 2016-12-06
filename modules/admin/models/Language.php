@@ -30,6 +30,7 @@ class Language extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['url', 'title_en', 'title', 'flag'], 'required'],
             [['enabled'], 'integer'],
             [['url'], 'string', 'max' => 10],
             [['title_en', 'title', 'flag'], 'string', 'max' => 255],
@@ -43,10 +44,10 @@ class Language extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('admin', 'ID'),
-            'url' => Yii::t('admin', 'Url'),
+            'url' => Yii::t('admin', 'Url segment'),
             'title_en' => Yii::t('admin', 'Title En'),
             'title' => Yii::t('admin', 'Title'),
-            'flag' => Yii::t('admin', 'Flag'),
+            'flag' => Yii::t('admin', 'Flag prefix'),
             'enabled' => Yii::t('admin', 'Enabled'),
         ];
     }

@@ -8,6 +8,7 @@ use app\modules\admin\models\LanguageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 /**
  * LanguageController implements the CRUD actions for Language model.
@@ -35,6 +36,7 @@ class LanguageController extends Controller
      */
     public function actionIndex()
     {
+        $this->checkAccess();
         $searchModel = new LanguageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -51,6 +53,7 @@ class LanguageController extends Controller
      */
     public function actionView($id)
     {
+        $this->checkAccess();
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -63,6 +66,7 @@ class LanguageController extends Controller
      */
     public function actionCreate()
     {
+        $this->checkAccess();
         $model = new Language();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -82,6 +86,7 @@ class LanguageController extends Controller
      */
     public function actionUpdate($id)
     {
+        $this->checkAccess();
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -101,6 +106,7 @@ class LanguageController extends Controller
      */
     public function actionDelete($id)
     {
+        $this->checkAccess();
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -119,6 +125,16 @@ class LanguageController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function checkAccess()
+    {
+        if(Yii::$app->user->can('admin')){
+            return true;
+        }
+        else {
+            throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
         }
     }
 }

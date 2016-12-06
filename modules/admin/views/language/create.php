@@ -9,6 +9,7 @@ use yii\helpers\Html;
 $this->title = Yii::t('admin', 'Create Language');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'Languages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['container'] = 'container';
 ?>
 <div class="language-create">
 

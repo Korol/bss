@@ -19,6 +19,7 @@ class AppAdminAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/admin.css',
+        'css/flags.css',
     ];
     public $js = [
         'js/admin.js',
