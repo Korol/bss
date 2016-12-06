@@ -258,21 +258,25 @@ body {
     margin-top: 20px;
 }
 .bmb1-yellow-appstore, .bmb1-yellow-gplay {
-    width: 286px;
-    height: 94px;
+    /*width: 286px;*/
+    /*height: 94px;*/
+    width: 287px;
+    height: 95px;
     text-shadow: none;
     margin-bottom: 20px;
 }
 .bmb1-yellow-appstore {
-    background: url("/images/btn_yellow_appstore.png") transparent;
+    /*background: url("/images/btn_yellow_appstore.png") transparent;*/
+    background: url("../images/btn_yellow_appstore1.png") transparent;
     margin-bottom: 35px;
 }
 .bmb1-yellow-gplay {
-    background: url("/images/btn_yellow_gplay.png") transparent;
+    /*background: url("/images/btn_yellow_gplay.png") transparent;*/
+    background: url("../images/btn_yellow_gplay1.png") transparent;
 }
 .bmb1-yellow-appstore span {
     position: relative;
-    left: 65px;
+    left: 72px;
     top: 5px;
     font-size: 20px;
     color: #231f20;
@@ -435,18 +439,22 @@ body {
     bottom: 50px;
 }
 .bmb4-black-appstore, .bmb4-black-gplay {
-    width: 286px;
-    height: 94px;
+    /*width: 286px;*/
+    /*height: 94px;*/
+    width: 287px;
+    height: 95px;
 }
 .bmb4-black-appstore {
-    background: url("/images/btn_black_appstore.png");
+    /*background: url("/images/btn_black_appstore.png");*/
+    background: url("../images/btn_black_appstore1.png");
 }
 .bmb4-black-gplay {
-    background: url("/images/btn_black_gplay.png");
+    /*background: url("/images/btn_black_gplay.png");*/
+    background: url("../images/btn_black_gplay1.png");
 }
 .bmb4-black-appstore span {
     position: relative;
-    left: 65px;
+    left: 72px;
     top: 5px;
     font-size: 20px;
     color: #ffd715;
@@ -690,18 +698,22 @@ body {
     margin-top: 65px;
 }
 .bmb8-black-white-appstore, .bmb8-black-white-gplay {
-    width: 286px;
-    height: 94px;
+    /*width: 286px;*/
+    /*height: 94px;*/
+    width: 287px;
+    height: 95px;
 }
 .bmb8-black-white-appstore {
-    background: url("/images/btn_black_white_appstore.png");
+    /*background: url("/images/btn_black_white_appstore.png");*/
+    background: url("../images/btn_black_white_appstore1.png");
 }
 .bmb8-black-white-gplay {
-    background: url("/images/btn_black_white_gplay.png");
+    /*background: url("/images/btn_black_white_gplay.png");*/
+    background: url("../images/btn_black_white_gplay1.png");
 }
 .bmb8-black-white-appstore span {
     position: relative;
-    left: 65px;
+    left: 72px;
     top: 5px;
     font-size: 20px;
     color: #fff;
