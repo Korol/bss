@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\Message;
 use Yii;
 use app\modules\admin\models\Language;
 use app\modules\admin\models\LanguageSearch;
@@ -88,8 +89,13 @@ class LanguageController extends Controller
     {
         $this->checkAccess();
         $model = $this->findModel($id);
+        $url = $model->url; // old URL segment
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if($model->url !== $url){
+                // update Message language code according to a new URL segment
+                Message::updateAll(['language' => $model->url], ['language' => $url]);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
