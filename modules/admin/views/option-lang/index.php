@@ -18,7 +18,7 @@ $this->params['container'] = 'container';
 <?php if(!empty($admin) && !empty($languages)): ?>
     <div class="row choose-language">
         <div class="col-lg-3">
-            <form action="/admin/option-lang/index" name="choose_lang">
+            <form action="<?=\yii\helpers\Url::to(['/admin/option-lang/index']); ?>" name="choose_lang">
                 <!--            <input type="hidden" name="_csrf" value="--><?//=Yii::$app->request->getCsrfToken()?><!--" />-->
                 <select class="form-control" name="lang_id" id="lang_id" onchange="document.choose_lang.submit();">
                     <option value="0"><?= Yii::t('admin', 'Choose language'); ?></option>
@@ -34,7 +34,7 @@ $this->params['container'] = 'container';
 <?php if(!empty($lang_id)): ?>
     <div class="row translation-table-block">
         <div class="col-lg-12">
-            <form action="/admin/option-lang/save" method="post">
+            <form action="<?=\yii\helpers\Url::to(['/admin/option-lang/save']); ?>" method="post">
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                 <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
                 <table class="table table-bordered table-striped">
@@ -66,7 +66,7 @@ $this->params['container'] = 'container';
 
     <div class="row option-note-block">
         <div class="col-lg-12">
-            <form method="post" action="/admin/option-lang/note">
+            <form method="post" action="<?=\yii\helpers\Url::to(['/admin/option-lang/note']); ?>">
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                 <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
                 <div class="form-group">

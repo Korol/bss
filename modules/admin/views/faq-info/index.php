@@ -16,7 +16,7 @@ $this->params['container'] = 'container';
 <?php if(!empty($admin) && !empty($languages)): ?>
     <div class="row choose-language">
         <div class="col-lg-3">
-            <form action="/admin/faq-info/index" name="choose_lang">
+            <form action="<?=\yii\helpers\Url::to(['/admin/faq-info/index']); ?>" name="choose_lang">
                 <!--            <input type="hidden" name="_csrf" value="--><?//=Yii::$app->request->getCsrfToken()?><!--" />-->
                 <select class="form-control" name="lang_id" id="lang_id" onchange="document.choose_lang.submit();">
                     <option value="0"><?= Yii::t('admin', 'Choose language'); ?></option>
@@ -32,7 +32,7 @@ $this->params['container'] = 'container';
 <?php if(!empty($lang_id)): ?>
     <div class="row about-block">
         <div class="col-lg-12">
-            <form action="/admin/faq-info/save" method="post">
+            <form action="<?=\yii\helpers\Url::to(['/admin/faq-info/save']); ?>" method="post">
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                 <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
                 <div class="form-group">

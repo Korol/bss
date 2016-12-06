@@ -31,7 +31,7 @@ class ContactController extends Controller
         }
         else{
             $lang_id = $this->app_language_id;
-            $contact = About::find()
+            $contact = Contact::find()
                 ->where(['language_id' => $lang_id])
                 ->asArray()
                 ->one();

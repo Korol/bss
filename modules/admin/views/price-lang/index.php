@@ -24,7 +24,7 @@ if(!empty($format['format'])){
 <?php if(!empty($admin) && !empty($languages)): ?>
 <div class="row choose-language">
     <div class="col-lg-3">
-        <form action="/admin/price-lang/index" name="choose_lang">
+        <form action="<?=\yii\helpers\Url::to(['/admin/price-lang/index']); ?>" name="choose_lang">
 <!--            <input type="hidden" name="_csrf" value="--><?//=Yii::$app->request->getCsrfToken()?><!--" />-->
             <select class="form-control" name="lang_id" id="lang_id" onchange="document.choose_lang.submit();">
                 <option value="0"><?= Yii::t('admin', 'Choose language'); ?></option>
@@ -40,7 +40,7 @@ if(!empty($format['format'])){
 <?php if(!empty($lang_id)): ?>
 <div class="row set-price-format">
     <div class="col-lg-9">
-        <form class="form-inline" method="post" action="/admin/price-lang/format">
+        <form class="form-inline" method="post" action="<?=\yii\helpers\Url::to(['/admin/price-lang/format']); ?>">
             <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
             <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
             <div class="form-group">
@@ -58,7 +58,7 @@ if(!empty($format['format'])){
 
 <div class="row translation-table-block">
     <div class="col-lg-12">
-        <form action="/admin/price-lang/save" method="post">
+        <form action="<?=\yii\helpers\Url::to(['/admin/price-lang/save']); ?>" method="post">
             <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
             <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
         <table class="table table-bordered table-striped">
@@ -90,7 +90,7 @@ if(!empty($format['format'])){
 
     <div class="row option-note-block">
         <div class="col-lg-12">
-            <form method="post" action="/admin/price-lang/note">
+            <form method="post" action="<?=\yii\helpers\Url::to(['/admin/price-lang/note']); ?>">
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                 <input type="hidden" name="language_id" value="<?=$lang_id; ?>" />
                 <div class="form-group">

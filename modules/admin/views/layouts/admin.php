@@ -56,6 +56,14 @@ $menu = [
             ],
         ],
         ['label' => Yii::t('admin', 'Contact'), 'url' => ['/admin/contact/index']],
+        [
+            'label' => Yii::t('admin', 'Languages'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Languages'), 'url' => ['/admin/language/index']],
+                ['label' => Yii::t('admin', 'Source Messages'), 'url' => ['/admin/source-message/index']],
+                ['label' => Yii::t('admin', 'Translation Messages'), 'url' => ['/admin/message/index']],
+            ],
+        ],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [
@@ -98,6 +106,12 @@ $menu = [
             ],
         ],
         ['label' => Yii::t('admin', 'Contact'), 'url' => ['/admin/contact/index']],
+        [
+            'label' => Yii::t('admin', 'Language'),
+            'items' => [
+                ['label' => Yii::t('admin', 'Translation Messages'), 'url' => ['/admin/message/index']],
+            ],
+        ],
     ],
     'guest' => [],
 ];
