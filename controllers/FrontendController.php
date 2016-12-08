@@ -12,6 +12,7 @@ use Yii;
 use yii\web\Controller;
 use app\models\Language;
 use app\models\Video;
+use app\models\Seo;
 use yii\helpers\ArrayHelper;
 
 class FrontendController extends Controller
@@ -33,6 +34,7 @@ class FrontendController extends Controller
         $this->view->params['page_links'] = $this->page_links;
         $this->setLanguages();
         $this->setVideos();
+        $this->setSeo();
     }
 
     public function setLanguages()
@@ -54,5 +56,15 @@ class FrontendController extends Controller
             ->asArray()
             ->all();
         $this->view->params['videos'] = $videos;
+    }
+
+    public function setSeo()
+    {
+        $seo = Seo::find()
+            ->where(['language_id' => $this->language->id])
+            ->asArray()
+            ->indexBy('page')
+            ->all();
+        $this->view->params['seo'] = $seo;
     }
 } 

@@ -90,6 +90,11 @@ $top_menu = [
         ],
     ],
 ];
+$seo = (!empty($this->params['seo'][$this->params['active_top_menu']])) ? $this->params['seo'][$this->params['active_top_menu']] : ['keywords' => '', 'description' => '', 'title' => ''];
+$this->registerMetaTag(['name' => 'keywords', 'content' => $seo['keywords']]);
+$this->registerMetaTag(['name' => 'description', 'content' => $seo['description']]);
+$this->registerMetaTag(['name' => 'title', 'content' => $seo['title']]);
+$this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

@@ -34,6 +34,7 @@ class SiteController extends FrontendController
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+                'view' => '@app/views/site/error2.php',
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
@@ -81,4 +82,13 @@ class SiteController extends FrontendController
         $this->view->params['active_top_menu'] = 'main';
         return $this->render('index', compact('blocks', 'banners', 'banner_middle', 'news', 'feedback'));
     }
+
+//    public function actionError()
+//    {
+//        $this->layout = 'error';
+//        $exception = Yii::$app->errorHandler->exception;var_dump(Yii::$app->errorHandler);
+//        if ($exception !== null) {
+//            return $this->render('error2', ['exception' => $exception]);
+//        }
+//    }
 }

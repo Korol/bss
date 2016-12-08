@@ -64,6 +64,7 @@ $menu = [
                 ['label' => Yii::t('admin', 'Translation Messages'), 'url' => ['/admin/message/index']],
             ],
         ],
+        ['label' => Yii::t('admin', 'SEO'), 'url' => ['/admin/seo/index']],
         ['label' => Yii::t('admin', 'Users'), 'url' => ['/user/admin/index']],
     ],
     'language_manager' => [
@@ -112,6 +113,7 @@ $menu = [
                 ['label' => Yii::t('admin', 'Translation Messages'), 'url' => ['/admin/message/index']],
             ],
         ],
+        ['label' => Yii::t('admin', 'SEO'), 'url' => ['/admin/seo/index']],
     ],
     'guest' => [],
 ];
