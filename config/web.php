@@ -112,7 +112,8 @@ $config = [
                 'User' => 'app\modules\admin\models\User',
             ],
             'controllerMap' => [
-                'admin' => 'app\modules\admin\controllers\AdminController'
+                'admin' => 'app\modules\admin\controllers\AdminController',
+                'security' => 'app\controllers\SecurityController',
             ],
         ],
         'rbac' => [
