@@ -209,6 +209,7 @@ body {
 }
 .boss-countries > li > a {
     padding: 5px 13px;
+    color: #ffd715;
 }
 /*.boss-countries-icon {*/
     /*position: absolute;*/

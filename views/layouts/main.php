@@ -189,7 +189,7 @@ $this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
                                 <?php foreach($this->params['all_languages'] as $lang): ?>
                                     <li>
                                         <a href="<?= '/' . $lang['url']; ?>" title="<?= $lang['title_en']; ?>">
-                                            <span class="flag flag-<?= $lang['flag']; ?>" alt="<?= $lang['title_en']; ?>"></span>
+                                            <span class="flag flag-<?= $lang['flag']; ?>" alt="<?= $lang['title_en']; ?>"></span> <?= $lang['title_en']; ?>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -240,7 +240,7 @@ $this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
                                             <?php foreach($this->params['all_languages'] as $lang): ?>
                                                 <li>
                                                     <a href="<?= '/' . $lang['url']; ?>" title="<?= $lang['title_en']; ?>">
-                                                        <span class="flag flag-<?= $lang['flag']; ?>" alt="<?= $lang['title_en']; ?>"></span>
+                                                        <span class="flag flag-<?= $lang['flag']; ?>" alt="<?= $lang['title_en']; ?>"></span> <?= $lang['title_en']; ?>
                                                     </a>
                                                 </li>
                                             <?php endforeach; ?>
