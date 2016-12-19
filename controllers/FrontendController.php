@@ -13,6 +13,7 @@ use yii\web\Controller;
 use app\models\Language;
 use app\models\Video;
 use app\models\Seo;
+use app\models\Settings;
 use yii\helpers\ArrayHelper;
 
 class FrontendController extends Controller
@@ -24,6 +25,7 @@ class FrontendController extends Controller
         'facebook' => 'https://www.facebook.com/likeaboss.pro/',
         'vk' => 'https://vk.com/bossapp',
         'youtube' => 'https://www.youtube.com/channel/UCSSuNbSPHybHAkcFJA73-mA/videos',
+        'email_help' => 'help@boss-app.com',
     ];
 
     public function init()
@@ -35,6 +37,7 @@ class FrontendController extends Controller
         $this->setLanguages();
         $this->setVideos();
         $this->setSeo();
+        $this->setSettings();
     }
 
     public function setLanguages()
@@ -66,5 +69,17 @@ class FrontendController extends Controller
             ->indexBy('page')
             ->all();
         $this->view->params['seo'] = $seo;
+    }
+
+    public function setSettings()
+    {
+        $settings = Settings::find()
+            ->asArray()
+            ->all();
+        $settings = (!empty($settings)) ? ArrayHelper::map($settings, 'key', 'value', 'position') : [];
+        if(!empty($settings['none'])){
+            $this->view->params['page_links'] = ArrayHelper::merge($this->view->params['page_links'], $settings['none']);
+        }
+        $this->view->params['site_settings'] = $settings;
     }
 } 

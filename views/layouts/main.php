@@ -15,44 +15,44 @@ $is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect-
 $top_menu = [
     'left' => [
         'main' => [
-            'title' => 'Main Page',
+            'title' => Yii::t('site', 'Main Page'),
             'url' => '/',
         ],
         'about' => [
-            'title' => 'About Boss',
+            'title' => Yii::t('site', 'About Boss'),
             'url' => '/about',
         ],
         'price' => [
-            'title' => 'Price',
+            'title' => Yii::t('site', 'Price'),
             'url' => '/price',
         ],
         'feedback' => [
-            'title' => 'Feedback',
+            'title' => Yii::t('site', 'Feedback'),
             'url' => '/feedback',
         ],
         'faq' => [
-            'title' => 'FAQ',
+            'title' => Yii::t('site', 'FAQ'),
             'url' => '/faq',
         ],
     ],
     'right' => [
         'news' => [
-            'title' => 'News',
+            'title' => Yii::t('site', 'News'),
             'url' => '/news',
         ],
         'partner' => [
-            'title' => 'Become a partner',
+            'title' => Yii::t('site', 'Become a partner'),
             'url' => '/partner',
         ],
         'contact' => [
-            'title' => 'Contact',
+            'title' => Yii::t('site', 'Contact'),
             'url' => '/contact',
         ],
     ],
 ];
 
 // temp:
-$top_menu = [
+/*$top_menu = [
     'left' => [
         'main' => [
             'title' => 'Главная',
@@ -89,7 +89,7 @@ $top_menu = [
             'url' => '/contact',
         ],
     ],
-];
+];*/
 $seo = (!empty($this->params['seo'][$this->params['active_top_menu']])) ? $this->params['seo'][$this->params['active_top_menu']] : ['keywords' => '', 'description' => '', 'title' => ''];
 $this->registerMetaTag(['name' => 'keywords', 'content' => $seo['keywords']]);
 $this->registerMetaTag(['name' => 'description', 'content' => $seo['description']]);
@@ -106,10 +106,23 @@ $this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
     <title><?= Html::encode($this->title) ?></title>
     <link rel="shortcut icon" href="<?=\yii\helpers\Url::to(['images/favicon.ico']); ?>" type="image/x-icon">
     <?php $this->head() ?>
+    <?php
+    if(!empty($this->params['site_settings']['head'])){
+        foreach($this->params['site_settings']['head'] as $head_param){
+            echo $head_param;
+        }
+    }
+    ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<?php
+if(!empty($this->params['site_settings']['body_start'])){
+    foreach($this->params['site_settings']['body_start'] as $body_start_param){
+        echo $body_start_param;
+    }
+}
+?>
 <div class="wrap <?= (!empty($this->params['wrap_class'])) ? $this->params['wrap_class'] : ''; ?>">
     <?php /*
     NavBar::begin([
@@ -384,54 +397,58 @@ $this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
         $block11 = [
             0 => [
                 0 => [
-                    'title' => 'Main Page',
+                    'title' => Yii::t('site', 'Main Page'),
                     'url' => '/',
                 ],
                 1 => [
-                    'title' => 'About Boss',
+                    'title' => Yii::t('site', 'About Boss'),
                     'url' => '/about',
                 ],
                 2 => [
-                    'title' => 'Price',
+                    'title' => Yii::t('site', 'Price'),
                     'url' => '/price',
                 ],
                 3 => [
-                    'title' => 'Feedback',
+                    'title' => Yii::t('site', 'Feedback'),
                     'url' => '/feedback',
                 ],
             ],
             1 => [
                 0 => [
-                    'title' => 'FAQ',
+                    'title' => Yii::t('site', 'FAQ'),
                     'url' => '/faq',
                 ],
                 1 => [
-                    'title' => 'News',
+                    'title' => Yii::t('site', 'News'),
                     'url' => '/news',
                 ],
                 2 => [
-                    'title' => 'Become a partner',
+                    'title' => Yii::t('site', 'Become a partner'),
                     'url' => '/partner',
                 ],
                 3 => [
-                    'title' => 'Contact',
-                    'url' => '#',
+                    'title' => Yii::t('site', 'Contact'),
+                    'url' => '/contact',
                 ],
             ],
             2 => [
                 0 => [
-                    'title' => 'Terms of use',
+                    'title' => Yii::t('site', 'Terms of use'),
                     'url' => '#',
                 ],
                 1 => [
-                    'title' => 'Privacy policy',
-                    'url' => '/contact',
+                    'title' => Yii::t('site', 'Privacy policy'),
+                    'url' => '#',
+                ],
+                2 => [
+                    'title' => $this->params['page_links']['email_help'],
+                    'url' => $this->params['page_links']['email_help'],
                 ],
             ],
         ];
 
         // temp:
-        $block11 = [
+        /*$block11 = [
             0 => [
                 0 => [
                     'title' => 'Главная',
@@ -482,7 +499,7 @@ $this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
                     'url' => 'help@boss-app.com',
                 ],
             ],
-        ];
+        ];*/
         ?>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3 bmb11-content">
@@ -542,6 +559,13 @@ $this->title = (!empty($seo['title'])) ? $seo['title'] : $this->title;
 </div>
 
 <?php $this->endBody() ?>
+<?php
+if(!empty($this->params['site_settings']['body_end'])){
+    foreach($this->params['site_settings']['body_end'] as $body_end_param){
+        echo $body_end_param;
+    }
+}
+?>
 </body>
 </html>
 <?php $this->endPage() ?>

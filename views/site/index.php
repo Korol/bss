@@ -733,8 +733,8 @@ $this->title = 'Boss';
                                     <span class="line2"><?= Yii::t('site', 'Come here'); ?></span>
                                 </a>
                                 <span class="line1"><?= Yii::t('site', 'or write to'); ?></span>
-                                <a href="mailto:help@boss-app.com">
-                                    <span class="line2">help@boss-app.com</span>
+                                <a href="mailto:<?=$this->params['page_links']['email_help']; ?>">
+                                    <span class="line2"><?=$this->params['page_links']['email_help']; ?></span>
                                 </a>
                             </div>
                     </div>
