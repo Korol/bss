@@ -73,8 +73,8 @@ class Seo extends \yii\db\ActiveRecord
             'faq' => Yii::t('admin', 'FAQ'),
             'partner' => Yii::t('admin', 'Become a partner'),
             'contact' => Yii::t('admin', 'Contact'),
-            'terms' => Yii::t('admin', 'Terms of use'),
-            'privacy' => Yii::t('admin', 'Privacy policy'),
+//            'terms' => Yii::t('admin', 'Terms of use'),
+//            'privacy' => Yii::t('admin', 'Privacy policy'),
         ];
     }
 }
