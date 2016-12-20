@@ -63,6 +63,8 @@ $config = [
             ],
             'rules' => [
                 'news/<id:\d+>' => 'news/view',
+                'privacy-policy' => 'static-pages/privacy',
+                'terms-of-use' => 'static-pages/terms',
             ],
         ],
         'view' => [

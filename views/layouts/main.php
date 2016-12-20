@@ -434,11 +434,11 @@ if(!empty($this->params['site_settings']['body_start'])){
             2 => [
                 0 => [
                     'title' => Yii::t('site', 'Terms of use'),
-                    'url' => '#',
+                    'url' => '/terms-of-use',
                 ],
                 1 => [
                     'title' => Yii::t('site', 'Privacy policy'),
-                    'url' => '#',
+                    'url' => '/privacy-policy',
                 ],
                 2 => [
                     'title' => $this->params['page_links']['email_help'],
