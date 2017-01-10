@@ -27,13 +27,30 @@ jQuery(document).ready(function ($) {
     });
 
     //$('.about-images').gpGallery('img', {row_max_height: 180});
-    $('.about-images').kirpi4i(); // из-за этого плагина глючит fancybox на iPhone Portrait, что-то с рекурсией связано
+    //$('.about-images').kirpi4i(); // из-за этого плагина глючит fancybox на iPhone Portrait, что-то с рекурсией связано
+    if(jQuery().kirpi4i && jQuery().fancybox) {
+        $('.about-images').kirpi4i();
 
-    $(".fancybox").fancybox({
-        helpers: {
-            overlay: {
-                locked: false
+        $(".fancybox").fancybox({
+            helpers: {
+                overlay: {
+                    locked: false
+                }
             }
+        });
+    }
+
+    // Scroll Up
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('#scrollup').fadeIn();
+        } else {
+            $('#scrollup').fadeOut();
         }
+    });
+
+    $('#scrollup').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
     });
 });

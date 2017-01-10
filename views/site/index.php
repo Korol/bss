@@ -220,13 +220,39 @@ $this->title = 'Boss';
                                     <img class="bmb2-icon" src="<?=\yii\helpers\Url::to([$block2_img_path . $b2_item['img']]); ?>" alt="Icon Smart"/>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 vcentered-block">
-                                    <div class="bmb2-text vcentered-content"><?= $b2_item['content']; ?></div>
+                                    <div class="bmb2-text <?php /*vcentered-content*/?>"><?= $b2_item['content']; ?></div>
                                 </div>
                             </div>
                         </div>
                         <?php endforeach; ?>
                     </div>
                     <?php endforeach; ?>
+<!--                    buttons-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
+                                        <div class="bmb4-black-appstore hcentered-block">
+                                            <span><?= $this->params['appstore_text']; ?></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
+                                        <div class="bmb4-black-gplay hcentered-block">
+                                            <span><?= $this->params['gplay_text']; ?></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    /buttons-->
                 </div>
                 <div class="col-lg-1 col-md-1"></div>
             </div>

@@ -365,17 +365,17 @@ if(!empty($this->params['site_settings']['body_start'])){
             <div class="col-lg-3 col-md-4 col-sm-4">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
-                        <a href="<?= $this->params['page_links']['youtube']; ?>">
+                        <a href="<?= $this->params['page_links']['youtube']; ?>" target="_blank">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube.png']); ?>" alt="Youtube Icon"/>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
-                        <a href="<?= $this->params['page_links']['facebook']; ?>">
+                        <a href="<?= $this->params['page_links']['facebook']; ?>" target="_blank">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb.png']); ?>" alt="Facebook Icon"/>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
-                        <a href="<?= $this->params['page_links']['vk']; ?>">
+                        <a href="<?= $this->params['page_links']['vk']; ?>" target="_blank">
                             <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk.png']); ?>" alt="VK Icon"/>
                         </a>
                     </div>
@@ -505,20 +505,25 @@ if(!empty($this->params['site_settings']['body_start'])){
             <div class="col-lg-3 col-md-3 col-sm-3 bmb11-content">
                 <div class="row">
                     <div class="col-lg-9 col-md-9 col-sm-9">
-                        <h1 class="bmb11-header"><?= $block11_header; ?></h1>
-                        <div class="row">
+                        <?php /*h1 class="bmb11-header"><?= $block11_header; ?></h1*/?>
+                        <div class="row footer-boss">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_boss.png']); ?>" class="footer-boss-img" alt="Boss Icon"/>
+                            </div>
+                        </div>
+                        <div class="row footer-boss-socials">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
-                                <a href="<?= $this->params['page_links']['facebook']; ?>">
+                                <a href="<?= $this->params['page_links']['facebook']; ?>" target="_blank">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_fb.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
-                                <a href="<?= $this->params['page_links']['vk']; ?>">
+                                <a href="<?= $this->params['page_links']['vk']; ?>" target="_blank">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_vk.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb11-social-icon">
-                                <a href="<?= $this->params['page_links']['youtube']; ?>">
+                                <a href="<?= $this->params['page_links']['youtube']; ?>" target="_blank">
                                     <img src="<?=\yii\helpers\Url::to([$block11_img_path . 'footer_youtube.png']); ?>" alt="Youtube Icon"/>
                                 </a>
                             </div>
@@ -557,6 +562,7 @@ if(!empty($this->params['site_settings']['body_start'])){
         </div>
     </div>
 </div>
+<a href="#" id="scrollup">Наверх</a>
 
 <?php $this->endBody() ?>
 <?php

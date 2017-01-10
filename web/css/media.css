@@ -107,6 +107,9 @@
     .contact-digits {
         top: 80px;
     }
+    #scrollup {
+        right: 20px;
+    }
 }
 
 /* tablets */
@@ -213,6 +216,9 @@
         /*display:block;*/
         /*padding-bottom:10px;*/
     /*}*/
+    #scrollup {
+        right: 20px;
+    }
 }
 
 /* smartphones */
@@ -381,5 +387,8 @@
     }
     .bmb3-header {
         font-size: 34px;
+    }
+    #scrollup {
+        right: 20px;
     }
 }
