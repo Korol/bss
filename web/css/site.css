@@ -372,7 +372,7 @@ body {
 }
 .bmb3-tag-block {
     text-align: right;
-    padding-top: 4px; /* 8 */
+    padding-top: 14px; /* 8, 14(?!?!) */
 }
 .bmb3-p {
     font-size: 20px;
