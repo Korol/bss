@@ -330,7 +330,7 @@ body {
     border-bottom: 1px solid #222;
 }
 .bmb2-wrap {
-    background: url("/images/boss-bg.png") repeat;
+    background: url("../images/boss-bg.png") repeat;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -395,7 +395,7 @@ body {
 .bmb4-phone-block {
     width: 380px;
     height: 779px;
-    background: url("/images/t_phone.png");
+    background: url("../images/t_phone.png");
 }
 .bmb4-phone-block img.bmb4-row-img {
     width: 343px;
