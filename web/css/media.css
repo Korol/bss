@@ -77,11 +77,11 @@
         left: 12px;
     }
     .bmb4-black-appstore {
-        margin-top: 50px;
-        margin-left: -45px;
+        margin-top: 70px;
+        margin-left: 25px;
     }
     .bmb4-black-gplay {
-        margin-top: 50px;
+        margin-top: 70px;
         margin-left: -28px;
     }
     .bmb8-buttons-block {
@@ -109,6 +109,13 @@
     }
     #scrollup {
         right: 20px;
+    }
+    .bmb8-black-white-appstore {
+        float: left !important;
+        margin-bottom: 20px;
+    }
+    .bmb8-black-white-gplay {
+        float: left;
     }
 }
 
@@ -218,6 +225,20 @@
     /*}*/
     #scrollup {
         right: 20px;
+    }
+    #block6_carousel .carousel-inner {
+        width: 90%;
+        margin-left: 5%;
+    }
+    #block6_carousel .carousel-control.left {
+        left: -20px;
+    }
+    #block6_carousel .carousel-control.right {
+        right: -20px;
+    }
+    #block6_carousel .carousel-control.left,
+    #block6_carousel .carousel-control.right {
+        width: 30px;
     }
 }
 
@@ -390,5 +411,19 @@
     }
     #scrollup {
         right: 20px;
+    }
+    #block6_carousel .carousel-inner {
+        width: 90%;
+        margin-left: 5%;
+    }
+    #block6_carousel .carousel-control.left {
+        left: -20px;
+    }
+    #block6_carousel .carousel-control.right {
+        right: -20px;
+    }
+    #block6_carousel .carousel-control.left,
+    #block6_carousel .carousel-control.right {
+        width: 30px;
     }
 }

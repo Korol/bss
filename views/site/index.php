@@ -392,7 +392,7 @@ $this->title = 'Boss';
             </div>
         </div>
         <div class="row bmb4-buttons-block">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-10">
                         <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
@@ -404,8 +404,8 @@ $this->title = 'Boss';
                     <div class="col-lg-2 col-md-2 col-sm-2"></div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4"></div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4 col-md-4 col-sm-6"></div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2"></div>
                     <div class="col-lg-10 col-md-10 col-sm-10">
@@ -783,14 +783,14 @@ $this->title = 'Boss';
                 </div>
             <?php endforeach; ?>
                 <div class="row bmb8-buttons-block">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
                             <div class="bmb8-black-white-appstore pull-right">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
                             <div class="bmb8-black-white-gplay">
                                 <span><?= $this->params['gplay_text']; ?></span>
