@@ -14,6 +14,7 @@ class FaqController extends FrontendController
     {
         $faqs = Faq::find()
             ->where(['language_id' => $this->language->id, 'enabled' => 1])
+            ->orderBy(['sort_order' => 'asc'])
             ->asArray()
             ->all();
         $faq_info = FaqInfo::find()

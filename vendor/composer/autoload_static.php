@@ -39,6 +39,8 @@ class ComposerStaticInit2324c0c7f064d0c0a284893fefbb8362
         ),
         'k' => 
         array (
+            'kartik\\sortinput\\' => 17,
+            'kartik\\sortable\\' => 16,
             'kartik\\select2\\' => 15,
             'kartik\\base\\' => 12,
         ),
@@ -151,6 +153,14 @@ class ComposerStaticInit2324c0c7f064d0c0a284893fefbb8362
         'mihaildev\\ckeditor\\' => 
         array (
             0 => __DIR__ . '/..' . '/mihaildev/yii2-ckeditor',
+        ),
+        'kartik\\sortinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-sortable-input',
+        ),
+        'kartik\\sortable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-sortable',
         ),
         'kartik\\select2\\' => 
         array (

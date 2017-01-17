@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $columns = [
         ['class' => 'yii\grid\SerialColumn'],
 
+        'sort_order',
         'question',
         'answer:html',
         [

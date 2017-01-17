@@ -149,4 +149,22 @@ return array (
       '@mihaildev/elfinder' => $vendorDir . '/mihaildev/yii2-elfinder',
     ),
   ),
+  'kartik-v/yii2-sortable' => 
+  array (
+    'name' => 'kartik-v/yii2-sortable',
+    'version' => '1.2.0.0',
+    'alias' => 
+    array (
+      '@kartik/sortable' => $vendorDir . '/kartik-v/yii2-sortable',
+    ),
+  ),
+  'kartik-v/yii2-sortable-input' => 
+  array (
+    'name' => 'kartik-v/yii2-sortable-input',
+    'version' => '1.1.0.0',
+    'alias' => 
+    array (
+      '@kartik/sortinput' => $vendorDir . '/kartik-v/yii2-sortable-input',
+    ),
+  ),
 );

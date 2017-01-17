@@ -45,6 +45,7 @@ $menu = [
             'label' => Yii::t('admin', 'FAQ'),
             'items' => [
                 ['label' => Yii::t('admin', 'Question/Answer'), 'url' => ['/admin/faq/index']],
+                ['label' => Yii::t('admin', 'Questions Order'), 'url' => ['/admin/faq/sorting']],
                 ['label' => Yii::t('admin', 'Info'), 'url' => ['/admin/faq-info/index']],
             ],
         ],
@@ -98,6 +99,7 @@ $menu = [
             'label' => Yii::t('admin', 'FAQ'),
             'items' => [
                 ['label' => Yii::t('admin', 'Question/Answer'), 'url' => ['/admin/faq/index']],
+                ['label' => Yii::t('admin', 'Questions Order'), 'url' => ['/admin/faq/sorting']],
                 ['label' => Yii::t('admin', 'Info'), 'url' => ['/admin/faq-info/index']],
             ],
         ],

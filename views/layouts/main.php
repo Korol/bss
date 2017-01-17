@@ -50,46 +50,6 @@ $top_menu = [
         ],
     ],
 ];
-
-// temp:
-/*$top_menu = [
-    'left' => [
-        'main' => [
-            'title' => 'Главная',
-            'url' => '/',
-        ],
-        'about' => [
-            'title' => 'Кто такой Босс',
-            'url' => '/about',
-        ],
-        'price' => [
-            'title' => 'Тарифы',
-            'url' => '/price',
-        ],
-        'feedback' => [
-            'title' => 'Отзывы',
-            'url' => '/feedback',
-        ],
-        'faq' => [
-            'title' => 'FAQ',
-            'url' => '/faq',
-        ],
-    ],
-    'right' => [
-        'news' => [
-            'title' => 'Новости',
-            'url' => '/news',
-        ],
-        'partner' => [
-            'title' => 'Стать партнером',
-            'url' => '/partner',
-        ],
-        'contact' => [
-            'title' => 'Мы на связи',
-            'url' => '/contact',
-        ],
-    ],
-];*/
 $seo = (!empty($this->params['seo'][$this->params['active_top_menu']])) ? $this->params['seo'][$this->params['active_top_menu']] : ['keywords' => '', 'description' => '', 'title' => ''];
 $this->registerMetaTag(['name' => 'keywords', 'content' => $seo['keywords']]);
 $this->registerMetaTag(['name' => 'description', 'content' => $seo['description']]);
@@ -193,7 +153,9 @@ if(!empty($this->params['site_settings']['body_start'])){
                             <li class="dropdown flags-dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <span class="flag flag-<?= $this->params['current_language']['flag']; ?>" alt="<?= $this->params['current_language']['title_en']; ?>"></span>
+                                    <?php if(!empty($this->params['all_languages'])): ?>
                                     <span class="glyphicon glyphicon-menu-down boss-countries-icon" aria-hidden="true"></span>
+                                    <?php endif; ?>
                                 </a>
                             <?php
                             if(!empty($this->params['all_languages'])):
@@ -446,60 +408,6 @@ if(!empty($this->params['site_settings']['body_start'])){
                 ],
             ],
         ];
-
-        // temp:
-        /*$block11 = [
-            0 => [
-                0 => [
-                    'title' => 'Главная',
-                    'url' => '/',
-                ],
-                1 => [
-                    'title' => 'Кто такой Boss',
-                    'url' => '/about',
-                ],
-                2 => [
-                    'title' => 'Тарифы',
-                    'url' => '/price',
-                ],
-                3 => [
-                    'title' => 'Отзывы',
-                    'url' => '/feedback',
-                ],
-            ],
-            1 => [
-                0 => [
-                    'title' => 'FAQ',
-                    'url' => '/faq',
-                ],
-                1 => [
-                    'title' => 'Наши новости',
-                    'url' => '/news',
-                ],
-                2 => [
-                    'title' => 'Стать партнёром',
-                    'url' => '/partner',
-                ],
-                3 => [
-                    'title' => 'Мы на связи',
-                    'url' => '/contact',
-                ],
-            ],
-            2 => [
-                0 => [
-                    'title' => 'Пользовательское соглашение',
-                    'url' => '#',
-                ],
-                1 => [
-                    'title' => 'Политика конфиденциальности',
-                    'url' => '#',
-                ],
-                2 => [
-                    'title' => 'help@boss-app.com',
-                    'url' => 'help@boss-app.com',
-                ],
-            ],
-        ];*/
         ?>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3 bmb11-content">

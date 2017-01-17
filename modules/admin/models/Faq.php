@@ -13,6 +13,7 @@ use app\models\Language;
  * @property string $question
  * @property string $answer
  * @property integer $enabled
+ * @property integer $sort_order
  */
 class Faq extends \yii\db\ActiveRecord
 {
@@ -47,6 +48,7 @@ class Faq extends \yii\db\ActiveRecord
             'question' => Yii::t('admin', 'Question'),
             'answer' => Yii::t('admin', 'Answer'),
             'enabled' => Yii::t('admin', 'Enabled'),
+            'sort_order' => Yii::t('admin', 'Sort Order'),
         ];
     }
 

@@ -1170,10 +1170,10 @@ h3.news-title a, h3.news-title a:hover {
     width: 88px;
     height: 73px;
     background: url("../images/about_mail.png");
-    margin: 10px auto 15px;
+    margin: 10px 0 15px;
 }
 .about-mail-address {
-    text-align: center;
+    text-align: left;
     margin-bottom: 40px;
 }
 .about-mail-address span {

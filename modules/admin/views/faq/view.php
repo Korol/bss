@@ -38,6 +38,7 @@ $language = \app\models\Language::findOne(['id' => $model->language_id]);
             ],
             'question',
             'answer:html',
+            'sort_order',
             [
                 'label' => Yii::t('admin', 'Enabled'),
                 'value' => ($model->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled'),

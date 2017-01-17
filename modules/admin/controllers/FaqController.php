@@ -74,12 +74,66 @@ class FaqController extends Controller
         $model = new Faq();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $max = Faq::find()->where(['language_id' => $model->language_id])->max('sort_order');
+            $model->sort_order = ((int)$max + 1);
+            $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionSorting($lang_id = 0)
+    {
+        $this->checkAccess();
+        $admin = false;
+        if(Yii::$app->user->can('admin')){
+            $admin = true;
+            if(!empty($lang_id) && is_numeric($lang_id)){
+                $faq = Faq::find()
+                    ->where(['language_id' => $lang_id])
+                    ->orderBy(['sort_order' => 'asc'])
+                    ->asArray()
+                    ->all();
+            }
+            else{
+                $faq = [];
+            }
+        }
+        else{
+            $lang_id = $this->app_language_id;
+            $faq = About::find()
+                ->where(['language_id' => $lang_id])
+                ->orderBy(['sort_order' => 'asc'])
+                ->asArray()
+                ->all();
+        }
+        $languages = Language::find()->asArray()->all();
+
+        return $this->render('sorting', compact('admin', 'lang_id', 'faq', 'languages'));
+    }
+
+    public function actionSortingSave()
+    {
+        $this->checkAccess();
+        $post = Yii::$app->request->post();
+        if(empty($post['language_id']) || empty($post['sort_list'])){
+            return $this->redirect(['index']);
+        }
+
+        $model = new Faq();
+        $sort_list = explode(',', $post['sort_list']);
+        if(!empty($sort_list)){
+            foreach($sort_list as $key => $item){
+                $sort_order = $key + 1;
+                $model->updateAll(['sort_order' => $sort_order], ['language_id' => $post['language_id'], 'id' => $item]);
+            }
+            Yii::$app->session->setFlash('success', Yii::t('admin', 'FAQ questions sorting order was updated successfully!'));
+        }
+
+        return $this->redirect(['sorting', 'lang_id' => $post['language_id']]);
     }
 
     /**

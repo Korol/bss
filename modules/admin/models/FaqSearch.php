@@ -18,7 +18,7 @@ class FaqSearch extends Faq
     public function rules()
     {
         return [
-            [['id', 'language_id', 'enabled'], 'integer'],
+            [['id', 'language_id', 'enabled', 'sort_order'], 'integer'],
             [['question', 'answer'], 'safe'],
         ];
     }
