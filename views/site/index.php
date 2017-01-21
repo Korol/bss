@@ -264,7 +264,7 @@ $this->title = 'Boss';
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="bmb3-left-img" src="<?=\yii\helpers\Url::to(['images/vbvk_phone_tablet2.png']); ?>" alt="Block 3 Image"/>
+                <img class="bmb3-left-img" src="<?=\yii\helpers\Url::to(['images/vbvk_phone_tablet3.png']); ?>" alt="Block 3 Image"/>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <?php
