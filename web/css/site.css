@@ -756,7 +756,7 @@ body {
     top: 7px;
     font-size: 16px;
     color: #fff;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .bmb8-btn-link:hover {
     text-decoration: none;
