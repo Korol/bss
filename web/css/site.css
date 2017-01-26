@@ -924,7 +924,7 @@ body {
     /*background-color: #ebebec;*/
     background-color: #daecf4;
     /*padding-top: 215px;*/
-    padding-top: 120px; /* 150 */
+    padding-top: 140px; /* 150 */
 }
 .wrap-news {
     background-color: #ebebec;
@@ -1113,7 +1113,7 @@ h3.news-title a, h3.news-title a:hover {
 }
 .price-buttons .bmb4-black-gplay {
     position: relative;
-    top: -4px;
+    top: 0px;
     margin-left: 50px;
 }
 .price-note {
@@ -1249,7 +1249,7 @@ h3.news-title a, h3.news-title a:hover {
 .faq-block-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 120px; /* 150 */
+    padding-top: 140px; /* 150 */
     padding-bottom: 50px;
 }
 .faq-block .bmb2-header {
@@ -1274,7 +1274,7 @@ h3.news-title a, h3.news-title a:hover {
 .partner-block-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 120px; /* 150 */
+    padding-top: 140px; /* 150 */
     padding-bottom: 50px;
 }
 .partner-block .bmb2-header {
