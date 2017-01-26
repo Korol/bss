@@ -474,7 +474,8 @@ body {
 }
 .bmb4-black-gplay {
     /*background: url("/images/btn_black_gplay.png");*/
-    background: url("../images/btn_black_gplay1.png");
+    /*background: url("../images/btn_black_gplay1.png");*/
+    background: url("../images/btn_black_gplay2.png");
 }
 .bmb4-black-appstore span {
     position: relative;

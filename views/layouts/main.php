@@ -331,12 +331,12 @@ if(!empty($this->params['site_settings']['body_start'])){
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
                         <a href="<?= $this->params['page_links']['facebook']; ?>" target="_blank">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb1_new.png']); ?>" alt="Facebook Icon"/>
+                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb2_new.png']); ?>" alt="Facebook Icon"/>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
                         <a href="<?= $this->params['page_links']['vk']; ?>" target="_blank">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk1_new.png']); ?>" alt="VK Icon"/>
+                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk2_new.png']); ?>" alt="VK Icon"/>
                         </a>
                     </div>
                 </div>
