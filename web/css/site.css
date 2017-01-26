@@ -201,9 +201,12 @@ body {
     color: #ffd715 !important;
 }
 .boss-logo-block {
+    /*width: 195px;*/
+    /*height: 142px;*/
+    /*background: url("../images/logo_png24.png");*/
     width: 195px;
-    height: 142px;
-    background: url("../images/logo_png24.png");
+    height: 138px;
+    background: url("../images/logo_png24_new.png");
 }
 .blb-hide {
     display: none;
@@ -275,7 +278,8 @@ body {
 .bmb1-yellow-appstore {
     /*background: url("/images/btn_yellow_appstore.png") transparent;*/
     /*background: url("../images/btn_yellow_appstore1.png") transparent;*/
-    background: url("../images/btn_yellow_appstore2.png") transparent;
+    /*background: url("../images/btn_yellow_appstore2.png") transparent;*/
+    background: url("../images/btn_yellow_appstore2_new.png") transparent;
     margin-bottom: 35px;
 }
 .bmb1-yellow-gplay {
@@ -327,7 +331,8 @@ body {
 
 /* BLOCK 2 */
 .boss-main-block2 {
-    background-color: #ffd715;
+    /*background-color: #ffd715;*/
+    background-color: #fce652;
     border-bottom: 1px solid #222;
 }
 .bmb2-wrap {
@@ -355,7 +360,8 @@ body {
 
 /* BLOCK 3 */
 .boss-main-block3 {
-    background-color: #ebebec;
+    /*background-color: #ebebec;*/
+    background-color: #eaeace;
     border-bottom: 1px solid #222;
     padding-top: 30px;
 }
@@ -382,7 +388,8 @@ body {
 
 /* BLOCK 4 */
 .boss-main-block4 {
-    background-color: #ffd715;
+    /*background-color: #ffd715;*/
+    background-color: #fce652;
     border-bottom: 1px solid #222;
     padding-top: 50px;
     /*padding-bottom: 50px;*/
@@ -396,7 +403,8 @@ body {
 .bmb4-phone-block {
     width: 380px;
     height: 779px;
-    background: url("../images/t_phone.png");
+    /*background: url("../images/t_phone.png");*/
+    background: url("../images/t_phone_new.png");
 }
 .bmb4-phone-block img.bmb4-row-img {
     width: 343px;
@@ -418,12 +426,18 @@ body {
 .bmb4-left-block {
     margin-bottom: 30px;
 }
+.bmb4-left-block-small{
+    margin-bottom: 10px;
+}
 .bmb4-row-title {
     font-size: 20px;
     font-weight: 100;
     text-align: right;
     text-transform: uppercase;
     cursor: pointer;
+}
+.bmb4-row-title-center{
+    text-align: center;
 }
 .bmb4-row-title span {
     border-bottom: 1px dotted #333;
@@ -455,7 +469,8 @@ body {
 .bmb4-black-appstore {
     /*background: url("/images/btn_black_appstore.png");*/
     /*background: url("../images/btn_black_appstore1.png");*/
-    background: url("../images/btn_black_appstore2.png");
+    /*background: url("../images/btn_black_appstore2.png");*/
+    background: url("../images/btn_black_appstore2_new.png");
 }
 .bmb4-black-gplay {
     /*background: url("/images/btn_black_gplay.png");*/
@@ -466,15 +481,17 @@ body {
     left: 80px;
     top: 5px;
     font-size: 20px;
-    color: #ffd715;
+    /*color: #ffd715;*/
+    color: #fbf78c;
 }
 .bmb4-black-gplay span {
     position: relative;
     left: 85px;
-    top: 7px;
-    font-size: 16px;
-    color: #ffd715;
-    text-transform: uppercase;
+    top: 5px;
+    font-size: 20px;
+    /*color: #ffd715;*/
+    color: #fce652;
+    /*text-transform: uppercase;*/
 }
 .bmb4-btn-link:hover {
     text-decoration: none;
@@ -482,7 +499,8 @@ body {
 
 /* BLOCK 5 */
 .boss-main-block5 {
-    background-color: #ebebec;
+    /*background-color: #ebebec;*/
+    background-color: #daecf4;
     border-bottom: 1px solid #222;
     padding-top: 30px;
     /*padding-bottom: 50px;*/
@@ -582,7 +600,8 @@ body {
 }
 /* BLOCK 6 */
 .boss-main-block6 {
-    background-color: #6fcd9b;
+    /*background-color: #6fcd9b;*/
+    background-color: #eaeace;
     border-bottom: 1px solid #222;
     padding-top: 30px;
     padding-bottom: 50px;
@@ -600,7 +619,8 @@ body {
     filter:none !important;
 }
 .bmb6-thumb {
-    background-color: #6fcd9b;
+    /*background-color: #6fcd9b;*/
+    background-color: #eaeace;
     border: none;
 }
 .bmb6-thumb img {
@@ -661,7 +681,8 @@ body {
 }
 /* BLOCK 7 */
 .boss-main-block7 {
-    background-color: #ffd715;
+    /*background-color: #ffd715;*/
+    background-color: #fce652;
     border-bottom: 1px solid #222;
 }
 .bmb7-content {
@@ -684,7 +705,8 @@ body {
 }
 /* BLOCK 8 */
 .boss-main-block8 {
-    background-color: #6fcd9b;
+    /*background-color: #6fcd9b;*/
+    background-color: #eaeace;
     border-bottom: 1px solid #222;
     padding-top: 30px;
 }
@@ -834,7 +856,8 @@ body {
 }
 /* BLOCK 11 */
 .boss-main-block11 {
-    background-color: #ffd715;
+    /*background-color: #ffd715;*/
+    background-color: #fce652;
     border-bottom: 20px solid #231f20;
     /*padding-top: 30px;*/
     padding-bottom: 40px;
@@ -896,9 +919,10 @@ body {
 
 /* NEWS PAGE */
 .boss-news-block {
-    background-color: #ebebec;
+    /*background-color: #ebebec;*/
+    background-color: #daecf4;
     /*padding-top: 215px;*/
-    padding-top: 150px;
+    padding-top: 120px; /* 150 */
 }
 .wrap-news {
     background-color: #ebebec;
@@ -944,7 +968,8 @@ h3.news-title a, h3.news-title a:hover {
 
 /* FEEDBACK PAGE */
 .boss-feedback-block {
-    background-color: #6fcd9b;
+    /*background-color: #6fcd9b;*/
+    background-color: #eaeace;
 }
 .feedback-wrapper {
     /*background: url('../images/boss-bg.png') repeat;*/
@@ -954,7 +979,7 @@ h3.news-title a, h3.news-title a:hover {
 .feedback-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 150px;
+    padding-top: 120px; /* 150 */
     padding-bottom: 50px;
 }
 .wrap-feedback {
@@ -1014,7 +1039,8 @@ h3.news-title a, h3.news-title a:hover {
 
 /* PRICE PAGE */
 .boss-price-block {
-    background-color: #ebebec;
+    /*background-color: #ebebec;*/
+    background-color: #eaeace;
 }
 .price-wrapper {
     padding-top: 20px;
@@ -1022,7 +1048,7 @@ h3.news-title a, h3.news-title a:hover {
 }
 .price-wrapper > .container {
     /*padding-top: 215px;*/
-    padding-top: 150px;
+    padding-top: 120px; /* 150 */
     padding-bottom: 50px;
 }
 .price-table > tbody > tr > td {
@@ -1048,7 +1074,8 @@ h3.news-title a, h3.news-title a:hover {
     position: relative;
 }
 .price-tr-light {
-    background: #ebebec;
+    /*background: #ebebec;*/
+    background: #eaeace;
 }
 .price-tr-dark {
     background: #e0e1e2;
@@ -1107,7 +1134,8 @@ h3.news-title a, h3.news-title a:hover {
 
 /* ABOUT PAGE */
 .about-block {
-    background: #ffd715;
+    /*background: #ffd715;*/
+    background: #fce652;
     border-bottom: 1px solid #222;
     /*margin-top: 50px;*/
     font-size: 18px;
@@ -1123,7 +1151,7 @@ h3.news-title a, h3.news-title a:hover {
 .about-block-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 150px;
+    padding-top: 120px; /* 150 */
     padding-bottom: 10px;
 }
 .about-block .bmb2-header,
@@ -1132,13 +1160,15 @@ h3.news-title a, h3.news-title a:hover {
     text-align: left;
 }
 .about-images-block {
-    background: #6fcd9b;
+    /*background: #6fcd9b;*/
+    background: #eaeace;
     border-bottom: 1px solid #222;
     padding-top: 20px;
     padding-bottom: 50px;
 }
 .about-vacancy {
-    background: #ffd715;
+    /*background: #ffd715;*/
+    background: #fce652;
 }
 .about-vacancy-wrapper {
     background: url('../images/boss-bg.png') repeat;
@@ -1197,7 +1227,8 @@ h3.news-title a, h3.news-title a:hover {
 
 /* FAQ PAGE */
 .faq-block {
-    background: #6fcd9b;
+    /*background: #6fcd9b;*/
+    background: #daecf4;
     font-size: 18px;
 }
 .wrap-faq {
@@ -1216,7 +1247,7 @@ h3.news-title a, h3.news-title a:hover {
 .faq-block-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 150px;
+    padding-top: 120px; /* 150 */
     padding-bottom: 50px;
 }
 .faq-block .bmb2-header {
@@ -1231,7 +1262,8 @@ h3.news-title a, h3.news-title a:hover {
 
 /* PARTNER PAGE */
 .partner-block {
-    background: #ffd715;
+    /*background: #ffd715;*/
+    background: #fce652;
     font-size: 18px;
 }
 .wrap-partner {
@@ -1240,7 +1272,7 @@ h3.news-title a, h3.news-title a:hover {
 .partner-block-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 150px;
+    padding-top: 120px; /* 150 */
     padding-bottom: 50px;
 }
 .partner-block .bmb2-header {
@@ -1262,7 +1294,8 @@ h3.news-title a, h3.news-title a:hover {
     width: 200px;
     position: absolute;
     right: 10px;
-    color: #ffd715;
+    /*color: #ffd715;*/
+    color: #fce652;
     font-size: 20px;
     top: 18px;
 }
@@ -1277,7 +1310,8 @@ h3.news-title a, h3.news-title a:hover {
     background: #231f20;
     padding: 40px 0 0;
     font-size: 18px;
-    color: #ffd715;
+    /*color: #ffd715;*/
+    color: #fce652;
 }
 .partner-mail {
     width: 89px;
@@ -1301,7 +1335,8 @@ h3.news-title a, h3.news-title a:hover {
 .partner-mail-address a:hover
 .partner-mail-address a:active
 .partner-mail-address a:focus {
-    color: #ffd715;
+    /*color: #ffd715;*/
+    color: #fce652;
     text-decoration: none;
 }
 

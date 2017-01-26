@@ -9,9 +9,12 @@
     }
     .boss-logo-block {
         /*display: none;*/
+        /*width: 160px;*/
+        /*height: 117px;*/
+        /*background: url('../images/logo_png24_md.png');*/
         width: 160px;
-        height: 117px;
-        background: url('../images/logo_png24_md.png');
+        height: 113px;
+        background: url('../images/logo_png24_md_new.png');
     }
     /*#blb_title {*/
         /*color: #ffd715 !important;*/
@@ -21,7 +24,8 @@
     .bmb4-phone-block {
         width: 300px;
         height: 615px;
-        background: url("../images/t_phone_mobile.png");
+        /*background: url("../images/t_phone_mobile.png");*/
+        background: url("../images/t_phone_mobile_new.png");
     }
     .bmb4-phone-block img.bmb4-row-img {
         width: 273px;
@@ -67,7 +71,8 @@
     .bmb4-phone-block {
         width: 255px;
         height: 523px;
-        background: url('../images/t_phone_sm.png');
+        /*background: url('../images/t_phone_sm.png');*/
+        background: url('../images/t_phone_sm_new.png');
     }
     .bmb4-phone-block img.bmb4-row-img {
         width: 230px;
@@ -283,7 +288,8 @@
     .bmb4-phone-block {
         width: 300px;
         height: 615px;
-        background: url("../images/t_phone_mobile.png");
+        /*background: url("../images/t_phone_mobile.png");*/
+        background: url("../images/t_phone_mobile_new.png");
     }
     .bmb4-phone-block img.bmb4-row-img {
         width: 273px;

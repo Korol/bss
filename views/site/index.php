@@ -360,6 +360,8 @@ $this->title = 'Boss';
         }
         ?>
         <div class="row">
+            <?php $view_is_mobile = ((Yii::$app->devicedetect->isMobile()) || (Yii::$app->devicedetect->isTablet())) ? true : false; ?>
+            <?php if(empty($view_is_mobile)): ?>
             <div class="col-lg-4 col-md-4 col-sm-4 bmb4-left-block-wrap">
                 <?php foreach($block4 as $b4_key => $b4_row): ?>
                 <div class="row bmb4-left-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_lb_<?=$b4_key; ?>">
@@ -390,6 +392,35 @@ $this->title = 'Boss';
                 </div>
                 <?php endforeach; ?>
             </div>
+            <?php else: ?>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <?php foreach($block4 as $b4_key => $b4_row): ?>
+                        <div class="bmb4-left-block bmb4-left-block-small <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_lb_<?=$b4_key; ?>">
+                            <div class="bmb4-row-title bmb4-row-title-center" id="bmb4_title_<?=$b4_key; ?>">
+                                <span><?= $b4_row['header']; ?></span>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <?php foreach($block4 as $b4_key => $b4_row): ?>
+                        <div class="row bmb4-right-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_rb_<?=$b4_key; ?>">
+                            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 bmb4-row-text">
+                                <h1 class="bmb3-header text-center"><?= $b4_row['header']; ?></h1>
+                                <p class="bmb3-p"><?= $b4_row['content']; ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 bmb4-right-block-wrap">
+                    <div class="bmb4-phone-block">
+                        <?php foreach($block4 as $b4_key => $b4_row): ?>
+                            <img id="bmb4_pbi_<?=$b4_key; ?>" class="bmb4-row-img <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" src="<?=\yii\helpers\Url::to([$block4_img_path . $b4_row['img']]); ?>" alt="Block 4 Image <?=$b4_row['header']; ?>"/>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="row bmb4-buttons-block">
             <div class="col-lg-4 col-md-4 col-sm-6">
@@ -689,7 +720,7 @@ $this->title = 'Boss';
                 <div class="col-lg-12 col-md-12 bmb7-content">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 text-center">
-                            <img src="<?=\yii\helpers\Url::to(['images/sp_icon.png']); ?>" alt="Partners Icon"/>
+                            <img src="<?=\yii\helpers\Url::to(['images/sp_icon_new.png']); ?>" alt="Partners Icon"/>
                         </div>
                     </div>
                     <div class="row">

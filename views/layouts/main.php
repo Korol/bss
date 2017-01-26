@@ -138,9 +138,7 @@ if(!empty($this->params['site_settings']['body_start'])){
                         <div class="clearfix"></div>
                     </div>
                     <div class="col-lg-2 col-md-2 blb">
-                        <div id="top_logo" class="boss-logo-block">
-
-                        </div>
+                        <div id="top_logo" class="boss-logo-block"></div>
                         <p id="blb_title">boss</p>
                     </div>
                     <div class="col-lg-5 col-md-5">
@@ -328,17 +326,17 @@ if(!empty($this->params['site_settings']['body_start'])){
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
                         <a href="<?= $this->params['page_links']['youtube']; ?>" target="_blank">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube.png']); ?>" alt="Youtube Icon"/>
+                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_youtube_new.png']); ?>" alt="Youtube Icon"/>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
                         <a href="<?= $this->params['page_links']['facebook']; ?>" target="_blank">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb1.png']); ?>" alt="Facebook Icon"/>
+                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_fb1_new.png']); ?>" alt="Facebook Icon"/>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bmb10-social-icon text-center">
                         <a href="<?= $this->params['page_links']['vk']; ?>" target="_blank">
-                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk1.png']); ?>" alt="VK Icon"/>
+                            <img src="<?=\yii\helpers\Url::to([$block10_img_path . 'ubob_vk1_new.png']); ?>" alt="VK Icon"/>
                         </a>
                     </div>
                 </div>
