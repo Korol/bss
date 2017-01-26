@@ -753,8 +753,8 @@ body {
 .bmb8-black-white-gplay span {
     position: relative;
     left: 85px;
-    top: 7px;
-    font-size: 16px;
+    top: 5px;
+    font-size: 20px;
     color: #fff;
     /*text-transform: uppercase;*/
 }
