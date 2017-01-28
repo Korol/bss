@@ -1,11 +1,15 @@
 /* md devices */
-@media (max-width: 1199px) {
-    .navbar-boss {
-        font-size: 14px !important;
-    }
+/*@media only screen and (max-width: 1199px) {*/
+@media only screen and (max-width: 1200px) {
+    /*.navbar-boss {*/
+        /*font-size: 14px !important;*/
+    /*}*/
     .navbar-boss .navbar-nav > li > a {
-        padding-left: 7px;/*10*/
-        padding-right: 7px;
+        /*padding-left: 7px;*//*10*/
+        /*padding-right: 7px;*/
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .boss-logo-block {
         /*display: none;*/
@@ -67,7 +71,8 @@
 }
 
 /* sm devices */
-@media (max-width: 991px) {
+/*@media only screen and (max-width: 991px) {*/
+@media only screen and (max-width: 992px) {
     .bmb4-phone-block {
         width: 255px;
         height: 523px;
@@ -122,10 +127,32 @@
     .bmb8-black-white-gplay {
         float: left;
     }
+    .navbar-boss {
+        height: 100px;
+    }
+    .navbar-boss .navbar-nav > li > a{
+        font-size: 16px;
+    }
+    .boss-logo-block {
+        display: none !important;
+    }
+    .blb p {
+        display: block;
+        color: #ffd715;
+        margin-left: -22px;
+        /*text-align: left;*/
+    }
+    .top-menu-leftside{
+        text-align: right;
+    }
+    .top-menu-leftside.navbar-nav > li {
+        text-align: right;
+    }
 }
 
 /* tablets */
-@media (max-width: 760px) {
+/*@media only screen and (max-width: 760px) {*/
+@media only screen and (max-width: 768px) {
     .bmb5-slider-item-left {
         border-left: none;
     }
@@ -245,10 +272,46 @@
     #block6_carousel .carousel-control.right {
         width: 30px;
     }
+    .navbar-boss {
+        height: 50px;
+    }
+    .blb{
+        display: none;
+    }
+    #bs-example-navbar-collapse-1 {
+        background: #222;
+    }
+    .top-menu-leftside > .navbar-nav {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+    .top-menu-leftside > .navbar-nav > li {
+        text-align: center;
+    }
+    .top-menu-rightside > .navbar-nav {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+    .top-menu-rightside > .navbar-nav > li {
+        text-align: center;
+        width: 100%;
+    }
+    .top-menu-leftside > .navbar-nav > li > a,
+    .top-menu-rightside > .navbar-nav > li > a {
+        color: #ffd715;
+    }
+    .navbar-inverse .navbar-brand{
+        display: block;
+        font-size: 40px;
+        color: #ffd715;
+        font-weight: 900;
+    }
 }
 
 /* smartphones */
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .bmb5-slider-item-right {
         border-right: none;
         padding-left: 30px;

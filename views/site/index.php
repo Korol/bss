@@ -402,7 +402,7 @@ $this->title = 'Boss';
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-4 col-md-8 col-sm-8">
                     <?php foreach($block4 as $b4_key => $b4_row): ?>
                         <div class="row bmb4-right-block <?= ($b4_key == 0) ? 'bmb4-row-active' : ''; ?>" id="bmb4_rb_<?=$b4_key; ?>">
                             <div class="col-lg-2 col-md-2 col-sm-2"></div>

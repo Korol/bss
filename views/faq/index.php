@@ -6,6 +6,24 @@
 use yii\helpers\ArrayHelper;
 
 $this->params['wrap_class'] = 'wrap-faq';
+
+$js = <<<JS
+
+    function gotoAnchor(hsh){
+        var urlHash = (hsh) ? hsh : window.location.hash;
+        if(urlHash){
+            var hashNum = urlHash.replace('#q', '');
+            $('.panel-collapse').removeClass('in');
+            $('#collapse'+hashNum).addClass('in');
+        }
+    }
+
+    gotoAnchor();
+
+JS;
+
+
+$this->registerJs($js, \yii\web\View::POS_END, 'goto-anchor');
 ?>
 
 <div class="faq-block">
@@ -21,11 +39,15 @@ $this->params['wrap_class'] = 'wrap-faq';
                     <?php if(!empty($faqs)): ?>
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                             <?php foreach($faqs as $fk => $faq): ?>
+                                <a name="q<?=$faq['id']; ?>" style="position: relative; top: -50px; display: block; visibility: hidden;"></a>
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="heading<?=$faq['id']; ?>">
                                         <h4 class="panel-title">
                                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$faq['id']; ?>" aria-expanded="true" aria-controls="collapseOne">
                                                 <?= $faq['question']; ?>
+                                            </a>
+                                            <a href="<?=\yii\helpers\Url::to(['/faq#q' . $faq['id']]); ?>" title="<?=Yii::t('site', 'Direct link to the question'); ?>" onclick="gotoAnchor('#q<?=$faq['id']; ?>');">
+                                                <span class="glyphicon glyphicon-link pull-right" aria-hidden="true"></span>
                                             </a>
                                         </h4>
                                     </div>

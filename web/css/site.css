@@ -146,15 +146,18 @@ body {
     font-size: 16px;
     font-weight: lighter;
 }
+.navbar-brand{
+    display: none;
+}
 .navbar-boss-mobile {
     font-size: 16px;
     font-weight: lighter;
 }
-.navbar-boss-mobile .icon-bar {
+.icon-bar {
     background-color: #ffd715 !important;
 }
-.navbar-boss-mobile .navbar-toggle {
-    border-color: #ffd715;
+.navbar-toggle {
+    border-color: #ffd715 !important;
 }
 .navbar-boss .navbar-nav > li > a {
     color: #ffd715;
@@ -355,7 +358,7 @@ body {
 }
 .bmb2-text {
     font-size: 20px;
-    font-weight: 100;
+    font-weight: normal; /* 100 */
 }
 
 /* BLOCK 3 */
@@ -1149,6 +1152,7 @@ h3.news-title a, h3.news-title a:hover {
     background: url('../images/boss-bg.png') repeat;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-weight: normal;
 }
 .about-block-wrapper > .container {
     /*padding-top: 215px;*/
@@ -1232,6 +1236,7 @@ h3.news-title a, h3.news-title a:hover {
     /*background: #6fcd9b;*/
     background: #daecf4;
     font-size: 18px;
+    padding-top: 60px;
 }
 .wrap-faq {
     background: #6fcd9b;
@@ -1249,7 +1254,7 @@ h3.news-title a, h3.news-title a:hover {
 .faq-block-wrapper > .container {
     /*padding-top: 215px;*/
     /*padding-bottom: 265px;*/
-    padding-top: 140px; /* 150 */
+    padding-top: 80px; /* 150 */
     padding-bottom: 50px;
 }
 .faq-block .bmb2-header {
@@ -1401,4 +1406,30 @@ h3.news-title a, h3.news-title a:hover {
     display:none;
     text-indent:-9999px;
     background: url("../images/icon_top.png") no-repeat;
+}
+.grid {
+    margin: 0 auto;
+}
+.grid-item {
+    width: 300px;
+    padding: 1px;
+}
+.grid-item img {
+    max-width: 100%;
+}
+.Collage{
+
+    /* define how much padding you want in between your images */
+    padding:1px;
+
+}
+
+.Collage img{
+
+    /* ensures padding at the bottom of the image is correct */
+    vertical-align:bottom;
+
+    /* hide the images until the plugin has run. the plugin will reveal the images*/
+    /*opacity:0;*/
+
 }

@@ -124,10 +124,11 @@ if(!empty($this->params['site_settings']['body_start'])){
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" href="#">BOSS</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="row">
-                    <div class="col-lg-5 col-md-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 top-menu-leftside">
                         <ul class="nav navbar-nav pull-right">
                             <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
                             <li <?=($tml_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
@@ -137,11 +138,11 @@ if(!empty($this->params['site_settings']['body_start'])){
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-lg-2 col-md-2 blb">
+                    <div class="col-lg-2 col-md-2 col-sm-2 blb">
                         <div id="top_logo" class="boss-logo-block"></div>
                         <p id="blb_title">boss</p>
                     </div>
-                    <div class="col-lg-5 col-md-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 top-menu-rightside">
                         <ul class="nav navbar-nav navbar-left">
                             <?php foreach($top_menu['right'] as $tmr_key =>$tm_right): ?>
                                 <li <?=($tmr_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
@@ -189,7 +190,7 @@ if(!empty($this->params['site_settings']['body_start'])){
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 top-menu-leftside">
                             <ul class="nav navbar-nav">
                                 <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
                                     <li <?=($tml_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
@@ -204,7 +205,9 @@ if(!empty($this->params['site_settings']['body_start'])){
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <span class="flag flag-<?= $this->params['current_language']['flag']; ?>" alt="<?= $this->params['current_language']['title_en']; ?>"></span>
+                                        <?php if(!empty($this->params['all_languages'])): ?>
                                         <span class="glyphicon glyphicon-menu-down boss-countries-icon" aria-hidden="true"></span>
+                                        <?php endif; ?>
                                     </a>
                                     <?php
                                     if(!empty($this->params['all_languages'])):

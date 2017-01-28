@@ -28,15 +28,25 @@ jQuery(document).ready(function ($) {
 
     //$('.about-images').gpGallery('img', {row_max_height: 180});
     //$('.about-images').kirpi4i(); // из-за этого плагина глючит fancybox на iPhone Portrait, что-то с рекурсией связано
-    if(jQuery().kirpi4i && jQuery().fancybox) {
+    if(jQuery().kirpi4i) {
         $('.about-images').kirpi4i();
+    }
 
+    if(jQuery().fancybox){
         $(".fancybox").fancybox({
             helpers: {
                 overlay: {
                     locked: false
                 }
             }
+        });
+    }
+
+    if(jQuery().masonry) {
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item'
+            //columnWidth: 200
         });
     }
 
