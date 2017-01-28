@@ -1147,6 +1147,7 @@ h3.news-title a, h3.news-title a:hover {
 }
 .about-content {
     font-size: 18px;
+    font-weight: normal;
 }
 .about-block-wrapper {
     background: url('../images/boss-bg.png') repeat;
@@ -1184,6 +1185,9 @@ h3.news-title a, h3.news-title a:hover {
 .about-vacancies {
     margin-top: 30px;
     margin-bottom: 0;
+}
+.about-vacancies .panel-body {
+    font-weight: normal;
 }
 .about-vacancies .panel, .about-vacancies .panel-default > .panel-heading {
     background: transparent;
