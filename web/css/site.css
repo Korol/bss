@@ -159,7 +159,8 @@ body {
 .navbar-toggle {
     border-color: #ffd715 !important;
 }
-.navbar-boss .navbar-nav > li > a {
+.navbar-boss .navbar-nav > li > a,
+.navbar-boss-mobile .navbar-nav > li > a {
     color: #ffd715;
     text-decoration: underline;
     padding-left: 13px;
@@ -202,6 +203,7 @@ body {
     text-transform: uppercase;
     font-weight: 900;
     color: #ffd715 !important;
+    display: block;
 }
 .boss-logo-block {
     /*width: 195px;*/
