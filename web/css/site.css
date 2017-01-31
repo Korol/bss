@@ -341,7 +341,8 @@ body {
     border-bottom: 1px solid #222;
 }
 .bmb2-wrap {
-    background: url("../images/boss-bg.png") repeat;
+    /*background: url("../images/boss-bg.png") repeat;*/
+    background: url("../images/boss-bg2.png") repeat;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -1153,7 +1154,8 @@ h3.news-title a, h3.news-title a:hover {
     font-weight: normal;
 }
 .about-block-wrapper {
-    background: url('../images/boss-bg.png') repeat;
+    /*background: url('../images/boss-bg.png') repeat;*/
+    background: url('../images/boss-bg2.png') repeat;
     padding-top: 20px;
     padding-bottom: 20px;
     font-weight: normal;
@@ -1181,7 +1183,8 @@ h3.news-title a, h3.news-title a:hover {
     background: #fce652;
 }
 .about-vacancy-wrapper {
-    background: url('../images/boss-bg.png') repeat;
+    /*background: url('../images/boss-bg.png') repeat;*/
+    background: url('../images/boss-bg2.png') repeat;
     padding-top: 20px;
     padding-bottom: 10px;
 }
