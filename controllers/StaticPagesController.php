@@ -37,4 +37,42 @@ class StaticPagesController extends FrontendController
         return (!empty($page)) ? $page : [];
     }
 
+    public function actionEn()
+    {
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('en');
+    }
+
+    public function actionTr()
+    {
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('tr');
+    }
+
+    public function actionVideo()
+    {
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('video');
+    }
+
+    public function actionHow()
+    {
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('how_to_work');
+    }
+
+    public function actionPrint_ru(){
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('print_ru');
+    }
+
+    public function actionPrint_en(){
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('print_en');
+    }
+
+    public function actionPrint_tr(){
+        $this->view->params['active_top_menu'] = '';
+        return $this->render('print_tr');
+    }
 }

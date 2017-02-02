@@ -1443,3 +1443,7 @@ h3.news-title a, h3.news-title a:hover {
     /*opacity:0;*/
 
 }
+
+.langversion {
+    margin: 120px 0 40px;
+}

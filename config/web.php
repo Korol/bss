@@ -65,6 +65,14 @@ $config = [
                 'news/<id:\d+>' => 'news/view',
                 'privacy-policy' => 'static-pages/privacy',
                 'terms-of-use' => 'static-pages/terms',
+                'en' => 'static-pages/en', // временно, пока не заполнена /en версия сайта
+                'tr' => 'static-pages/tr', // временно, пока не заполнена /tr версия сайта
+                'video' => 'static-pages/video',
+                'video/how-to-work' => 'static-pages/how',
+                'help/print' => 'static-pages/print_ru',
+                'help/print/ru' => 'static-pages/print_ru',
+                'help/print/en' => 'static-pages/print_en',
+                'help/print/tr' => 'static-pages/print_tr',
             ],
         ],
         'view' => [
