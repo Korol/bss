@@ -1,3 +1,6 @@
+<?php
+$this->title = 'Boss';
+?>
 <link rel="stylesheet" type="text/css" href="/css/print/style.css">
 <style>
     .ptext {

@@ -1,4 +1,7 @@
 <?php
+$this->title = 'Boss - How to work';
+?>
+<?php
 $url = 'how-to-work';
 $langs = array('ru', 'en', 'tr');
 $lang = (!empty($_GET['Lang']) && in_array($_GET['Lang'], $langs)) ? $_GET['Lang'] : 'ru';

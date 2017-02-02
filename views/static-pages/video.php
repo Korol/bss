@@ -1,4 +1,7 @@
 <?php
+$this->title = 'Boss Video';
+?>
+<?php
 $langs = array('ru', 'en', 'tr');
 $lang = (!empty($_GET['Lang']) && in_array($_GET['Lang'], $langs)) ? $_GET['Lang'] : 'ru';
 $lang = ($lang == 'tr') ? 'ru' : $lang;

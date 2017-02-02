@@ -1,3 +1,6 @@
+<?php
+$this->title = 'Boss';
+?>
 <link rel="stylesheet" type="text/css" href="/css/en/stylemin.css">
 <link rel="stylesheet" type="text/css" href="/css/en/animatemin.css" />
 
