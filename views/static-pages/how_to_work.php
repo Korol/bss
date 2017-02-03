@@ -106,7 +106,7 @@ $video_code = (!empty($_GET['video']) && in_array($_GET['video'], $videos[$lang]
         text-decoration: none;
     }
     #video {
-        margin-top: 150px;
+        padding-top: 150px;
         padding-bottom: 50px;
     }
     @media only screen and (max-width: 992px) {
@@ -115,7 +115,7 @@ $video_code = (!empty($_GET['video']) && in_array($_GET['video'], $videos[$lang]
             margin-bottom: 30px;
         }
         #video {
-            margin-top: 70px;
+            padding-top: 70px;
         }
     }
     @media only screen and (max-width: 768px) {

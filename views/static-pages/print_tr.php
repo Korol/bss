@@ -19,7 +19,7 @@ $this->title = 'Boss';
     <p>Raporları ve faturaları doğrudan Boss'dan yazdırmak için, bilgisayarınızın en az bir yazıcıya bağlı olduğundan emin olun ve birkaç ayar yapın:</p>
 
     <div class="row" style="margin: 10px">
-        <div class="col-md-8 col-xs-8">
+        <div class="col-md-7 col-xs-12">
             <br>
             <p><b>1) Google Chrome'a girin</b></p>
             <p>Bilgisayarınızda yoksa, <a target="_blank" href="http://www.google.ru/chrome/">www.google.ru/chrome</a> adresinden indirebilirsiniz. E-postalarınızdan birini kullanarak oturum açın (kurulumun başında telefonunuz / tabletinizde gördüğünüz liste) veya kaydolun.</p>
@@ -30,28 +30,28 @@ $this->title = 'Boss';
             <p>Yenileri eklemek için "Yazıcı ekle" tıklayınız.  Bilgisayarınıza bağlı olan tüm yazıcıların listesini göreceksiniz.</p>
             <p>İstenenleri seçin ve "Yazıcı Ekle" yi tıklayın.</p>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-5 col-xs-12">
             <img class="img-thumbnail" style="padding: 15px;" src="/images/print_en/image3.jpg">
         </div>
     </div>
 
     <div class="row" style="margin: 10px">
-        <div class="col-md-8 col-xs-8">
+        <div class="col-md-7 col-xs-12">
             <p>Ayarların doğru yapıldığından emin olmak için <a target="_blank" href="https://www.google.com/cloudprint#printers">https://www.google.com/cloudprint#printers</a> linkini tıklayın.</p>
             <p>Yazdırma işlemi için hazır olan yazıcılar bold ile belirtilmiştir.  Devre dışı olanlar gri ile belirtilmiştir.</p>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-5 col-xs-12">
             <img class="img-thumbnail" style="padding: 15px;" src="/images/print_en/image2.jpg">
         </div>
     </div>
 
     <div class="row" style="margin: 10px">
-        <div class="col-md-8 col-xs-8">
+        <div class="col-md-7 col-xs-12">
             <p><b>3) Diğer kullanıcıların bu yazıcıyla çalışmasına izin ver</b></p>
             <p>Çalışanlarınızın da bu yazıcıyı Boss'tan faturalar ve raporları çıktı almalarını istiyorsanız, onlara erişim vermelisiniz. Listeden adını seçin ve "Paylaş" ı tıklayın.</p>
             <p>Aşağıda, çalışanların mobil cihazlarında çalıştıkları e-posta adreslerini girin. Onları bulmak için telefon / tablet ayarlarını açtıktan sonra "Hesaplar" ı açıp gmail.com ile bitenleri görebilirsiniz. Ayarları kaydetmek için "Paylaş" ı tıklayın.</p>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-5 col-xs-12">
             <img class="img-thumbnail" style="padding: 15px;" src="/images/print_en/image2.jpg">
         </div>
     </div>

@@ -19,7 +19,7 @@ $this->title = 'Boss';
     <p>Чтобы печатать отчеты и накладные прямо из Boss убедитесь что к вашему компьютеру подключен хотя бы один принтер, а затем выполните несколько настроек:</p>
 
     <div class="row" style="margin: 10px">
-        <div class="col-md-8 col-xs-8">
+        <div class="col-md-7 col-xs-12">
             <br>
             <p><b>1) Войдите в Google Chrome</b></p>
             <p>Если на вашем компьютере его нет - скачать можете тут <a target="_blank" href="http://www.google.ru/chrome/">www.google.ru/chrome</a>. Войдите с помощью одного из  ваших электронных адресов  (их список вы видели на своем телефоне/планшете в самом начале настройки) или зарегистрируйтесь.</p>
@@ -30,29 +30,29 @@ $this->title = 'Boss';
             <p>Чтобы добавить новые нажмите “Добавить принтеры”. Вы увидите список всех, которые подключены  к вашему компьютеру.</p>
             <p>Отметьте галочками нужные  и нажмите “Добавить принтер”.</p>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-5 col-xs-12">
             <img class="img-thumbnail" style="padding: 15px;" src="/images/print_ru/image002.png">
         </div>
     </div>
 
     <div class="row" style="margin: 10px">
-        <div class="col-md-8 col-xs-8">
+        <div class="col-md-7 col-xs-12">
             <p>Чтобы убедиться, что все настроено верно, перейдите по ссылке <a target="_blank" href="https://www.google.com/cloudprint#printers">https://www.google.com/cloudprint#printers.</a></p>
             <p>Жирным выделены принтеры,  на которых уже можно печатать. Серым - те, что отключены.</p>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-5 col-xs-12">
             <img class="img-thumbnail" style="padding: 15px;" src="/images/print_ru/image004.png">
         </div>
     </div>
 
     <div class="row" style="margin: 10px">
-        <div class="col-md-8 col-xs-8">
+        <div class="col-md-7 col-xs-12">
             <p><b>3) Разрешите другим пользователям работать с этим принтером</b></p>
             <p>Если вы хотите, чтобы ваши сотрудники тоже могли печатать накладные и отчеты из Boss на этом принтере, то необходимо дать им доступ. Выделите строку с его названием в списке и нажмите кнопку “Предоставить общий доступ”.</p>
             <p>Внизу введите электронные адреса под которыми сотрудники работают на своих мобильных устройствах. Узнать их можно, если открыть настройки телефона/планшета,  затем “Аккаунты” и найти там те, что заканчиваются на gmail.com.
                 Чтобы сохранить настройки, нажмите “Предоставить общий доступ”.</p>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-5 col-xs-12">
             <img class="img-thumbnail" style="padding: 15px;" src="/images/print_ru/image005.png">
         </div>
     </div>

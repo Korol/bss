@@ -95,7 +95,8 @@ class SiteController extends FrontendController
     public function actionRedirect($url)
     {
         if (substr($url, -1) == '/') {
-            return $this->redirect(Yii::$app->getRequest()->getBaseUrl() . '/' . rtrim($url, '/'), 301);
+            $qs = (!empty($_SERVER['QUERY_STRING'])) ? '?' . $_SERVER['QUERY_STRING'] : '';
+            return $this->redirect(Yii::$app->getRequest()->getBaseUrl() . '/' . rtrim($url, '/') . $qs, 301);
         } else {
             throw new NotFoundHttpException;
         }

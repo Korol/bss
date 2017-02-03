@@ -3,6 +3,21 @@ $this->title = 'Boss';
 ?>
 <link rel="stylesheet" type="text/css" href="/css/en/stylemin.css">
 <link rel="stylesheet" type="text/css" href="/css/en/animatemin.css" />
+<style>
+    @media only screen and (max-width: 1200px) {
+        #feedrel a {
+            top: -5px;
+        }
+    }
+    @media only screen and (max-width: 992px) {
+
+    }
+    @media only screen and (max-width: 768px) {
+        #feedrel a {
+            top: 0px;
+        }
+    }
+</style>
 
 <div id="header">
     <div class="container">
@@ -258,6 +273,6 @@ $this->title = 'Boss';
         </div>
     </div>
 </div>
-
+<div class="clearfix"></div>
 <script type="text/javascript" src="/js/en/wow.min.js"></script>
 <script type="text/javascript" src="js/en/utils.min.js"></script>
