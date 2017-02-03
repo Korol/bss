@@ -53,6 +53,10 @@ $config = [
             'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'normalizer' => [
+                'class' => 'yii\web\UrlNormalizer',
+                'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // используем временный редирект вместо постоянного
+            ],
             // List all supported languages here
             // Make sure, you include your app's default language.
 //            'languages' => ['ru', 'en', 'ua', 'de'],
