@@ -91,4 +91,13 @@ class SiteController extends FrontendController
 //            return $this->render('error2', ['exception' => $exception]);
 //        }
 //    }
+
+    public function actionRedirect($url)
+    {
+        if (substr($url, -1) == '/') {
+            return $this->redirect(Yii::$app->getRequest()->getBaseUrl() . '/' . rtrim($url, '/'), 301);
+        } else {
+            throw new NotFoundHttpException;
+        }
+    }
 }

@@ -77,6 +77,7 @@ $config = [
                 'help/print/ru' => 'static-pages/print_ru',
                 'help/print/en' => 'static-pages/print_en',
                 'help/print/tr' => 'static-pages/print_tr',
+                '<url:.+/>' => 'site/redirect',
             ],
         ],
         'view' => [
