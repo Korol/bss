@@ -41,6 +41,9 @@
     .bmb4-black-gplay {
         margin-left: -45px;
     }
+    .bmb2-gplay-btn {
+        margin-left: auto;
+    }
     .bmb8-buttons-block {
         margin-top: 30px;
     }
@@ -68,6 +71,9 @@
     .cdsb-text {
         font-size: 20px;
     }
+    .footer-boss-socials {
+        margin-left: -15px;
+    }
 }
 
 /* sm devices */
@@ -93,6 +99,9 @@
     .bmb4-black-gplay {
         margin-top: 70px;
         margin-left: -28px;
+    }
+    .bmb2-gplay-btn {
+        margin-left: auto;
     }
     .bmb8-buttons-block {
         margin-top: 30px;
@@ -395,6 +404,9 @@
         font-size: 40px;
         color: #ffd715;
         font-weight: 900;
+    }
+    .footer-boss-socials {
+        margin-left: auto;
     }
 }
 

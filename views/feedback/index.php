@@ -106,7 +106,7 @@ $this->params['wrap_class'] = 'wrap-feedback';
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                        <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
                             <div class="feed-about-gplay"><?= Yii::t('site', 'Feedback text to the right of the button'); ?></div>
                         </div>
                     </div>

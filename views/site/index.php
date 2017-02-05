@@ -244,7 +244,7 @@ $this->title = 'Boss';
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
-                                        <div class="bmb4-black-gplay hcentered-block">
+                                        <div class="bmb4-black-gplay hcentered-block bmb2-gplay-btn">
                                             <span><?= $this->params['gplay_text']; ?></span>
                                         </div>
                                     </a>

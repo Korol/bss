@@ -64,7 +64,7 @@ $this->params['wrap_class'] = 'wrap-news';
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h1 class="bmb2-header"><?= $news_header; ?></h1>
+                        <h1 class="bmb2-header"><?= Yii::t('site', 'Download Boss for free'); ?></h1>
                     </div>
                 </div>
                 <div class="row">

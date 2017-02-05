@@ -1,8 +1,9 @@
 <!-- Subscribe Modal -->
 <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel">
     <div class="modal-dialog" role="document">
-        <form method="post">
             <div class="modal-content">
+                <script type="text/javascript" src="https://app.getresponse.com/view_webform_v2.js?u=B5r2I&webforms_id=4970406"></script>
+            <?php /*form method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="subscribeModalLabel"><?= Yii::t('site', 'Subscription to the newsletter'); ?></h4>
@@ -21,8 +22,8 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?= Yii::t('site', 'Close'); ?></button>
                     <button type="submit" class="btn btn-primary"><?= Yii::t('site', 'Subscribe'); ?></button>
                 </div>
+            </form*/?>
             </div>
-        </form>
     </div>
 </div>
 <!-- /Subscribe Modal -->
