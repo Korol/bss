@@ -455,7 +455,7 @@ $this->title = 'Boss';
 <div class="boss-main-block5">
     <div class="container">
         <?php
-        $block5_header = 'Что нового у босса';
+        $block5_header = Yii::t('site', 'News from boss');
         ?>
         <div class="row">
             <div class="col-lg-10 col-md-9 col-sm-9">
@@ -562,7 +562,7 @@ $this->title = 'Boss';
 <div class="boss-main-block6">
     <div class="container">
         <?php
-        $block6_header = 'Отзывы';
+        $block6_header = Yii::t('site', 'Feedback');
         ?>
         <div class="row">
             <div class="col-lg-12">

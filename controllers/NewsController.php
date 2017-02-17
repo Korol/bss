@@ -7,8 +7,6 @@ use app\models\News;
 
 class NewsController  extends FrontendController
 {
-    public $news_header = 'Что нового у Босса';
-
     public function actionIndex()
     {
         $news = News::find()
@@ -18,7 +16,7 @@ class NewsController  extends FrontendController
             ->all();
         $current_news = (!empty($news)) ? array_shift($news) : array();
         $this->view->params['active_top_menu'] = 'news';
-        $this->view->title = $news_header = $this->news_header;
+        $this->view->title = $news_header = Yii::t('site', 'News from boss');
         return $this->render('index', compact('current_news', 'news', 'news_header'));
     }
 
@@ -42,8 +40,8 @@ class NewsController  extends FrontendController
             }
         }
         $this->view->params['active_top_menu'] = 'news';
-        $this->view->title = ((!empty($current_news['header'])) ? $current_news['header'] . ' – ' : '') . 'Что нового у Босса';
-        $news_header = $this->news_header;
+        $this->view->title = ((!empty($current_news['header'])) ? $current_news['header'] . ' – ' : '') . Yii::t('site', 'News from boss');
+        $news_header = Yii::t('site', 'News from boss');
         return $this->render('index', compact('current_news', 'news', 'news_header'));
     }
 } 

@@ -7,8 +7,6 @@ use app\models\Feedback;
 
 class FeedbackController  extends FrontendController
 {
-    public $page_header = 'Отзывы';
-
     public function actionIndex()
     {
         $feedback = Feedback::find()
@@ -28,7 +26,7 @@ class FeedbackController  extends FrontendController
             }
         }
         $this->view->params['active_top_menu'] = 'feedback';
-        $this->view->title = $page_header = $this->page_header;
+        $this->view->title = $page_header = Yii::t('site', 'Feedback');
         return $this->render('index', compact('video_feedback', 'text_feedback', 'page_header'));
     }
 } 
