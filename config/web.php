@@ -64,6 +64,8 @@ $config = [
             'ignoreLanguageUrlPatterns' => [
                 '#^images/#' => '#^images/#', // исключение роутингов и URL типа images/ из области действия модуля, может также быть полезным для AJAX-запросов
                 '#^uploads/#' => '#^uploads/#',
+                '#^fancybox/#' => '#^fancybox/#',
+                '#^js/#' => '#^js/#',
             ],
             'rules' => [
                 'news/<id:\d+>' => 'news/view',

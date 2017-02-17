@@ -317,13 +317,13 @@ if(!empty($this->params['site_settings']['body_start'])){
 <div class="boss-main-block10">
     <div class="container">
         <?php
-        $block10_left = 'Подписывайтесь<br/>на наш канал';
-        $block10_right = 'Будем рады подружиться с вами<br/>в социальных сетях';
+        $block10_left = 'Subscribe<br/>to our channel';
+        $block10_right = 'We will be glad to make friends<br/>with you on social networks';
         $block10_img_path = '@web/images/';
         ?>
         <div class="row bmb10-content">
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <p class="bmb10-p text-right"><?= $block10_left; ?></p>
+                <p class="bmb10-p text-right"><?= Yii::t('site', $block10_left); ?></p>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-4">
                 <div class="row">
@@ -345,7 +345,7 @@ if(!empty($this->params['site_settings']['body_start'])){
                 </div>
             </div>
             <div class="col-lg-5 col-md-4 col-sm-4">
-                <p class="bmb10-p text-left"><?= $block10_right; ?></p>
+                <p class="bmb10-p text-left"><?= Yii::t('site', $block10_right); ?></p>
             </div>
         </div>
     </div>
