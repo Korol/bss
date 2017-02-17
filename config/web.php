@@ -66,6 +66,7 @@ $config = [
                 '#^uploads/#' => '#^uploads/#',
                 '#^fancybox/#' => '#^fancybox/#',
                 '#^js/#' => '#^js/#',
+                '#^tr#' => '#^tr#',// временно, пока не заполнена /tr версия сайта
             ],
             'rules' => [
                 'news/<id:\d+>' => 'news/view',
