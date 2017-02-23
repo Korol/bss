@@ -21,7 +21,7 @@ $this->params['wrap_class'] = 'wrap-partner';
                     <?= ArrayHelper::getValue($partner, 'content'); ?>
                 </div>
             </div>
-            <div class="row">
+            <?php /*div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 partner-dbutton-block">
                     <?php $file_link = (!empty($partner['file'])) ? \yii\helpers\Url::to(['@web/uploads/partner/' . $partner['file']]) : '#'; ?>
                     <a href="<?=$file_link; ?>" target="<?=($file_link == '#') ? '_self' : '_blank'; ?>">
@@ -30,7 +30,7 @@ $this->params['wrap_class'] = 'wrap-partner';
                         </div>
                     </a>
                 </div>
-            </div>
+            </div*/?>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <div class="row">
