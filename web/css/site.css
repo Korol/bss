@@ -139,7 +139,7 @@ body {
     font-weight: normal;
 }
 .boss-yellow-color {
-    color: #ffd715; /* hover: #fbe751; */
+    color: #fce652; /* hover: #fbe751; */
 }
 .navbar-boss {
     height: 50px;
@@ -154,14 +154,14 @@ body {
     font-weight: lighter;
 }
 .icon-bar {
-    background-color: #ffd715 !important;
+    background-color: #fce652 !important;
 }
 .navbar-toggle {
-    border-color: #ffd715 !important;
+    border-color: #fce652 !important;
 }
 .navbar-boss .navbar-nav > li > a,
 .navbar-boss-mobile .navbar-nav > li > a {
-    color: #ffd715;
+    color: #fce652;
     text-decoration: underline;
     padding-left: 13px;
     padding-right: 13px;
@@ -193,7 +193,7 @@ body {
 }
 .blb-yellow-title {
     display: block !important;
-    color: #ffd715 !important;
+    color: #fce652 !important;
     position: relative;
     /*top: -14px;*/
     top: -2px;
@@ -202,7 +202,7 @@ body {
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 900;
-    color: #ffd715 !important;
+    color: #fce652 !important;
     display: block;
 }
 .boss-logo-block {
@@ -226,7 +226,7 @@ body {
 }
 .boss-countries > li > a {
     padding: 5px 13px;
-    color: #ffd715;
+    color: #fce652;
 }
 /*.boss-countries-icon {*/
     /*position: absolute;*/
@@ -238,7 +238,7 @@ body {
     position: absolute;
     top: 32px;
     left: 50%;
-    color: #ffd715;
+    color: #fce652;
     margin-left: -8px;
     width: 16px;
 }
