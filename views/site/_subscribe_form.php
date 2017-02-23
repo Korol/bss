@@ -2,7 +2,13 @@
 <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel">
     <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <script type="text/javascript" src="https://app.getresponse.com/view_webform_v2.js?u=B5r2I&webforms_id=4970406"></script>
+                <?php
+                $subscribe_code = (!empty($this->params['page_links']['subscribe_' . Yii::$app->language]))
+                    ? $this->params['page_links']['subscribe_' . Yii::$app->language]
+                    : $this->params['page_links']['subscribe_ru'];
+                echo $subscribe_code;
+                ?>
+                <?php /*script type="text/javascript" src="https://app.getresponse.com/view_webform_v2.js?u=B5r2I&webforms_id=4970406"></script*/?>
             <?php /*form method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

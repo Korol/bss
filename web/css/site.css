@@ -209,9 +209,12 @@ body {
     /*width: 195px;*/
     /*height: 142px;*/
     /*background: url("../images/logo_png24.png");*/
+    /*width: 195px;*/
+    /*height: 138px;*/
+    /*background: url("../images/logo_png24_new.png");*/
     width: 195px;
-    height: 138px;
-    background: url("../images/logo_png24_new.png");
+    height: 142px;
+    background: url("../images/logo_new3.png");
 }
 .blb-hide {
     display: none;

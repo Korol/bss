@@ -264,7 +264,14 @@ $this->title = 'Boss';
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="bmb3-left-img" src="<?=\yii\helpers\Url::to(['images/vbvk_phone_tablet5.png']); ?>" alt="Block 3 Image"/>
+                <?php
+                $vbvk_images = array(
+                    'ru' => 'vbvk_phone_tablet5.png',
+                    'en' => 'vbvk_phone_tablet_en1.png',
+                );
+                $vbvk_image = (!empty($vbvk_images[Yii::$app->language])) ? $vbvk_images[Yii::$app->language] : $vbvk_images['en'];
+                ?>
+                <img class="bmb3-left-img" src="<?=\yii\helpers\Url::to(['images/' . $vbvk_image]); ?>" alt="Block 3 Image"/>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <?php
