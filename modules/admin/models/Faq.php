@@ -14,6 +14,8 @@ use app\models\Language;
  * @property string $answer
  * @property integer $enabled
  * @property integer $sort_order
+ * @property string $keywords
+ * @property string $description
  */
 class Faq extends \yii\db\ActiveRecord
 {
@@ -32,8 +34,8 @@ class Faq extends \yii\db\ActiveRecord
     {
         return [
             [['language_id', 'enabled'], 'integer'],
-            [['answer'], 'string'],
-            [['question'], 'string', 'max' => 255],
+            [['answer', 'description'], 'string'],
+            [['question', 'keywords'], 'string', 'max' => 255],
         ];
     }
 
@@ -49,6 +51,8 @@ class Faq extends \yii\db\ActiveRecord
             'answer' => Yii::t('admin', 'Answer'),
             'enabled' => Yii::t('admin', 'Enabled'),
             'sort_order' => Yii::t('admin', 'Sort Order'),
+            'keywords' => Yii::t('admin', 'META Keywords'),
+            'description' => Yii::t('admin', 'META Description'),
         ];
     }
 

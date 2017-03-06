@@ -38,6 +38,8 @@ $language = \app\models\Language::findOne(['id' => $model->language_id]);
             ],
             'question',
             'answer:html',
+            'keywords',
+            'description',
             'sort_order',
             [
                 'label' => Yii::t('admin', 'Enabled'),

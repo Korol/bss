@@ -70,6 +70,7 @@ $config = [
             ],
             'rules' => [
                 'news/<id:\d+>' => 'news/view',
+                'faq/<id:\d+>' => 'faq/view',
                 'privacy-policy' => 'static-pages/privacy',
                 'terms-of-use' => 'static-pages/terms',
                 'en' => 'static-pages/en', // временно, пока не заполнена /en версия сайта

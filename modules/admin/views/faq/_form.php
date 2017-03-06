@@ -34,6 +34,10 @@ $language = \app\models\Language::findOne(['url' => Yii::$app->language]);
     ]);
     ?>
 
+    <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]); ?>
+
     <?php $model->enabled = ($model->isNewRecord) ? 1 : $model->enabled; ?>
     <?= $form->field($model, 'enabled')->radioList([0 => Yii::t('admin', 'Disabled'), 1 => Yii::t('admin', 'Enabled')], ['class' => 'main-page-radio']) ?>
 

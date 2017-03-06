@@ -19,7 +19,7 @@ class FaqSearch extends Faq
     {
         return [
             [['id', 'language_id', 'enabled', 'sort_order'], 'integer'],
-            [['question', 'answer'], 'safe'],
+            [['question', 'answer', 'keywords', 'description'], 'safe'],
         ];
     }
 
@@ -69,7 +69,9 @@ class FaqSearch extends Faq
         ]);
 
         $query->andFilterWhere(['like', 'question', $this->question])
-            ->andFilterWhere(['like', 'answer', $this->answer]);
+            ->andFilterWhere(['like', 'answer', $this->answer])
+            ->andFilterWhere(['like', 'keywords', $this->keywords])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

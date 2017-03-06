@@ -25,6 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'sort_order',
         'question',
         'answer:html',
+        'keywords',
+        'description',
         [
             'attribute' => 'enabled',
             'value' => function($data){

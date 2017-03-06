@@ -1,3 +1,7 @@
 1. Сделать автоматическое перенаправление для language_manager на его языковую версию Админки (/en, /de, /ua, etc)
 
 + 2. Смена URL для языковой версии должна сопровождаться обновлением поля language в таблице переводов messages!
+
+ALTER TABLE `faq` ADD `keywords` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `sort_order`;
+ALTER TABLE `faq` ADD `description` TEXT  NULL  AFTER `keywords`;
+

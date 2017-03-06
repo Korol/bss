@@ -2,12 +2,28 @@
 /* @var $this yii\web\View */
 /* @var $faqs app\controllers\FaqController */
 /* @var $faq_info app\controllers\FaqController */
-/* @var $current_faq app\controllers\FaqController */
 
 use yii\helpers\ArrayHelper;
-use yii\helpers\Url;
 
 $this->params['wrap_class'] = 'wrap-faq';
+
+$js = <<<JS
+
+    function gotoAnchor(hsh){
+        var urlHash = (hsh) ? hsh : window.location.hash;
+        if(urlHash){
+            var hashNum = urlHash.replace('#q', '');
+            $('.panel-collapse').removeClass('in');
+            $('#collapse'+hashNum).addClass('in');
+        }
+    }
+
+    gotoAnchor();
+
+JS;
+
+
+$this->registerJs($js, \yii\web\View::POS_END, 'goto-anchor');
 ?>
 
 <div class="faq-block">
@@ -20,33 +36,28 @@ $this->params['wrap_class'] = 'wrap-faq';
             </div>
             <div class="row about-vacancies">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php if(!empty($current_faq)): ?>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 current-news-header">
-                                <h3 class="news-title nt-border-btm">
-                                    <?= $current_faq['question']; ?>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><?= $current_faq['answer']; ?></div>
-                        </div>
-                    <?php endif; ?>
                     <?php if(!empty($faqs)): ?>
-                        <div class="row news-other">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding-left">
-                                <?php foreach($faqs as $faq_item): ?>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <h3 class="news-title">
-                                                <a href="<?= Url::to(['faq/' . $faq_item['id']]); ?>" title="<?= $faq_item['question']; ?>">
-                                                    <?= $faq_item['question']; ?>
-                                                </a>
-                                            </h3>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <?php foreach($faqs as $fk => $faq): ?>
+                                <a name="q<?=$faq['id']; ?>" style="position: relative; top: -50px; display: block; visibility: hidden;"></a>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="heading<?=$faq['id']; ?>">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$faq['id']; ?>" aria-expanded="true" aria-controls="collapseOne">
+                                                <?= $faq['question']; ?>
+                                            </a>
+                                            <a href="<?=\yii\helpers\Url::to(['/faq#q' . $faq['id']]); ?>" title="<?=Yii::t('site', 'Direct link to the question'); ?>" onclick="gotoAnchor('#q<?=$faq['id']; ?>');">
+                                                <span class="glyphicon glyphicon-link pull-right" aria-hidden="true"></span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse<?=$faq['id']; ?>" class="panel-collapse collapse <?= ($fk == 0) ? 'in' : ''; ?>" role="tabpanel" aria-labelledby="heading<?=$faq['id']; ?>">
+                                        <div class="panel-body">
+                                            <?= $faq['answer']; ?>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
-                            </div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
                 </div>
