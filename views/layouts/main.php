@@ -536,6 +536,12 @@ else document['do'+'cumentE'+'leme'+'n'+'t']['fi'+'rstCh'+'ild']['a'+'p'+'pen'+'
 })();
 </script> -->
 <!-- {/literal} -->
+<?php
+$jivosite_code = (!empty($this->params['page_links']['jivosite_' . Yii::$app->language]))
+    ? $this->params['page_links']['jivosite_' . Yii::$app->language]
+    : $this->params['page_links']['jivosite_ru'];
+echo $jivosite_code;
+?>
 </body>
 </html>
 <?php $this->endPage() ?>

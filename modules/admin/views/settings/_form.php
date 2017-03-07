@@ -22,6 +22,8 @@ $positions = $settings->getPositions();
         <p>Settings for which the position is defined as "No position" – are used only for their direct call in the code of the site (like some Email-addresses, for example).<br/>Therefore, be very careful when editing these settings and do not change them Key's unless absolutely necessary!</p>
         <p>For placing getresponse.ru subscription code you need to use the Key <b>strict</b> on the following principle: subscribe_{language_code_from_URL}.<br>
         Examples: subscribe_ru, subscribe_en, subscribe_tr, subscribe_de, etc ...</p>
+        <p>For placing code of online-chat by JivoSite you need to use the Key <b>strict</b> on the following principle: jivosite_{language_code_from_URL}.<br>
+        Examples: jivosite_ru, jivosite_en, jivosite_tr, jivosite_de, etc ...</p>
     </div>
 </div>
 <div class="collapse" id="collapseRu">
@@ -31,6 +33,8 @@ $positions = $settings->getPositions();
         <p>Настройки, для которых их Позиция определена как «Нет позиции» – будут использованы только при прямом обращении к ним в исходном коде сайта (как например, некоторые Email-адреса).<br/>Поэтому, будьте очень внимательны при редактировании таких настроек, и не изменяйте параметр «Ключ» («Key») для таких настроек без крайней необходимости!</p>
         <p>Для размещения кода подписки getresponse.ru нужно использовать Ключ <b>строго</b> по такому принципу: subscribe_{код_языка_из_URL}.<br>
         Примеры: subscribe_ru, subscribe_en, subscribe_tr, subscribe_de, etc...</p>
+        <p>Для размещения кода онлайн-чата JivoSite нужно использовать Ключ <b>строго</b> по такому принципу: jivosite_{код_языка_из_URL}.<br>
+        Примеры: jivosite_ru, jivosite_en, jivosite_tr, jivosite_de, etc...</p>
     </div>
 </div>
 <br/><br/>
