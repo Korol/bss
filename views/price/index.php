@@ -75,30 +75,6 @@ $this->registerJs($js, \yii\web\View::POS_END, 'new-price');
                                     endforeach;
                                 endif;
                                 ?>
-<!--                                <div class="picc-item clearfix vcentered-price-block">-->
-<!--                                    <div class="picci-img">-->
-<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
-<!--                                    </div>-->
-<!--                                    <div class="picci-text vcentered-price-content"><span>1 пользователь</span></div>-->
-<!--                                </div>-->
-<!--                                <div class="picc-item clearfix vcentered-price-block">-->
-<!--                                    <div class="picci-img">-->
-<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
-<!--                                    </div>-->
-<!--                                    <div class="picci-text vcentered-price-content"><span>Мобильное приложение</span></div>-->
-<!--                                </div>-->
-<!--                                <div class="picc-item clearfix vcentered-price-block">-->
-<!--                                    <div class="picci-img">-->
-<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
-<!--                                    </div>-->
-<!--                                    <div class="picci-text vcentered-price-content"><span>Web-версия</span></div>-->
-<!--                                </div>-->
-<!--                                <div class="picc-item clearfix vcentered-price-block">-->
-<!--                                    <div class="picci-img">-->
-<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
-<!--                                    </div>-->
-<!--                                    <div class="picci-text vcentered-price-content"><span>Различные роли пользователей</span></div>-->
-<!--                                </div>-->
                             </div>
                         </div>
                         <div class="pi-footer-block">
@@ -111,7 +87,11 @@ $this->registerJs($js, \yii\web\View::POS_END, 'new-price');
                                     <?= str_replace('{sum}', $price['annually'], $price_format['format']) . ' ' . Yii::t('site', 'annually'); ?>
                                 </div>
                                 <div class="pif-discount">
-                                    (<?= str_replace('{sum}', $price['year_cost'], $price_format['format']); ?>) = <span><?= $price['discount']; ?>% <?= Yii::t('site', 'off'); ?></span>
+                                    <?php
+                                    $price_year = str_replace('{sum}', $price['year_cost'], $price_format['format']);
+                                    $price_year_ex = explode('/', $price_year);
+                                    ?>
+                                    (<?= $price_year_ex[0]; ?>) = <span><?= $price['discount']; ?>% <?= Yii::t('site', 'off'); ?></span>
                                 </div>
                             </div>
                         </div>

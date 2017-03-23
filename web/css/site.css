@@ -1558,6 +1558,7 @@ h3.news-title a, h3.news-title a:hover {
 }
 .pif-discount span{
     color: #f91d1d;
+    font-weight: bold;
 }
 /* vertical centering */
 .vcentered-price-block {
