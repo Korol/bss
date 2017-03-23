@@ -28,6 +28,9 @@ $this->params['container'] = 'container';
 //            'id',
             'title',
             'cost',
+            'annually',
+            'year_cost',
+            'discount',
             [
                 'attribute' => 'enabled',
                 'value' => function($data){

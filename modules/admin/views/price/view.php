@@ -33,6 +33,9 @@ $this->params['container'] = 'container';
             'id',
             'title',
             'cost',
+            'annually',
+            'year_cost',
+            'discount',
             [
                 'label' => Yii::t('admin', 'Enabled'),
                 'value' => ($model->enabled > 0) ? Yii::t('admin', 'Enabled') : Yii::t('admin', 'Disabled'),

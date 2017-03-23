@@ -10,7 +10,10 @@ use Yii;
  * @property integer $id
  * @property string $title
  * @property string $cost
+ * @property string $annually
+ * @property string $year_cost
  * @property integer $enabled
+ * @property integer $discount
  */
 class Price extends \yii\db\ActiveRecord
 {
@@ -28,8 +31,8 @@ class Price extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['enabled'], 'integer'],
-            [['title', 'cost'], 'string', 'max' => 255],
+            [['enabled', 'discount'], 'integer'],
+            [['title', 'cost', 'annually', 'year_cost'], 'string', 'max' => 255],
         ];
     }
 
@@ -43,6 +46,9 @@ class Price extends \yii\db\ActiveRecord
             'title' => Yii::t('admin', 'Title'),
             'cost' => Yii::t('admin', 'Cost'),
             'enabled' => Yii::t('admin', 'Enabled'),
+            'annually' => Yii::t('admin', 'Annually'),
+            'year_cost' => Yii::t('admin', 'Year Cost'),
+            'discount' => Yii::t('admin', 'Discount, %'),
         ];
     }
 }

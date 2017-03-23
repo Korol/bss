@@ -18,8 +18,8 @@ class PriceSearch extends Price
     public function rules()
     {
         return [
-            [['id', 'enabled'], 'integer'],
-            [['title', 'cost'], 'safe'],
+            [['id', 'enabled', 'discount'], 'integer'],
+            [['title', 'cost', 'year_cost', 'annually'], 'safe'],
         ];
     }
 
@@ -61,10 +61,13 @@ class PriceSearch extends Price
         $query->andFilterWhere([
             'id' => $this->id,
             'enabled' => $this->enabled,
+            'discount' => $this->discount,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'cost', $this->cost]);
+            ->andFilterWhere(['like', 'cost', $this->cost])
+            ->andFilterWhere(['like', 'year_cost', $this->year_cost])
+            ->andFilterWhere(['like', 'annually', $this->annually]);
 
         return $dataProvider;
     }

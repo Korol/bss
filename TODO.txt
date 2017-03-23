@@ -5,3 +5,7 @@
 ALTER TABLE `faq` ADD `keywords` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `sort_order`;
 ALTER TABLE `faq` ADD `description` TEXT  NULL  AFTER `keywords`;
 
+
+ALTER TABLE `price` ADD `annually` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `enabled`;
+ALTER TABLE `price` ADD `year_cost` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `annually`;
+ALTER TABLE `price` ADD `discount` INT(11)  NULL  DEFAULT NULL  AFTER `year_cost`;

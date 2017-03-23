@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\ArrayHelper;
+
 /* @var $this yii\web\View */
 // 'prices', 'options', 'prices_lang', 'options_lang', 'prices_options', 'price_format'
 /* @var $prices app\controllers\PriceController */
@@ -10,96 +12,114 @@
 /* @var $price_header app\controllers\PriceController */
 /* @var $option_note app\controllers\PriceController */
 /* @var $price_note app\controllers\PriceController */
-
+//var_dump($options, $prices_options);
 $this->params['wrap_class'] = 'wrap-price';
-$circle_classes = [
-    'Yes' => 'option-circle-yes',
-    'No' => 'option-circle-no',
-    'Planned' => 'option-circle-planned',
-];
+$js = <<<JS
+
+    function setEqualHeight(columns)
+    {
+        var tallestcolumn = 0;
+        columns.each(
+            function()
+            {
+                currentHeight = $(this).height();
+                if(currentHeight > tallestcolumn)
+                {
+                tallestcolumn = currentHeight;
+                }
+            }
+        );
+        columns.height(tallestcolumn);
+    }
+    $(document).ready(function() {
+        setEqualHeight($(".pi-content"));
+    });
+
+JS;
+
+$this->registerJs($js, \yii\web\View::POS_END, 'new-price');
 ?>
 
 <div class="boss-price-block">
     <div class="price-wrapper">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="table-responsive">
-                    <table class="table price-table">
-                        <tr>
-                            <td><h1 class="bmb2-header price-header"><?= $price_header; ?></h1></td>
-                            <?php
-                            if(!empty($prices)){
-                                foreach($prices as $price){
-                                    if($price['cost'] == 'Free'){
-                                        $price['cost'] = '<span class="price-cost-span">' . Yii::t('site', 'Free') . '</span>';
-                                    }
-                                    else{
-                                        if(!empty($price_format['format'])){
-                                            $price['cost'] = str_replace('{sum}', '<span class="price-cost-span">' . $price['cost'] . '</span>', $price_format['format']);
-                                        }
-                                        else{
-                                            $price['cost'] = '$<span class="price-cost-span">' . $price['cost'] . '</span>/month';
-                                        }
-                                    }
-                            ?>
-                            <td class="option-td-circle">
-                                <div class="price-title">
-                                    <?= (!empty($prices_lang[$price['id']]['title'])) ? $prices_lang[$price['id']]['title'] : $price['title']; ?>
+            <div class="row price-blocks-container clearfix">
+                <?php
+                if(!empty($prices)):
+                    foreach($prices as $price):
+                ?>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 price-item">
+                        <div class="pi-header"><?= ArrayHelper::getValue($prices_lang, $price['id'].'.title', $price['title']); ?></div>
+                        <div class="pi-content">
+                            <div class="pic-content">
+                                <?php
+                                if(!empty($options)):
+                                    foreach($options as $option):
+                                        if(
+                                            !empty($prices_options[$option['id']][$price['id']])
+                                            && ($prices_options[$option['id']][$price['id']]['value'] == 'Yes')
+                                        ):
+                                ?>
+                                <div class="picc-item clearfix vcentered-price-block">
+                                    <div class="picci-img">
+                                        <img src="<?= \yii\helpers\Url::to(['images/new_price_check.png']); ?>" alt="Pic icon"/>
+                                    </div>
+                                    <div class="picci-text vcentered-price-content">
+                                        <span>
+                                            <?= ArrayHelper::getValue($options_lang, $option['id'].'.title', $option['title']); ?>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="price-cost"><?= $price['cost']; ?></div>
-                            </td>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </tr>
-                        <?php
-                        if(!empty($options)){
-                            $oi = 1;
-                            foreach($options as $option){
-                                $tr_class = (($oi % 2) == 0) ? 'price-tr-light' : 'price-tr-dark';
-                        ?>
-                        <tr class="<?= $tr_class; ?>">
-                            <td class="option-title"><?= (!empty($options_lang[$option['id']]['title'])) ? $options_lang[$option['id']]['title'] : $option['']; ?></td>
-                            <?php
-                            if(!empty($prices)){
-                                foreach($prices as $o_price){
-                            ?>
-                            <td class="option-td-circle">
-                                <?php if(!empty($prices_options[$option['id']][$o_price['id']]['star'])): ?>
-                                    <div class="price-star">*</div>
-                                <?php endif; ?>
-                                <div class="price-circle <?= (!empty($prices_options[$option['id']][$o_price['id']]['value'])) ? $circle_classes[$prices_options[$option['id']][$o_price['id']]['value']] : $circle_classes['No']; ?>"></div>
-                            </td>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </tr>
-                        <?php
-                                $oi++;
-                            }
-                        }
-                        ?>
-                        <tr>
-                            <td class="option-title"><?= (!empty($price_note['note'])) ? '<span class="price-note">' . $price_note['note'] . '</span>' : ''; ?></td>
-                            <?php
-                            $last_price = count($prices);
-                            for($i = 1; $i <= $last_price; $i++){
-                                if($i == $last_price){
-                                    echo '<td class="option-td-circle with-note"><span class="price-note">(' . Yii::t('site', 'planned') . ')</span></td>';
-                                }
-                                else{
-                                    echo '<td class="option-td-circle"></td>';
-                                }
-                            }
-                            ?>
-                        </tr>
-                    </table>
+                                <?php
+                                        endif;
+                                    endforeach;
+                                endif;
+                                ?>
+<!--                                <div class="picc-item clearfix vcentered-price-block">-->
+<!--                                    <div class="picci-img">-->
+<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="picci-text vcentered-price-content"><span>1 пользователь</span></div>-->
+<!--                                </div>-->
+<!--                                <div class="picc-item clearfix vcentered-price-block">-->
+<!--                                    <div class="picci-img">-->
+<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="picci-text vcentered-price-content"><span>Мобильное приложение</span></div>-->
+<!--                                </div>-->
+<!--                                <div class="picc-item clearfix vcentered-price-block">-->
+<!--                                    <div class="picci-img">-->
+<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="picci-text vcentered-price-content"><span>Web-версия</span></div>-->
+<!--                                </div>-->
+<!--                                <div class="picc-item clearfix vcentered-price-block">-->
+<!--                                    <div class="picci-img">-->
+<!--                                        <img src="--><?//= \yii\helpers\Url::to(['images/new_price_check.png']); ?><!--" alt="Pic icon"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="picci-text vcentered-price-content"><span>Различные роли пользователей</span></div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                        <div class="pi-footer-block">
+                            <div class="pi-footer">
+                                <div class="pif-circle"></div>
+                                <div class="pif-month">
+                                    <?= str_replace('{sum}', $price['cost'], $price_format['format']); ?>
+                                </div>
+                                <div class="pif-annually">
+                                    <?= str_replace('{sum}', $price['annually'], $price_format['format']) . ' ' . Yii::t('site', 'annually'); ?>
+                                </div>
+                                <div class="pif-discount">
+                                    (<?= str_replace('{sum}', $price['year_cost'], $price_format['format']); ?>) = <span><?= $price['discount']; ?>% <?= Yii::t('site', 'off'); ?></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="clearfix"></div>
-                </div>
+                <?php
+                    endforeach;
+                endif;
+                ?>
             </div>
 
             <?php if(!empty($option_note['note'])): ?>
