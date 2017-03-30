@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\StaticPages;
 use yii\helpers\ArrayHelper;
+use app\models\Banner;
 
 class StaticPagesController extends FrontendController
 {
@@ -22,6 +23,17 @@ class StaticPagesController extends FrontendController
     {
         $page = $this->getPage('terms');
         return $this->render('index', compact('page'));
+    }
+
+    public function actionWebversion()
+    {
+        $page = $this->getPage('web_version');
+        $banners = Banner::find()
+            ->where(['language_id' => $this->language->id, 'enabled' => 1, 'position' => 'web_version'])
+            ->orderBy(['id' => SORT_ASC])
+            ->asArray()
+            ->all();
+        return $this->render('web_version', compact('page', 'banners'));
     }
 
     public function getPage($type)

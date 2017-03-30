@@ -2,10 +2,25 @@
 
 + 2. Смена URL для языковой версии должна сопровождаться обновлением поля language в таблице переводов messages!
 
-ALTER TABLE `faq` ADD `keywords` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `sort_order`;
-ALTER TABLE `faq` ADD `description` TEXT  NULL  AFTER `keywords`;
+ALTER TABLE `banner` CHANGE `position` `position` ENUM('main_top','main_middle','web_version')  CHARACTER SET utf8  COLLATE utf8_general_ci  NULL  DEFAULT 'main_top';
+ALTER TABLE `static_pages` CHANGE `type` `type` ENUM('privacy','terms','web_version')  CHARACTER SET utf8  COLLATE utf8_general_ci  NOT NULL  DEFAULT 'privacy';
 
 
-ALTER TABLE `price` ADD `annually` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `enabled`;
-ALTER TABLE `price` ADD `year_cost` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `annually`;
-ALTER TABLE `price` ADD `discount` INT(11)  NULL  DEFAULT NULL  AFTER `year_cost`;
+Добавление изображений на страницу «Web-версия»:
+Admin/Main Page/Banners/Create Banner
+Language: указать язык версии
+Type: Image & Text
+Position: Web Version page
+Img: выбрать изображение
+Content: ввести пояснительный текст к изображению
+Create.
+
+Добавление контента страницы (заголовок, мета-теги, текст):
+Admin/Pages/Create Static Page
+Language: указать язык версии
+Type: Web version
+Title: ввести заголовок страницы
+Content: ввести текст, который будет показан после скриншотов
+META Keywords: мета-теги
+META Description: мета-теги
+Create.

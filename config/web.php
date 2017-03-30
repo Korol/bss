@@ -73,6 +73,7 @@ $config = [
                 'faq/<id:\d+>' => 'faq/view',
                 'privacy-policy' => 'static-pages/privacy',
                 'terms-of-use' => 'static-pages/terms',
+                'web-version' => 'static-pages/webversion',
                 'en' => 'static-pages/en', // временно, пока не заполнена /en версия сайта
                 'tr' => 'static-pages/tr', // временно, пока не заполнена /tr версия сайта
                 'video' => 'static-pages/video',

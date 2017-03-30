@@ -1570,3 +1570,12 @@ h3.news-title a, h3.news-title a:hover {
     margin-bottom: auto;
     margin-top: auto;
 }
+
+/* Web version page */
+.wv-screens{
+    margin-bottom: 30px;
+}
+.wv-text{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

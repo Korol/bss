@@ -78,6 +78,7 @@ class Banner extends \yii\db\ActiveRecord
         return [
             'main_top' => Yii::t('admin', 'Main page Top'),
             'main_middle' => Yii::t('admin', 'Main page Middle'),
+            'web_version' => Yii::t('admin', 'Web Version page'),
         ];
     }
 

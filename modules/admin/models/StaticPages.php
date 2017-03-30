@@ -72,6 +72,7 @@ class StaticPages extends \yii\db\ActiveRecord
         return [
             'privacy' => Yii::t('admin', 'Privacy policy'),
             'terms' => Yii::t('admin', 'Terms of use'),
+            'web_version' => Yii::t('admin', 'Web version'),
         ];
     }
 }
