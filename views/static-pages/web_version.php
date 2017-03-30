@@ -62,12 +62,12 @@ $banners_path = '@web/uploads/banners/';
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 price-buttons">
                     <h1 class="bmb2-header price-header"><?= Yii::t('site', 'Download Boss for free'); ?></h1>
-                    <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
+                    <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link" target="_blank">
                         <div class="bmb4-black-appstore">
                             <span><?= $this->params['appstore_text']; ?></span>
                         </div>
                     </a>
-                    <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
+                    <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link" target="_blank">
                         <div class="bmb4-black-gplay">
                             <span><?= $this->params['gplay_text']; ?></span>
                         </div>

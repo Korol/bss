@@ -100,7 +100,7 @@ $this->params['wrap_class'] = 'wrap-feedback';
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                            <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
+                            <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link" target="_blank">
                                 <div class="bmb1-yellow-gplay">
                                     <span><?= $this->params['gplay_text']; ?></span>
                                 </div>

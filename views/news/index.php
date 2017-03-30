@@ -69,14 +69,14 @@ $this->params['wrap_class'] = 'wrap-news';
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12">
-                        <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link">
+                        <a href="<?= $this->params['page_links']['itunes']; ?>" class="bmb4-btn-link" target="_blank">
                             <div class="bmb4-black-appstore">
                                 <span><?= $this->params['appstore_text']; ?></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
-                        <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link">
+                        <a href="<?= $this->params['page_links']['play']; ?>" class="bmb4-btn-link" target="_blank">
                             <div class="bmb4-black-gplay news-gplay-btn">
                                 <span><?= $this->params['gplay_text']; ?></span>
                             </div>
