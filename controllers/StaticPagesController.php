@@ -33,6 +33,7 @@ class StaticPagesController extends FrontendController
             ->orderBy(['id' => SORT_ASC])
             ->asArray()
             ->all();
+        $this->view->params['active_top_menu'] = 'web_version';
         return $this->render('web_version', compact('page', 'banners'));
     }
 

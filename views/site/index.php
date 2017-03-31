@@ -732,7 +732,11 @@ $this->title = 'Boss';
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <h1 class="bmb3-header text-center"><a href="<?=\yii\helpers\Url::to(['/partner']); ?>"><?= $block7_header; ?></a></h1>
+                            <?php if(in_array(Yii::$app->language, ['ru'])): ?>
+                            <h1 class="bmb3-header text-center"><a href="<?=\yii\helpers\Url::to(['/web-version']); ?>"><?= $block7_header; ?></a></h1>
+                            <?php else: ?>
+                            <h1 class="bmb3-header text-center"><?= $block7_header; ?></h1>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="row">

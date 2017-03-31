@@ -50,6 +50,34 @@ $top_menu = [
         ],
     ],
 ];
+// пропускаем или заменяем пункты меню
+$replace_menu = [
+    'ru' => [
+        'partner' => [
+            'key' => 'web_version',
+            'title' => Yii::t('site', 'Web-version'),
+            'url' => '/web-version',
+        ],
+    ],
+    'en' => [
+        'news' => [
+            'key' => 'faq',
+            'title' => Yii::t('site', 'FAQ'),
+            'url' => '/faq',
+        ],
+        'partner' => [
+            'key' => 'news',
+            'title' => Yii::t('site', 'News'),
+            'url' => '/news',
+        ],
+    ],
+];
+$skip_menu = [
+    'en' => [
+        'faq',
+    ],
+];
+
 $seo = (!empty($this->params['seo'][$this->params['active_top_menu']])) ? $this->params['seo'][$this->params['active_top_menu']] : ['keywords' => '', 'description' => '', 'title' => ''];
 $this->registerMetaTag(['name' => 'keywords', 'content' => $seo['keywords']]);
 $this->registerMetaTag(['name' => 'description', 'content' => $seo['description']]);
@@ -131,6 +159,14 @@ if(!empty($this->params['site_settings']['body_start'])){
                     <div class="col-lg-5 col-md-5 col-sm-5 top-menu-leftside">
                         <ul class="nav navbar-nav pull-right">
                             <?php foreach($top_menu['left'] as $tml_key => $tm_left): ?>
+                                <?php
+                                if(!empty($skip_menu[Yii::$app->language]) && in_array($tml_key, $skip_menu[Yii::$app->language])) continue;
+                                if(!empty($replace_menu[Yii::$app->language][$tml_key])){
+                                    $new_item = $replace_menu[Yii::$app->language][$tml_key];
+                                    $tml_key = $new_item['key'];
+                                    $tm_left = $new_item;
+                                }
+                                ?>
                             <li <?=($tml_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
                                 <a href="<?= \yii\helpers\Url::to([$tm_left['url']]); ?>"><?= $tm_left['title']; ?></a>
                             </li>
@@ -144,7 +180,15 @@ if(!empty($this->params['site_settings']['body_start'])){
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5 top-menu-rightside">
                         <ul class="nav navbar-nav navbar-left">
-                            <?php foreach($top_menu['right'] as $tmr_key =>$tm_right): ?>
+                            <?php foreach($top_menu['right'] as $tmr_key => $tm_right): ?>
+                                <?php
+                                if(!empty($skip_menu[Yii::$app->language]) && in_array($tmr_key, $skip_menu[Yii::$app->language])) continue;
+                                if(!empty($replace_menu[Yii::$app->language][$tmr_key])){
+                                    $new_item = $replace_menu[Yii::$app->language][$tmr_key];
+                                    $tmr_key = $new_item['key'];
+                                    $tm_right = $new_item;
+                                }
+                                ?>
                                 <li <?=($tmr_key == $this->params['active_top_menu']) ? 'class="active"' : ''; ?>>
                                     <a href="<?= \yii\helpers\Url::to([$tm_right['url']]); ?>"><?= $tm_right['title']; ?></a>
                                 </li>
@@ -386,8 +430,8 @@ if(!empty($this->params['site_settings']['body_start'])){
                     'url' => '/news',
                 ],
                 2 => [
-                    'title' => Yii::t('site', 'Become a partner'),
-                    'url' => '/partner',
+                    'title' => Yii::t('site', 'Web-version'),
+                    'url' => '/web-version',
                 ],
                 3 => [
                     'title' => Yii::t('site', 'Contact'),
@@ -457,6 +501,7 @@ if(!empty($this->params['site_settings']['body_start'])){
                                 </div>
                             <?php endif;*/ ?>
                             <?php foreach($b11_part as $b11_item): ?>
+                                <?php if((Yii::$app->language != 'ru') && ($b11_item['url'] == '/web-version')) continue; ?>
                                 <div class="b11-row">
                                     <?= (strpos($b11_item['url'], '@') !== false) ? Html::mailto($b11_item['url'], $b11_item['url']) : Html::a($b11_item['title'], \yii\helpers\Url::to([$b11_item['url']])); ?>
                                 </div>
