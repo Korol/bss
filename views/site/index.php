@@ -469,7 +469,7 @@ $this->title = 'Boss';
                 <h1 class="bmb3-header ml30"><?= $block5_header; ?></h1>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-3">
-                <div class="row bmb5-subscribe-block">
+                <?php /*div class="row bmb5-subscribe-block">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bmb5-subscribe-img">
                         <img src="<?= \yii\helpers\Url::to(['images/cnub_mail.png']); ?>" alt="Subscribe Image"/>
                     </div>
@@ -478,7 +478,7 @@ $this->title = 'Boss';
                             <span class="bmb5-subscribe-text"><?= $this->params['subscribe_text']; ?></span>
                         </a>
                     </div>
-                </div>
+                </div*/?>
             </div>
         </div>
         <div class="row">
