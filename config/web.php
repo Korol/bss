@@ -5,7 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', 'devicedetect', 'assetsAutoCompress'],
+    'bootstrap' => ['log', 'devicedetect'], // , 'assetsAutoCompress'
     'language' => 'ru',
     'components' => [
         'devicedetect' => [
@@ -106,29 +106,29 @@ $config = [
             ],
         ],
         'assetManager' => [
-//            'class' => 'yii\web\AssetManager',
-//            'bundles' => [
-//                'yii\web\JqueryAsset' => [
-//                    'js' => [
-//                        YII_ENV_DEV ? 'jquery.js' : 'jquery.min.js'
-//                    ]
-//                ],
-//                'yii\bootstrap\BootstrapAsset' => [
-//                    'css' => [
-//                        YII_ENV_DEV ? 'css/bootstrap.css' :         'css/bootstrap.min.css',
-//                    ]
-//                ],
-//                'yii\bootstrap\BootstrapPluginAsset' => [
-//                    'js' => [
-//                        YII_ENV_DEV ? 'js/bootstrap.js' : 'js/bootstrap.min.js',
-//                    ]
-//                ]
-//            ],
+            'class' => 'yii\web\AssetManager',
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [
+                        YII_ENV_DEV ? 'jquery.js' : 'jquery.min.js'
+                    ]
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [
+                        YII_ENV_DEV ? 'css/bootstrap.css' :         'css/bootstrap.min.css',
+                    ]
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [
+                        YII_ENV_DEV ? 'js/bootstrap.js' : 'js/bootstrap.min.js',
+                    ]
+                ]
+            ],
 //            'appendTimestamp' => true, // ОТКЛЮЧИТЬ НА ПРОДАКШЕНЕ!!!!!!!
         ],
-        'assetsAutoCompress' =>
-            [
-                'class'         => '\skeeks\yii2\assetsAuto\AssetsAutoCompressComponent',
+//        'assetsAutoCompress' =>
+//            [
+//                'class'         => '\skeeks\yii2\assetsAuto\AssetsAutoCompressComponent',
 //                'enabled'                       => true,
 //                'readFileTimeout'               => 3,           //Time in seconds for reading each asset file
 //
@@ -155,7 +155,7 @@ $config = [
 //                        'extra' => false,        //use more compact algorithm
 //                        'no-comments' => true   //cut all the html comments
 //                    ],
-            ],
+//            ],
     ],
     'modules' => [
         'admin' => [
