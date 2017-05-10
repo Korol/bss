@@ -1591,6 +1591,6 @@ h3.news-title a, h3.news-title a:hover {
 }
 
 /* Responsive img width for News */
-.current-news-content img{
+.current-news-content img, .current-news-content iframe{
     max-width: 100% !important;
 }
