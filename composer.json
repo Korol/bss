@@ -24,7 +24,8 @@
         "dektrium/yii2-rbac": "1.0.0-alpha@dev",
         "mihaildev/yii2-ckeditor": "*",
         "mihaildev/yii2-elfinder": "*",
-        "kartik-v/yii2-sortable-input": "*"
+        "kartik-v/yii2-sortable-input": "*",
+        "skeeks/yii2-assets-auto-compress": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

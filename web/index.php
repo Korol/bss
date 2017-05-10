@@ -1,8 +1,9 @@
 <?php
-
+$yii_debug = (strpos($_SERVER['HTTP_HOST'], '.loc') !== false) ? true : false;
+$yii_env = (strpos($_SERVER['HTTP_HOST'], '.loc') !== false) ? 'dev' : 'prod';
 // comment out the following two lines when deployed to production
-defined('YII_DEBUG') or define('YII_DEBUG', true);
-defined('YII_ENV') or define('YII_ENV', 'dev');
+defined('YII_DEBUG') or define('YII_DEBUG', $yii_debug);
+defined('YII_ENV') or define('YII_ENV', $yii_env);
 
 require(__DIR__ . '/../vendor/autoload.php');
 require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
