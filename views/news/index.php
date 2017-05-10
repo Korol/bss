@@ -39,7 +39,7 @@ $this->params['wrap_class'] = 'wrap-news';
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><?= $current_news['content']; ?></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 current-news-content"><?= $current_news['content']; ?></div>
             </div>
         <?php endif; ?>
         <?php if(!empty($news)): ?>

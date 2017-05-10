@@ -1589,3 +1589,8 @@ h3.news-title a, h3.news-title a:hover {
     margin-top: 50px;
     margin-bottom: 30px;
 }
+
+/* Responsive img width for News */
+.current-news-content img{
+    max-width: 100% !important;
+}
