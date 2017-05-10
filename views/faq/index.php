@@ -29,7 +29,7 @@ $this->params['wrap_class'] = 'wrap-faq';
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><?= $current_faq['answer']; ?></div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 current-news-content"><?= $current_faq['answer']; ?></div>
                         </div>
                     <?php endif; ?>
                     <?php if(!empty($faqs)): ?>
