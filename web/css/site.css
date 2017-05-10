@@ -1594,3 +1594,7 @@ h3.news-title a, h3.news-title a:hover {
 .current-news-content img, .current-news-content iframe{
     max-width: 100% !important;
 }
+
+.navbar-inverse .navbar-brand {
+    text-decoration: none;
+}

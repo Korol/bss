@@ -152,7 +152,7 @@ if(!empty($this->params['site_settings']['body_start'])){
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">BOSS</a>
+                <a class="navbar-brand" href="<?=\yii\helpers\Url::to(['/']); ?>">BOSS</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="row">
